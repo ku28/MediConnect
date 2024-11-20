@@ -1,3 +1,4 @@
-export const truncate = (str, max) =>{
-    return str.length > max ? str.substring(0, max-1) + '...' : str;
-}
+export const truncate = (str, n) => {
+    if (!str) return '';
+    return str.length > n ? str.slice(0, n-1) + '...' : str;
+  };
