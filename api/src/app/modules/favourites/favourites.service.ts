@@ -21,7 +21,7 @@ const createFavourite = async (user: any, payload: Favourites): Promise<Favourit
     });
 
     if (isFavourite) {
-        throw new ApiError(httpStatus.NOT_FOUND, 'AllReady doctor is Favourite !!')
+        throw new ApiError(httpStatus.NOT_FOUND, 'Already doctor is Favourite !!')
     } else {
         payload.patientId = isUserExist.id;
         const favourites = await prisma.favourites.create({

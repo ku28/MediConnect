@@ -26,7 +26,7 @@ const PersonalInformation = ({ handleChange, selectValue, setPatientId =() =>{} 
         <form className="rounded p-3 mt-5" style={{ background: "#f8f9fa" }}>
             <div className="row">
                 <Checkbox checked={checked} onChange={onChange}>
-                    Allready Have an Account ?
+                    Already Have an Account ?
                 </Checkbox>
 
                 <div className="col-md-6 col-sm-12">
