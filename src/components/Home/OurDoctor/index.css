@@ -33,7 +33,7 @@
     font-weight: 700;
     margin-bottom: 5px;
     font-size: 20px;
-    color: #2c4964;
+    color: #000000;
 }
 
 .doctors .member span {
@@ -50,7 +50,7 @@
     display: block;
     width: 50px;
     height: 1px;
-    background: #b2c8dd;
+    background: #03f4bb;
     bottom: 0;
     left: 0;
 }
@@ -75,7 +75,7 @@
     border-radius: 50px;
     width: 32px;
     height: 32px;
-    background: #a0bcd5;
+    background: #a0d5d2;
 }
 
 .doctors .member .social a .icon {
@@ -85,7 +85,7 @@
 }
 
 .doctors .member .social a:hover {
-    background: #1977cc;
+    background: #50C878;
 }
 
 .doctors .member .social a+a {

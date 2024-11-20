@@ -17,7 +17,7 @@ const uploadFile = async (file: any): Promise<ICloudinaryResponse> => {
     }
     return new Promise((resolve, reject) => {
         cloudinary.uploader.upload_stream(
-            { resource_type: 'auto', folder: 'doctorOnCall' },
+            { resource_type: 'auto', folder: 'MediConnect' },
             (error: any, result: any) => {
                 if (error) {
                     reject(error)

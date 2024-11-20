@@ -19,11 +19,11 @@
 }
 
 #topbar .contact-info a:hover {
-  color: #1977cc;
+  color: #50C878;
 }
 
 #topbar .contact-info .contact-icon {
-  color: #1977cc;
+  color: #50C878;
   padding-right: 4px;
   margin-left: 15px;
   line-height: 0;
@@ -42,7 +42,7 @@
 }
 
 #topbar .social-links a:hover {
-  color: #1977cc;
+  color: #50C878;
 }
 
 #topbar .social-links a:first-child {

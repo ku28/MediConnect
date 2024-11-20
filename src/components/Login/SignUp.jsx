@@ -167,6 +167,7 @@ const SignUp = ({ setSignUp }) => {
             {infoError && <h6 className="text-danger text-center">{infoError}</h6>}
             <button type="submit"
                 className="btn btn-primary btn-block mt-2 iBtn"
+                style={{ backgroundColor: "#50C878" }}
                 disabled={
                     passwordValidation.carLength && passwordValidation.numeric && passwordValidation.upperLowerCase && passwordValidation.specailChar && emailError.emailError ? "" : true
                 }

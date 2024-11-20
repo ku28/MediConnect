@@ -3,7 +3,7 @@
 	margin: 0;
 	padding: 0;
 }
-.doc-department {color: #1977cc;}
+.doc-department {color: #50C878;}
 .doc-department img{
     width: 1.5rem;
     margin-right: 2px;
@@ -46,9 +46,9 @@
 }
 .clinic-booking a {
     background-color: #fff;
-    border: 2px solid #1977cc;
+    border: 2px solid #50C878;
     border-radius: 4px;
-    color: #1977cc;
+    color: #50C878;
     display: block;
     font-size: 14px;
     font-weight: 500;
@@ -59,22 +59,22 @@
     width: 100%;
 }
 .clinic-booking a.view-pro-btn:hover, .clinic-booking a.view-pro-btn:focus {
-	background: #1977cc; 
+	background: #50C878; 
 	color: #fff;
 }
 .clinic-booking a.apt-btn {
-    background-color: #1977cc;
+    background-color: #50C878;
     color: #fff;
 }
 .clinic-booking a.apt-btn:hover, .clinic-booking a.apt-btn:focus {
-	background-color: #1977cc;
-	border-color: #1977cc;
+	background-color: #50C878;
+	border-color: #50C878;
 	color: #fff;
 }
 .load-more {
 	margin-bottom: 30px;
 }
 .overview-text {
-    color: #2c4964;
+    color: #000000;
     font-weight: 600;
 }

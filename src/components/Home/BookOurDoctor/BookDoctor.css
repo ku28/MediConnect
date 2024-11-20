@@ -59,15 +59,15 @@
     min-height: 40px;
 }
 .view-profile-btn{
-    border-color: #1977cc !important;
-    color: #1977cc !important;
+    border-color: #50C878 !important;
+    color: #50C878 !important;
 }
 .view-profile-btn:hover{
     color: #fff !important;
-    background-color: #1977cc !important;
+    background-color: #50C878 !important;
 }
 .book-btn{
-    background-color: #1977cc !important;
+    background-color: #50C878 !important;
     border: none;
     color: #fff !important;    
 }

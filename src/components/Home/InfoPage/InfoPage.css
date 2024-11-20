@@ -1,6 +1,6 @@
 .why-us .content {
   padding: 30px;
-  background: #1977cc;
+  background: #50C878;
   border-radius: 4px;
   color: #fff;
 }
@@ -30,7 +30,7 @@
 }
 
 .why-us .content .more-btn:hover {
-  color: #1977cc;
+  color: #50C878;
   background: #fff;
 }
 
@@ -45,7 +45,7 @@
 
 .why-us .icon-boxes .icon-box .icon {
   font-size: 40px;
-  color: #1977cc;
+  color: #50C878;
   margin-bottom: 30px;
 }
 
@@ -53,7 +53,7 @@
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 30px 0;
-  color: #2c4964;
+  color: #000000;
 }
 
 .why-us .icon-boxes .icon-box p {

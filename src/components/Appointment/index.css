@@ -1,12 +1,12 @@
 .info-part p{
     font-size: 14px;
-    color: #2c4964;
+    color: #000000;
     font-weight: 600;
 }
 .info-head-date{
     min-height: 60px;
     font-weight: 600;
-    color: #2c4964;
+    color: #000000;
     font-size: 16px;
 }
 .icon-box .icon{
@@ -14,10 +14,10 @@
     margin-top: 2px;
 }
 .select-date{
-    border: 2px solid #1977cc;
+    border: 2px solid #50C878;
     width: 100%;
     cursor: pointer;
-    color: #1977cc;
+    color: #50C878;
     transition: 0.6s ease-in;
 }
 
@@ -35,11 +35,11 @@
     font-size: 16px;
 }
 .info-date-card .active{
-    background-color: #1977cc;
+    background-color: #50C878;
     color: white !important;
 }
 
 .select-date:hover{
-    background-color: #1977cc;
+    background-color: #50C878;
     color: white !important;
 }

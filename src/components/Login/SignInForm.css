@@ -42,7 +42,7 @@
     position: absolute;
     width: 2000px;
     height: 2000px;border-radius: 50%;
-    background: linear-gradient(-45deg, #795cf9, #7355F7);
+    background: linear-gradient(-45deg, #1de9a9, #3cd6de);
     top: -10%;
     right: 48%;
     transform: translateY(-50%);
@@ -149,8 +149,8 @@
   }
   
   .social-icon:hover {
-    border: 1px solid #6e4dff;
-    color: #6e4dff;
+    border: 1px solid #0e783c;
+    color: #0e783c;
   }
   
   .input-field input::placeholder {
@@ -165,7 +165,7 @@
     outline: none;
     border-radius: 50px;
     cursor: pointer;
-    background-color: #7355F7;
+    background-color: #62d2a2;
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
@@ -174,7 +174,7 @@
     transition: .5s;
   }
   .iBtn:hover{
-    background: #4C25F5;
+    background: #0e783c;
   }
   
   .social-text {

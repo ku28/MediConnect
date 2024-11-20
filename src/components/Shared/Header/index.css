@@ -13,7 +13,7 @@
     object-fit: cover;
     object-position: top;
     margin-left: 11px;
-    border: 2px #1977cc solid;
+    border: 2px #50C878 solid;
     cursor: pointer;
 }
 .hideTopHeader{
@@ -47,11 +47,12 @@
 }
 
 #header .logo a {
-    color: #2c4964;
+    color: #000000;
 }
 
 #header .logo img {
-    max-height: 40px;
+    max-height: 100px;
+    max-width: 150px;
 }
 
 
@@ -83,7 +84,7 @@
     align-items: center;
     justify-content: space-between;
     font-size: 14px;
-    color: #2c4964;
+    color: #000000;
     white-space: nowrap;
     transition: 0.3s;
     border-bottom: 2px solid #fff;
@@ -101,8 +102,8 @@
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-    color: #1977cc;
-    border-color: #1977cc;
+    color: #50C878;
+    border-color: #50C878;
 }
 
 .navbar .dropdown ul {
@@ -140,7 +141,7 @@
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-    color: #1977cc;
+    color: #50C878;
 }
 
 .navbar .dropdown:hover>ul {
@@ -173,7 +174,7 @@
 }
 
 .mobile-nav-toggle {
-    color: #2c4964;
+    color: #000000;
     font-size: 28px;
     cursor: pointer;
     display: none;
@@ -194,7 +195,7 @@
 
 .appointment-btn {
     margin-left: 25px;
-    background: #1977cc;
+    background: #50C878;
     color: #fff;
     border-radius: 50px;
     padding: 8px 25px;
@@ -219,7 +220,7 @@
 .mobile-menu-nav {
     list-style: none;
     font-size: 1.2rem;
-    color: #1977cc !important;
+    color: #50C878 !important;
 }
 .mobile-menu-nav .icon{
     font-size: 1.3rem;

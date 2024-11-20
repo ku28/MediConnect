@@ -34,13 +34,13 @@
 }
 .dashboard-menu > ul > li:hover > a,
 .dashboard-menu > ul > li.active > a {
-	color:#1977cc;
+	color:#50C878;
 }
 .dashboard-menu > ul > li:hover > a{
     transform: scale(1.05);
 }
 .active {
-    color: #1977cc !important;
+    color: #50C878 !important;
     background: #fff;
 }
 

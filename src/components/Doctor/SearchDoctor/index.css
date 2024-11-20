@@ -8,5 +8,16 @@
     object-position: top;
 }
 .doc-info a{
-    color: #1977cc !important;
+    color: #50C878 !important;
 }
+
+.ant-btn-primary {
+    background-color: #13ba71 !important;
+    border-color: #13ba71 !important;
+  }
+  
+  .ant-btn-primary:hover {
+    background-color: #0e783c !important; /* Change the hover color */
+    border-color: #0e783c !important;
+  }
+  
