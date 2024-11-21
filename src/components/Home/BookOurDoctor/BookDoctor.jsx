@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './BookDoctor.css';
 import { Link } from 'react-router-dom';
 import { useGetDoctorsQuery } from '../../../redux/api/doctorApi';
-import { FaLocationArrow, FaCheckCircle, FaRegHeart, FaDollarSign, FaClock } from "react-icons/fa";
+import { FaLocationArrow, FaCheckCircle, FaRegHeart, FaClock, FaRupeeSign } from "react-icons/fa";
 import { useAddFavouriteMutation } from '../../../redux/api/favouriteApi';
 import StarRatings from 'react-star-ratings';
 import { message } from 'antd';
@@ -79,7 +79,7 @@ const BookDoctor = () => {
 										<FaClock className='icon' /> Available on Fri, 22 Mar
 									</li>
 									<li>
-										<FaDollarSign className='icon' /> $100 - $400
+										<FaRupeeSign className='icon' /> ₹100 - ₹400
 									</li>
 								</ul>
 								<div className="d-flex justify-content-between align-items-center">

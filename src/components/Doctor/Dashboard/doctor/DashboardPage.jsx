@@ -117,7 +117,7 @@ const DashboardPage = () => {
     const items = [
         {
             key: '1',
-            label: 'upcoming',
+            label: 'Upcoming',
             children: <CustomTable
                 loading={isLoading}
                 columns={upcomingColumns}
@@ -129,7 +129,7 @@ const DashboardPage = () => {
         },
         {
             key: '2',
-            label: 'today',
+            label: 'Today',
             children: <CustomTable
                 loading={isLoading}
                 columns={upcomingColumns}

@@ -7,7 +7,7 @@ export const bloodGrupOptions = bloodGrup.map((data) => {
     }
 })
 
-const gender = ['male', 'female', 'shemale']
+const gender = ['male', 'female', 'other']
 
 export const genderOptions = gender.map((data) => {
     return {

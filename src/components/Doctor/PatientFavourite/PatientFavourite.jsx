@@ -4,7 +4,7 @@ import DashboardLayout from '../DashboardLayout/DashboardLayout';
 import { useGetFavouriteQuery, useRemoveFavouriteMutation } from '../../../redux/api/favouriteApi';
 import { useEffect } from 'react';
 import { Empty, message } from 'antd';
-import { FaLocationArrow, FaCheckCircle, FaBookmark, FaDollarSign, FaClock } from "react-icons/fa";
+import { FaLocationArrow, FaCheckCircle, FaBookmark, FaRupeeSign, FaClock } from "react-icons/fa";
 import StarRatings from 'react-star-ratings';
 import './index.css';
 
@@ -68,7 +68,7 @@ const PatientFavouriteDoctor = () => {
                                     <FaClock className='icon' /> Available on Fri, 22 Mar
                                 </li>
                                 <li>
-                                    <FaDollarSign className='icon' /> $100 - $400
+                                    <FaRupeeSign className='icon' /> ₹100 - ₹400
                                 </li>
                             </ul>
                             <div className="d-flex justify-content-between mb-3 mt-2">

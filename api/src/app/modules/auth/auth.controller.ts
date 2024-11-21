@@ -90,7 +90,7 @@ const VerifyUser = catchAsync(async (req: Request, res: Response) => {
 })
 
 const Verified = catchAsync(async (req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, "../../../../template/verfied.html"))
+    res.sendFile(path.join(__dirname, "../../../../template/verified.html"))
 })
 
 const VerficationExpired = catchAsync(async (req: Request, res: Response) => {

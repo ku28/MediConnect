@@ -78,7 +78,7 @@ const AdminDashboard = () => {
                                         <i className="fe fe-folder"></i>
                                     </span>
                                     <div className="dash-count">
-                                        <h3>$62523</h3>
+                                        <h3>₹62523</h3>
                                     </div>
                                 </div>
                                 <div className="dash-widget-info">
@@ -146,7 +146,7 @@ const AdminDashboard = () => {
                                                     </h2>
                                                 </td>
                                                 <td>Dental</td>
-                                                <td>$3200.00</td>
+                                                <td>₹3200.00</td>
                                                 <td>
                                                     <i className="fe fe-star text-warning"></i>
                                                     <i className="fe fe-star text-warning"></i>
@@ -189,7 +189,7 @@ const AdminDashboard = () => {
                                                 </td>
                                                 <td>8286329170</td>
                                                 <td>20 Oct 2019</td>
-                                                <td className="text-right">$100.00</td>
+                                                <td className="text-right">₹100.00</td>
                                             </tr>
                                            
                                         </tbody>
@@ -243,7 +243,7 @@ const AdminDashboard = () => {
                                                     </div>
                                                 </td>
                                                 <td className="text-right">
-                                                    $200.00
+                                                    ₹200.00
                                                 </td>
                                             </tr>
                                         </tbody>

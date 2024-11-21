@@ -53,7 +53,7 @@ const Location = () => {
 
                             <div className="col-md-2">
                                 <div className="consult-price">
-                                    $250
+                                    ₹250
                                 </div>
                             </div>
                         </div>

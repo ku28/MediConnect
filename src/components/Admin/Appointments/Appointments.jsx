@@ -40,7 +40,7 @@ const AdminAppointments = () => {
 															<a href="profile.html">Charlene Reed </a>
 														</h2>
 													</td>
-													<td>9 Nov 2019 <span className="text-primary d-block">11.00 AM - 11.15 AM</span></td>
+													<td>9 Nov 2024 <span className="text-primary d-block">11.00 AM - 11.15 AM</span></td>
 													<td>
 														<div className="status-toggle">
 															<input type="checkbox" id="status_1" className="check" checked/>
@@ -48,7 +48,7 @@ const AdminAppointments = () => {
 														</div>
 													</td>
 													<td className="text-right">
-														$200.00
+														₹200.00
 													</td>
 												</tr>
 											</tbody>

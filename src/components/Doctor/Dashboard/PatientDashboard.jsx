@@ -144,14 +144,6 @@ const PatientDashboard = () => {
                                 <FaRegEye />
                             </Button>
                         </Link>
-                        {/* <Link to={`/dashboard/appointment/treatment/edit/${data.id}`}>
-                            <Button type='primary' size='small' className="bg-primary" style={{ margin: "5px 5px" }}>
-                                <FaEdit />
-                            </Button>
-                        </Link> */}
-                        {/* <Button onClick={() => deleteHandler(data.id)} size='small' type='primary' style={{ margin: "5px 5px" }} danger>
-                            <FaRegTimesCircle />
-                        </Button> */}
                     </div>
                 )
             }

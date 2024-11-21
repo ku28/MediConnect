@@ -95,7 +95,7 @@ const Contact = () => {
                                     <div className="col-md-12">
                                         <div className="form-group">
                                             <label className='form-label'>Message</label>
-                                            <textarea required {...register("text")} className="form-control mb-3" cols="30" rows="10" placeholder="enter your message"/>
+                                            <textarea required {...register("text")} className="form-control mb-3" cols="30" rows="10" placeholder="Enter your message"/>
                                         </div>
                                     </div>
 

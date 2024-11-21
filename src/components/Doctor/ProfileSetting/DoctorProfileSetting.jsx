@@ -113,7 +113,7 @@ const DoctorProfileSetting = () => {
                                 <option value={''}>Select</option>
                                 <option className='text-capitalize'>male</option>
                                 <option className='text-capitalize'>female</option>
-                                <option className='text-capitalize'>shemale</option>
+                                <option className='text-capitalize'>other</option>
                             </select>
                         </div>
                     </div>

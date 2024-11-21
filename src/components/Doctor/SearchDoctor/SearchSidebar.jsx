@@ -16,8 +16,8 @@ const SearchSidebar = ({ setSearchTerm, setSorByGender, setSpecialist, setPriceR
       value: 'female',
     },
     {
-      label: 'Shemale',
-      value: 'shemale',
+      label: 'Other',
+      value: 'other',
     },
   ];
   const onSelectGender = (e) => setSorByGender(e.target.value)

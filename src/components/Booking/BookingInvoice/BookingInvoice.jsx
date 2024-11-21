@@ -107,7 +107,7 @@ const BookingInvoice = () => {
                                         <tbody>
                                             <tr>
                                                 <th>Subtotal:</th>
-                                                <td><span>${data?.totalAmount}</span></td>
+                                                <td><span>₹{data?.totalAmount}</span></td>
                                             </tr>
                                             <tr>
                                                 <th>Discount:</th>
@@ -115,7 +115,7 @@ const BookingInvoice = () => {
                                             </tr>
                                             <tr>
                                                 <th>Total Amount:</th>
-                                                <td><span>${data?.totalAmount}</span></td>
+                                                <td><span>₹{data?.totalAmount}</span></td>
                                             </tr>
                                         </tbody>
                                     </table>

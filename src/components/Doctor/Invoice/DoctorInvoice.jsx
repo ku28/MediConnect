@@ -33,7 +33,7 @@ const DoctorInvoice = () => {
             key: '2',
             width: 100,
             render: function (data) {
-                return <div>{data?.totalAmount} $</div>
+                return <div>₹{data?.totalAmount}</div>
             }
         },
         {

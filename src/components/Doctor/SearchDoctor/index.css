@@ -1,23 +1,38 @@
 .doc-img-fluid img {
-    height: 200px;
-    width: 200px;
-    border: 8px solid #e0e0e0;
-    border-radius: 50%;
-    overflow: hidden;
-    object-fit: cover;
-    object-position: top;
+  height: 200px;
+  width: 200px;
+  border: 8px solid #e0e0e0;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: top;
 }
 .doc-info a{
-    color: #50C878 !important;
+  color: #50C878 !important;
 }
 
 .ant-btn-primary {
-    background-color: #13ba71 !important;
-    border-color: #13ba71 !important;
-  }
+  background-color: #13ba71 !important;
+  border-color: #13ba71 !important;
+}
   
-  .ant-btn-primary:hover {
-    background-color: #0e783c !important; /* Change the hover color */
-    border-color: #0e783c !important;
-  }
+.ant-btn-primary:hover {
+  background-color: #0e783c !important;
+  border-color: #0e783c !important;
+}
+
+.ant-slider-track {
+  background-color: #13ba71 !important;
+}
+
+.ant-slider-handle {
+  background-color: #13ba71 !important;
+  border-color: #13ba71 !important;
+}
+
+.ant-slider-rail {
+  background-color: #d9d9d9 !important;
+}
+
+
   

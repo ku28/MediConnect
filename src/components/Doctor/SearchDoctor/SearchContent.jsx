@@ -4,7 +4,7 @@ import showImg from '../../../images/specialities/specialities-01.png'
 import StarRatings from 'react-star-ratings';
 import { Tag } from 'antd';
 import './index.css';
-import { FaLocationArrow, FaRegThumbsUp, FaDollarSign, FaComment } from "react-icons/fa";
+import { FaLocationArrow, FaRegThumbsUp, FaComment, FaRupeeSign } from "react-icons/fa";
 import { truncate } from '../../../utils/truncate';
 
 const SearchContent = ({ data }) => {
@@ -66,7 +66,7 @@ const SearchContent = ({ data }) => {
                             <li><FaRegThumbsUp />  97%</li>
                             <li><FaComment /> 4 Feedback</li>
                             <li><FaLocationArrow />{truncate(data?.clinicAddress, 20)}</li>
-                            <li><FaDollarSign /> {data?.price ? truncate(data?.price, 4) : 60} (Per Hour)</li>
+                            <li><FaRupeeSign /> {data?.price ? truncate(data?.price, 4) : 60} (Per Hour)</li>
                         </ul>
                     </div>
                     <div className="clinic-booking">
