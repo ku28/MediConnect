@@ -27,5 +27,6 @@ export default {
     gmail_app_Email: process.env.GMAIL_APP_EMAIL,
     defaultAdminDoctor: process.env.DEFULT_ADMIN_DOCTOR,
     backendLiveUrl: process.env.BACKEND_LIVE_URL,
-    backendLocalUrl: process.env.BACKEND_LOCAL_URL
+    backendLocalUrl: process.env.BACKEND_LOCAL_URL,
+    frontendLiveUrl: process.env.FRONTEND_LIVE_URL,
 }

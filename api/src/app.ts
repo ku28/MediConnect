@@ -8,7 +8,9 @@ import config from './config';
 
 const app: Application = express();
 
-app.use(cors());
+app.use(cors({
+    origin: config.clientUrl,
+}));
 app.use(CookieParser());
 
 app.use(express.json());
