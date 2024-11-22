@@ -17,10 +17,10 @@ const OverView = () => {
                 <VerticalTimeline>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{ background: '#2e81c4', color: '#000' }}
-                        contentArrowStyle={{ borderRight: '7px solid  #2e81c4' }}
+                        contentStyle={{ background: '#50C878', color: '#000' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
                         date="2011 - 2000"
-                        iconStyle={{ background: '#2e81c4', color: '#fff' }}
+                        iconStyle={{ background: '#50C878', color: '#fff' }}
                         icon={<FaBriefcase />}
                     >
                         <h5 className="text-white">American Dental Medical University</h5>
@@ -33,10 +33,10 @@ const OverView = () => {
 
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{ background: '#2e81c4', color: '#000' }}
-                        contentArrowStyle={{ borderRight: '7px solid  #2e81c4' }}
+                        contentStyle={{ background: '#50C878', color: '#000' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
                         date="2003 - 2005"
-                        iconStyle={{ background: '#2e81c4', color: '#fff' }}
+                        iconStyle={{ background: '#50C878', color: '#fff' }}
                         icon={<FaBriefcase />}
                     >
                         <h5 className="text-white">American Dental Medical University</h5>
@@ -55,10 +55,10 @@ const OverView = () => {
                 <VerticalTimeline>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{ background: '#2e81c4', color: '#000' }}
-                        contentArrowStyle={{ borderRight: '7px solid  #2e81c4' }}
+                        contentStyle={{ background: '#50C878', color: '#000' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
                         date="2010 - Present (5 years)"
-                        iconStyle={{ background: '#2e81c4', color: '#fff' }}
+                        iconStyle={{ background: '#50C878', color: '#fff' }}
                         icon={<FaBriefcase />}
                     >
                         <h5 className="text-white">Glowing Smiles Family Dental Clinic</h5>
@@ -70,10 +70,10 @@ const OverView = () => {
 
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{ background: '#2e81c4', color: '#000' }}
-                        contentArrowStyle={{ borderRight: '7px solid  #2e81c4' }}
+                        contentStyle={{ background: '#50C878', color: '#000' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
                         date="2007 - 2010 (3 years)"
-                        iconStyle={{ background: '#2e81c4', color: '#fff' }}
+                        iconStyle={{ background: '#50C878', color: '#fff' }}
                         icon={<FaBriefcase />}
                     >
                         <h5 className="text-white">Comfort Care Dental Clinic</h5>
@@ -85,10 +85,10 @@ const OverView = () => {
 
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{ background: '#2e81c4', color: '#000' }}
-                        contentArrowStyle={{ borderRight: '7px solid  #2e81c4' }}
+                        contentStyle={{ background: '#50C878', color: '#000' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
                         date="2005 - 2007 (2 years)"
-                        iconStyle={{ background: '#2e81c4', color: '#fff' }}
+                        iconStyle={{ background: '#50C878', color: '#fff' }}
                         icon={<FaBriefcase />}
                     >
                         <h5 className="text-white">Dream Smile Dental Practice</h5>
@@ -108,10 +108,10 @@ const OverView = () => {
                 <VerticalTimeline>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{ background: '#2e81c4', color: '#000' }}
-                        contentArrowStyle={{ borderRight: '7px solid  #2e81c4' }}
+                        contentStyle={{ background: '#50C878', color: '#000' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
                         date="July 2019"
-                        iconStyle={{ background: '#2e81c4', color: '#fff' }}
+                        iconStyle={{ background: '#50C878', color: '#fff' }}
                         icon={<FaBriefcase />}
                     >
                         <h5 className="text-white">Humanitarian Award</h5>
@@ -121,10 +121,10 @@ const OverView = () => {
 
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{ background: '#2e81c4', color: '#000' }}
-                        contentArrowStyle={{ borderRight: '7px solid  #2e81c4' }}
+                        contentStyle={{ background: '#50C878', color: '#000' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
                         date="March 2011"
-                        iconStyle={{ background: '#2e81c4', color: '#fff' }}
+                        iconStyle={{ background: '#50C878', color: '#fff' }}
                         icon={<FaBriefcase />}
                     >
                         <h5 className="text-white">Certificate for International Volunteer Service</h5>
@@ -134,10 +134,10 @@ const OverView = () => {
 
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{ background: '#2e81c4', color: '#00' }}
-                        contentArrowStyle={{ borderRight: '7px solid  #2e81c4' }}
+                        contentStyle={{ background: '#50C878', color: '#00' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
                         date="March 2011"
-                        iconStyle={{ background: '#2e81c4', color: '#fff' }}
+                        iconStyle={{ background: '#50C878', color: '#fff' }}
                         icon={<FaBriefcase />}
                     >
                         <h5 className="text-white">The Dental Professional of The Year Award</h5>
