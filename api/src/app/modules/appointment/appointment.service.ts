@@ -6,6 +6,7 @@ import moment from 'moment';
 import { EmailtTransporter } from "../../../helpers/emailTransporter";
 import * as path from 'path';
 import config from "../../../config";
+import { log } from "console";
 
 const createAppointment = async (payload: any): Promise<Appointments | null | any> => {
 
@@ -55,6 +56,8 @@ const createAppointment = async (payload: any): Promise<Appointments | null | an
                 patient: true
             }
         });
+
+        // log(patientInfo)
         const { paymentMethod, paymentType } = payment;
         const docFee = Number(isDoctorExist.price);
         const vat = (15 / 100) * (docFee + 10)
@@ -71,6 +74,7 @@ const createAppointment = async (payload: any): Promise<Appointments | null | an
                 }
             })
         }
+        
         const pathName = path.join(__dirname, '../../../../template/appointment.html')
         const appointmentObj = {
             created: moment(appointment.createdAt).format('LL'),

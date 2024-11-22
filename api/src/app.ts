@@ -31,6 +31,7 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
         res.status(httpStatus.NOT_FOUND).json({
             success: false,
             message: 'Something Went Wrong',
+            error: err.message || err || 'Internal Server Error'
         });
     }
     next();

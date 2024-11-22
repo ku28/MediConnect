@@ -57,6 +57,8 @@ const AppointmentPage = () => {
   }, [selectValue, isCheck]);
   
   const handleConfirmSchedule = () => {
+    // console.log("here");
+    
     const obj = {};
     obj.patientInfo = {
       firstName: selectValue.firstName,

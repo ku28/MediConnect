@@ -18,6 +18,8 @@ import Header from '../../Shared/Header/Header';
 import useAuthCheck from '../../../redux/hooks/useAuthCheck';
 
 const DoctorBooking = () => {
+    // console.log("here");
+    
     const dispatch = useDispatch();
     let initialValue = {
         paymentMethod: 'paypal',

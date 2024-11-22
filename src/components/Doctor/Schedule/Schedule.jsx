@@ -181,31 +181,33 @@ const Schedule = () => {
                         <div className="row form-row hours-cont">
                             {
                                 timeSlot && timeSlot?.map((item, index) => (
-                                    <div className="col-12 col-md-10 d-flex align-items-center justify-content-between" key={index + item.id}>
+                                    <div className="col-12 col-sm-10 d-flex align-items-center justify-content-between" key={index + item.id}>
                                         <div className="row form-row">
-                                            <div className="col-12 col-md-6">
+                                            <div className="col-12 col-sm-5">
                                                 <div className="form-group">
                                                     <label>Start Time</label>
                                                     <TimePicer handleFunction={handleEditStartTime} time={item.startTime} id={item.id} />
                                                 </div>
                                             </div>
-                                            <div className="col-12 col-md-6">
+                                            <div className="col-12 col-sm-5">
                                                 <div className="form-group">
                                                     <label>End Time</label>
                                                     <TimePicer handleFunction={handleEditEndTime} time={item.startTime} id={item.id} />
                                                 </div>
                                             </div>
                                         </div>
-                                        <Button type="primary" size='small' htmlType="submit"
-                                            onClick={() => remove(item?.id)} block icon={<FaWindowClose />}>
-                                        </Button>
+                                            <div className='col-6 col-sm-2 container mx-auto'>
+                                                <Button className='' type="primary" size='small' htmlType="submit"
+                                                    onClick={() => remove(item?.id)} block icon={<FaWindowClose />}>
+                                                </Button>
+                                            </div>
                                     </div>
                                 ))
                             }
                         </div>
                     </div>
 
-                    <div className=" my-2 w-25">
+                    <div className=" my-2 w-full w-sm-25">
                         <Button type="primary" size='small' htmlType="submit" onClick={(e) => addField(e)} block icon={<FaPlus />}>
                             Add More
                         </Button>

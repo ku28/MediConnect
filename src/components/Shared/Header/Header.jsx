@@ -50,7 +50,7 @@ const Header = () => {
                 <Link to="/dashboard">Dashboard</Link>
             </div>
             <Button variant="outline-danger" className='w-100' size="sm" onClick={hanldeSignOut}>
-                Logged Out
+                Log Out
             </Button>
         </div >
     );

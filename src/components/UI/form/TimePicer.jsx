@@ -8,6 +8,7 @@ const TimePicer = ({ id, time, handleFunction, showValue = false }) => {
             defaultValue={showValue && defaultTime}
             use12Hours
             format="h:mm a"
+            className='border-b'
             onChange={(time, timeString) => handleFunction(id, time, timeString)}
         />
     )
