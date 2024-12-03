@@ -1,48 +1,114 @@
-.patients-info>h5 {
-    color: #000000;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.6s ease-in;
+/* Appointments.css */
+
+/* Table Styles */
+.appointment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.patients-info>h5:hover {
-    color: #358fe2;
-    transform: scale(1.1);
+.appointment-table thead {
+    background-color: #50C878; /* Dark blue header */
+    color: #fff;
 }
 
-.patients-info .info {
-    color: #757575;
+.appointment-table thead th {
+    padding: 12px 15px;
+    text-transform: uppercase;
 }
 
-.patients-info .info p {
+.appointment-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.appointment-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.appointment-table td {
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+
+/* Patient Image */
+.patient-img img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+/* Tags */
+.text-uppercase {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Icon Styling */
+.icon {
+    margin-right: 5px;
+    color: green; /* Consistent blue color */
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actions button {
+    font-size: 14px;
+}
+
+/* Buttons */
+button.ant-btn-primary {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
-    margin-bottom: 3px;
 }
 
-.patients-info .info .icon {
-    font-size: 23px !important;
+button.ant-btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
 }
 
-.patient-img img {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
-    border: 8px solid #efefef;
-    transition: 0.6s ease-in;
+button.ant-btn-primary.ant-btn-dangerous {
+    background-color: #ff4d4f;
+    border-color: #ff4d4f;
 }
 
-.patient-img img:hover {
-    transform: scale(1.1);
+button.ant-btn-primary.ant-btn-dangerous:hover {
+    background-color: #d9363e;
+    border-color: #d9363e;
 }
-.appointment-status > p{
+
+/* Tooltip */
+.ant-tooltip-inner {
     font-size: 14px;
-    font-weight: 600;
-    color: #757575;
-    margin-bottom: 3px;
-    display: flex;
-    justify-content: space-between;
+    color: #fff;
+    background-color: #004080;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .appointment-table {
+        font-size: 14px;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .patient-img img {
+        width: 40px;
+        height: 40px;
+    }
 }

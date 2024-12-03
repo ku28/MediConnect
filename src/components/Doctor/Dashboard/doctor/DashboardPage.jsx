@@ -68,7 +68,7 @@ const DashboardPage = () => {
             width: 100,
             render: function (data) {
                 return (
-                    <div>{moment(data?.scheduleDate).format("LL")} <span className="d-block text-info">{data?.scheduleTime}</span></div>
+                    <div>{moment(data?.scheduleDate).format("LL")} <span className="d-block text-[#50C878]">{data?.scheduleTime}</span></div>
                 )
             }
         },
@@ -78,7 +78,7 @@ const DashboardPage = () => {
             width: 100,
             render: function (data) {
                 return (
-                    <Tag color="#87d068" className='text-uppercase'>{data?.status}</Tag>
+                    <Tag color="#50C878" className='text-uppercase'>{data?.status}</Tag>
                 )
             }
         },
@@ -113,11 +113,10 @@ const DashboardPage = () => {
             }
         },
     ];
-
     const items = [
         {
             key: '1',
-            label: 'Upcoming',
+            label: <span style={{ color: '#006400' }}>Upcoming</span>, // Dark green color for text
             children: <CustomTable
                 loading={isLoading}
                 columns={upcomingColumns}
@@ -129,7 +128,7 @@ const DashboardPage = () => {
         },
         {
             key: '2',
-            label: 'Today',
+            label: <span style={{ color: '#006400' }}>Today</span>, // Dark green color for text
             children: <CustomTable
                 loading={isLoading}
                 columns={upcomingColumns}
@@ -140,7 +139,7 @@ const DashboardPage = () => {
             />,
         },
     ];
-
+    
     return (
         <Tabs defaultActiveKey="1" items={items} onChange={handleOnselect} />
     )

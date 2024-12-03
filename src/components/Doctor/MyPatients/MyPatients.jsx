@@ -3,44 +3,63 @@ import img from '../../../images/avatar.jpg';
 import DashboardLayout from '../DashboardLayout/DashboardLayout';
 import { useGetDoctorPatientsQuery } from '../../../redux/api/appointmentApi';
 import moment from 'moment';
-import { Link } from 'react-router-dom';
-import { FaClock, FaEnvelope, FaLocationArrow, FaPhoneAlt } from "react-icons/fa";
 import { Empty } from 'antd';
 
 const MyPatients = () => {
+    const { data, isLoading, isError } = useGetDoctorPatientsQuery();
+
     const getInitPatientName = (item) => {
         const fullName = `${item?.firstName ?? ''} ${item?.lastName ?? ''}`;
         return fullName.trim() || "Private Patient";
     }
-    const { data, isLoading, isError } = useGetDoctorPatientsQuery();
+
     let content = null;
-    if (!isLoading && isError) content = <div>Something Went Wrong !</div>
-    if (!isLoading && !isError && data?.length === 0) content = <Empty/>
+    if (!isLoading && isError) content = <div>Something Went Wrong!</div>
+    if (!isLoading && !isError && data?.length === 0) content = <Empty />
     if (!isLoading && !isError && data?.length > 0) content =
-        <>
-            {data && data?.map((item) => (
-                <div className="w-100 mb-3 rounded p-3 text-center" style={{ background: '#f8f9fa' }}>
-                    <div className="">
-                        <Link to={'/'} className="my-3 patient-img">
-                            <img src={data?.patient?.img ? data?.patient?.img : img} alt="" />
-                        </Link>
-                        <div className="patients-info mt-4">
-                            <h5>{getInitPatientName(item)}</h5>
-                            <div className="info">
-                                <p><FaClock className='icon' /> {moment(item?.appointmentTime).format("MMM Do YY")} </p>
-                                <p><FaLocationArrow className='icon' /> {item?.address}</p>
-                                <p><FaEnvelope className='icon' /> {item?.email}</p>
-                                <p><FaPhoneAlt className='icon' /> {item?.mobile}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            ))}
-        </>
+        <div className="table-responsive">
+            <table className="table table-bordered" style={{ backgroundColor: '#f8f9fa', borderRadius: '10px' }}>
+                <thead style={{ backgroundColor: '#28a745', color: '#fff' }}>
+                    <tr>
+                        <th>Serial No</th>
+                        <th>Image</th>
+                        <th>Patient Name</th>
+                        <th>Appointment Date</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map((item, index) => (
+                        <tr key={index}>
+                            <td>{index + 1}</td>
+                            <td>
+                                <img
+                                    src={item?.patient?.img ? item?.patient?.img : img}
+                                    alt="Patient"
+                                    style={{
+                                        width: '50px',
+                                        height: '50px',
+                                        borderRadius: '50%',
+                                        border: '2px solid #28a745',
+                                        objectFit: 'cover',
+                                    }}
+                                />
+                            </td>
+                            <td>{getInitPatientName(item)}</td>
+                            <td>{moment(item?.appointmentTime).format("MMM Do YY")}</td>
+                            <td>{item?.email}</td>
+                            <td>{item?.mobile}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+
     return (
         <DashboardLayout>
             <div className="row">
-                <div className="col-md-6 col-lg-4 col-xl-3">
+                <div className="col-md-12">
                     {content}
                 </div>
             </div>
@@ -48,4 +67,4 @@ const MyPatients = () => {
     )
 }
 
-export default MyPatients
+export default MyPatients;

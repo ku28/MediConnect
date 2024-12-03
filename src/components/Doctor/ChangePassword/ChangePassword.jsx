@@ -6,7 +6,7 @@ const ChangePassword = () => {
     return (
         <DashboardLayout>
             <div className="w-100 mb-3 rounded p-2" style={{ background: '#f8f9fa' }}>
-                <h5 className='text-title mt-3'>Change Your Password</h5>
+                <h5 className='text-title mt-3 text-center'>Change Your Password</h5>
                 <form className='container row form-row px-5 mx-auto my-5'>
                     <div className="col-md-12">
                         <div className="form-group mb-3 card-label">
