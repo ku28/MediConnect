@@ -54,7 +54,7 @@ const BookDoctor = () => {
 							<div className="pro-content">
 								<h3 className="title">
 									<Link to={`/doctors/profile/${item?.id}`}>
-										<a>{item?.firstName + ' ' + item?.lastName}</a>
+										{item?.firstName + ' ' + item?.lastName}
 									</Link>
 									<FaCheckCircle className='verified' />
 								</h3>
@@ -116,7 +116,7 @@ const BookDoctor = () => {
 								slidesPerView={1}
 								modules={[Navigation, Autoplay]}
 								navigation={true}
-								loop={true}
+								loop={doctors?.length > 3}
 								centeredSlides={true}
 								autoplay={{ delay: 5000, disableOnInteraction: false }}
 								breakpoints={{

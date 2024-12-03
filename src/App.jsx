@@ -42,6 +42,8 @@ import ForgotPassword from './components/Login/ForgotPassword';
 import Dashboard from './components/Doctor/Dashboard/Dashboard';
 import PrivateOutlet from './components/Shared/PrivateOutlet';
 import NotFound from './components/UI/NotFound';
+import { createBrowserRouter, RouterProvider, createRoutesFromElements, Route } from "react-router-dom";
+import Service from './components/Service/Service';
 
 function App() {
   return (

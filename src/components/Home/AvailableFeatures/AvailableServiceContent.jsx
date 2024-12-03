@@ -20,7 +20,7 @@ const AvailableServiceContent = () => {
 
             <Swiper
                 spaceBetween={2}
-                slidesPerView={4}
+                slidesPerView={3}
                 modules={[Navigation, Autoplay]}
                 loop={true}
                 centeredSlides={true}

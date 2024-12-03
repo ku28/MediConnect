@@ -54,10 +54,10 @@ const Testimonial = () => {
             <div className="row d-flex justify-content-center">
                 <Swiper
                     spaceBetween={10}
-                    slidesPerView={2}
+                    slidesPerView={data?.length < 2 ? data.length : 2}
                     modules={[Navigation, Autoplay]}
                     navigation={true}
-                    loop={true}
+                    loop={data?.length > 2}
                     centeredSlides={true}
                     autoplay={{ delay: 2500, disableOnInteraction: false }}
                 >

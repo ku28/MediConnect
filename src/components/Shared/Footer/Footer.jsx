@@ -78,10 +78,10 @@ const Footer = () => {
 						<div className="row">
 							<div className="col-md-6 col-lg-6">
 								<div className="copyright-text">
-									<p className="mb-0"><a href="templateshub.net">
+									<div className="mb-0"><a href="templateshub.net">
 										<div className="copyRight text-center">
 											<p>Copyright {(new Date()).getFullYear()} All Rights Reserved</p>
-										</div></a></p>
+										</div></a></div>
 								</div>
 							</div>
 							<div className="col-md-6 col-lg-6">
