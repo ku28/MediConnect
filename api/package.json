@@ -6,6 +6,7 @@
   "scripts": {
     "start": "ts-node-dev --respawn --transpile-only src/server.ts",
     "compile": "node ./dist/server.js",
+    "vercel-build": "npm run build",
     "lint:check": "eslint --ignore-path .eslintignore --ext .js,.ts .",
     "build": "tsc && copyfiles -u 1 template/* dist/template",
     "lint:fix": "eslint . --fix",
@@ -15,8 +16,7 @@
     "lint-prettier": "npm run lint:check && npm run prettier:check",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "ujjal",
-  "license": "ISC",
+  "author": "kushagra",
   "dependencies": {
     "@prisma/client": "^5.22.0",
     "bcrypt": "^5.1.1",

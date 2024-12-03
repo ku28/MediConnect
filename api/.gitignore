@@ -4,5 +4,6 @@ prisma/migrations/
 .vercel
 dist/
 
-.env.*
+.env.production
 .env
+.vercel
