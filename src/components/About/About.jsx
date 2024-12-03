@@ -3,6 +3,7 @@ import "./index.css";
 import Header from "../Shared/Header/Header";
 import Footer from "../Shared/Footer/Footer";
 import ImageHeading from "../../images/doc/doctor 5.jpg";
+import defaultDoctorImage from "../../images/img/default-doctor.png";
 import whattoSay from "../../images/doc/doc4.jpg";
 import SubHeader from "../Shared/SubHeader";
 import { Empty } from "antd";
@@ -22,27 +23,27 @@ const About = () => {
   } else if (!isLoading && !isError && doctors?.length === 0) {
     doctorContent = <Empty />;
   } else if (!isLoading && !isError && doctors?.length > 0) {
+    const defaultImage = defaultDoctorImage;
+
     doctorContent = (
       <div className="row">
-        {doctors.map((item, id) => (
-          <div className="col-lg-3 col-md-6 col-sm-6" key={id + item.id}>
-            <div className="card">
-              {item.img && (
-                <img
-                  src={item.img}
-                  className="img-fluid"
-                  alt={item.firstName}
-                />
-              )}
-              <div className="p-2">
-                <h4 className="mt-4 mb-0 text-blue-800">
-                  {item?.firstName + " " + item?.lastName}
-                </h4>
-                <p>{item?.designation}</p>
-              </div>
-            </div>
+      {doctors.map((item, id) => (
+        <div className="col-lg-3 col-md-6 col-sm-6" key={id + item.id}>
+        <div className="card">
+          <img
+          src={item.img || defaultImage}
+          className="img-fluid"
+          alt={item.firstName}
+          />
+          <div className="p-2">
+          <h4 className="mt-4 mb-0 text-blue-800">
+            {item?.firstName + " " + item?.lastName}
+          </h4>
+          <p>{item?.designation}</p>
           </div>
-        ))}
+        </div>
+        </div>
+      ))}
       </div>
     );
   }
