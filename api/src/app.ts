@@ -12,7 +12,8 @@ const app: Application = express();
 const allowedOrigins = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
-    config.clientUrl
+    config.clientUrl,
+    'https://mediconnect-ura.netlify.app'
 ].filter(Boolean);
 
 const corsOptions = {
@@ -40,16 +41,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.get('/favicon.ico', (req: Request, res: Response) => {
+app.get('/favicon.ico', (_req: Request, res: Response) => {
     res.status(204).end();
 });
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (_req: Request, res: Response) => {
     res.send(config.clientUrl);
 });
 
 app.use('/api/v1', router);
-app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+app.use((err: any, _req: Request, res: Response, next: NextFunction) => {
     if (err instanceof ApiError) {
         res.status(err.statusCode).json({ success: false, message: err.message });
     } else {
