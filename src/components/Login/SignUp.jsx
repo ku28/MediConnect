@@ -126,7 +126,7 @@ const SignUp = ({ setSignUp }) => {
         e.preventDefault();
         setLoading(true);
         if (userType === "doctor") {
-            doctorSignUp(user);
+            doctorSignUp({ ...user, price: '100' });
         } else {
             patientSignUp(user)
         }
