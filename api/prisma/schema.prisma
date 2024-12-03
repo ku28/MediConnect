@@ -82,7 +82,7 @@ model Doctor {
   state                  String?
   country                String?
   postalCode             String?
-  price                  String?
+  price                  String
   services               String?
   specialization         String?
   degree                 String?

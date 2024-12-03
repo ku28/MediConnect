@@ -1,4 +1,4 @@
-.footer {
+/* .footer {
     background-color: #0d6232;
 }
 .footer a {
@@ -112,4 +112,229 @@
 }
 .footer .social-icon ul li a:hover {
 	color: #09e5ab;
+}
+
+ */
+
+
+
+ /* Main footer background */
+.footer {
+    background-color: #0d6232;
+}
+
+/* Footer links */
+.footer a {
+    text-decoration: none;
+}
+
+/* Spacing for footer top section */
+.footer .footer-top {
+    padding: 40px 0;
+}
+
+/* Footer titles */
+.footer-title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+
+/* Remove list styles for footer menu */
+.footer .footer-widget.footer-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+/* Footer logo styling */
+.footer .footer-widget .footer-logo {
+    margin-bottom: 30px;
+}
+
+/* About section content styling */
+.footer .footer-widget .footer-about-content p {
+    color: #fff;
+}
+
+.footer .footer-widget .footer-about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Footer menu styling */
+.footer .footer-menu ul li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.footer .footer-menu ul li:last-child {
+    margin-bottom: 0;
+}
+
+.footer .footer-menu ul li a {
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.4s ease 0s;
+}
+
+.footer .footer-menu ul li a i {
+    margin-right: 5px;
+}
+
+/* Hover effect on footer menu items */
+.footer .footer-widget.footer-menu ul li a:hover {
+    color: #fff;
+    letter-spacing: 0.5px;
+    padding-left: 10px;
+}
+
+/* Footer contact information */
+.footer-contact-info {
+    color: #fff;
+    font-size: 15px;
+}
+
+.footer-contact-info .footer-address {
+    display: flex;
+}
+
+.footer-contact-info .footer-address span {
+    margin-right: 20px;
+}
+
+.footer-contact-info .footer-address span .icon .fa-map-marker-alt {
+    font-size: 20px;
+}
+
+.footer-contact-info p i {
+    margin-right: 15px;
+}
+
+/* Footer bottom section with copyright text */
+.footer .footer-bottom .copyright {
+    border-top: 1px solid #0e783c;
+    padding: 30px 0;
+}
+
+/* Styling for footer bottom text */
+.footer .footer-bottom .copyright-text p {
+    color: #fff;
+    font-size: 15px;
+}
+
+.footer .footer-bottom .copyright-text p a {
+    color: #09e5ab;
+    transition: all 0.4s ease 0s;
+}
+
+.footer .footer-bottom .copyright-text p a:hover {
+    color: #fff;
+}
+
+.footer .footer-bottom .copyright-text p.title {
+    font-weight: 400;
+    margin: 10px 0 0;
+}
+
+/* Social icons in footer */
+.footer .social-icon ul {
+    display: inline-flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .social-icon ul li {
+    margin-right: 15px;
+}
+
+.footer .social-icon ul li:last-child {
+    margin-right: 0;
+}
+
+.footer .social-icon ul li a {
+    color: #fff;
+    font-size: 20px;
+    transition: all 0.4s ease 0s;
+}
+
+.footer .social-icon ul li a:hover {
+    color: #09e5ab;
+}
+
+/* Responsive footer adjustments */
+@media (max-width: 768px) {
+    .footer .footer-top {
+        padding: 30px 0;
+    }
+
+    .footer-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .footer .footer-widget.footer-menu ul li a {
+        font-size: 14px;
+    }
+
+    .footer-contact-info {
+        font-size: 14px;
+    }
+
+    .footer .footer-bottom .copyright-text p {
+        font-size: 14px;
+    }
+
+    /* Social icons adjustment */
+    .footer .social-icon ul {
+        justify-content: center;
+    }
+
+    .footer .social-icon ul li {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 580px) {
+    /* Mobile-specific adjustments */
+    .footer {
+        padding: 20px;
+    }
+
+    .footer-title {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .footer-contact-info {
+        font-size: 13px;
+    }
+
+    .footer .footer-widget.footer-menu ul li a {
+        font-size: 13px;
+    }
+
+    .footer .footer-bottom .copyright-text p {
+        font-size: 13px;
+    }
+
+    .footer .footer-bottom .copyright {
+        padding: 20px 0;
+    }
+
+    .footer .footer-logo img {
+        max-width: 150px; /* Adjust the footer logo size for mobile */
+    }
+
+    /* Social icons in footer */
+    .footer .social-icon ul {
+        justify-content: center;
+    }
+
+    .footer .social-icon ul li {
+        margin-right: 8px;
+    }
 }
