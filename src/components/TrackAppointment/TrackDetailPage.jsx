@@ -16,9 +16,12 @@ const TrackDetailPage = ({ data, setShowInfo }) => {
   return (
     <>
       <div className="container mb-2" style={{ marginTop: '8rem' }}>
-        <Button type="primary" 
-        icon={<FaArrowAltCircleLeft />} size='medium'
-        onClick={() => setShowInfo(false)}
+        <Button 
+          type="primary" 
+          icon={<FaArrowAltCircleLeft />} 
+          size="large"
+          onClick={() => setShowInfo(false)}
+          className="back-btn"
         >
           Back
         </Button>
@@ -28,25 +31,29 @@ const TrackDetailPage = ({ data, setShowInfo }) => {
           <div className="col-md-4">
             <div className="d-flex flex-column gap-4 justify-content-around">
 
-              <div className='card shadow-sm p-3 text-center shadow border-0 bg-success'>
+              <div className='card shadow-sm p-4 text-center bg-gradient-success'>
                 <div className='text-white'>
-                  <h6 className='text-start text-primary text-uppercase text-black'>Patient</h6>
-                  <div className='d-flex gap-2'>
+                  <h6 className='text-start text-uppercase text-black'>Patient</h6>
+                  <div className='d-flex gap-3 align-items-center'>
                     <div className='img-div'>
                       {data?.patient?.img ? <img src={data?.patient?.img} alt='' /> : <img src={img} alt='' />}
                     </div>
                     <div className='text-start'>
                       <h6 className='mb-0 text-white'>{patinetFirstName + ' ' + patinetLastName}</h6>
-                      <p className='form-text text-white'>{data?.patient?.address && data?.patient?.address + ',' + data?.patient?.city && data?.patient?.city}<br /> {data?.patient?.state + ',' + data?.patient?.country && data?.patient?.country}</p>
+                      <p className='form-text text-white'>
+                        {data?.patient?.address && data?.patient?.address + ',' + data?.patient?.city && data?.patient?.city}
+                        <br />
+                        {data?.patient?.state + ',' + data?.patient?.country && data?.patient?.country}
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className=' card shadow-sm p-3 text-center shadow border-0 bg-danger text-white'>
+              <div className='card shadow-sm p-4 text-center bg-gradient-danger text-white'>
                 <div>
                   <h6 className='text-start text-uppercase text-black'>Doctor</h6>
-                  <div className='d-flex gap-2'>
+                  <div className='d-flex gap-3 align-items-center'>
                     <div className='img-div'>
                       {data?.doctor?.img ? <img src={data?.doctor?.img} alt='' /> : <img src={img} alt='' />}
                     </div>
@@ -62,13 +69,19 @@ const TrackDetailPage = ({ data, setShowInfo }) => {
 
           <div className='col-md-8'>
             <h4 className='text-center text-capitalized'>Status : {data?.status}</h4>
-            <p className='px-5 form-text text-center'>{appointStatusDsc.appointment[data?.status]}</p>
+            <p className='px-5 form-text text-center text-muted'>{appointStatusDsc.appointment[data?.status]}</p>
 
             <div className='d-flex justify-content-center mt-4'>
               <div className='text-center'>
                 <h5>Meeting Schedule: </h5>
-                <div className='text-secondary text-start'><FaCalendarCheck className='me-2' />Appointment Date : {moment(data?.scheduleDate).format("MMM Do YY")}</div>
-                <div className='text-secondary text-start'><FaRegClock className='me-2' />Appointment Time : {data?.scheduleTime}</div>
+                <div className='text-secondary text-start'>
+                  <FaCalendarCheck className='me-2 text-primary' />
+                  <strong>Appointment Date:</strong> {moment(data?.scheduleDate).format("MMM Do YY")}
+                </div>
+                <div className='text-secondary text-start'>
+                  <FaRegClock className='me-2 text-warning' />
+                  <strong>Appointment Time:</strong> {data?.scheduleTime}
+                </div>
               </div>
             </div>
           </div>
