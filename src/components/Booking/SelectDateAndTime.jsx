@@ -14,9 +14,8 @@ const SelectDateAndTime = ({ content, handleDateChange, disabledDateTime, select
                 <div className="col-md-5 col-sm-12 mt-3">
                     <h5 className='text-title mb-3'>Please Select Date</h5>
                     <DatePicker
-                        format="YYYY-MM-DD HH:mm:ss"
+                        format="YYYY-MM-DD"
                         disabledDate={disabledDateTime}
-                        open={true}
                         onChange={handleDateChange}
                     />
                 </div>

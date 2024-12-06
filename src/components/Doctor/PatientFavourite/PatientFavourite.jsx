@@ -1,4 +1,4 @@
-import img from '../../../images/doc/doctor 3.jpg';
+import img from "../../../images/img/default-doctor.png";
 import { Link } from 'react-router-dom';
 import DashboardLayout from '../DashboardLayout/DashboardLayout';
 import { useGetFavouriteQuery, useRemoveFavouriteMutation } from '../../../redux/api/favouriteApi';

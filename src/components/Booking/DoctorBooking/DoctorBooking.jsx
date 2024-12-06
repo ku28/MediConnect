@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Footer from '../../Shared/Footer/Footer'
-import img from '../../../images/doc/doctor 3.jpg'
+import img from "../../../images/img/default-doctor.png";
 import './index.css';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Empty, Button, message, Steps } from 'antd';

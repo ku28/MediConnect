@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import img from '../../../images/doc/doctor 3.jpg'
+import img from "../../../images/img/default-doctor.png";
 import { FaRegThumbsUp } from "react-icons/fa";
 import moment from 'moment';
 import StarRatings from 'react-star-ratings';

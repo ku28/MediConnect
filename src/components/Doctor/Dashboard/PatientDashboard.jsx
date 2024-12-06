@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../../images/doc/doctor 3.jpg';
+import img from "../../../images/img/default-doctor.png";
 import moment from 'moment';
 import { useGetPatientAppointmentsQuery, useGetPatientInvoicesQuery } from '../../../redux/api/appointmentApi';
 import { useGetPatientPrescriptionQuery } from '../../../redux/api/prescriptionApi';
