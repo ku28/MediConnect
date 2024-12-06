@@ -6,15 +6,18 @@ import { Tag } from 'antd';
 import './index.css';
 import { FaLocationArrow, FaRegThumbsUp, FaComment, FaRupeeSign } from "react-icons/fa";
 import { truncate } from '../../../utils/truncate';
+import defaultDoctorImage from "../../../images/img/default-doctor.png";
 
 const SearchContent = ({ data }) => {
+    if (!data) return null;
     const services = data?.services?.split(',')
+    const defaultImage = defaultDoctorImage;
     return (
         <div className="mb-4 rounded" style={{ background: '#f3f3f3' }}>
             <div className='d-flex p-3 justify-content-between'>
                 <div className='d-flex gap-3'>
                     <div className='doc-img-fluid d-flex align-items-center'>
-                        { data?.img && <img src={data?.img} className="" alt="User Image" />}
+                        <img src={data?.img || defaultImage} className="" alt="User Image" />
                     </div>
                     <div className="doc-info">
                         <h5 className='mb-0'><Link to={`/doctors/profile/${data?.id}`}>Dr. {data?.firstName + ' ' + data?.lastName}</Link></h5>

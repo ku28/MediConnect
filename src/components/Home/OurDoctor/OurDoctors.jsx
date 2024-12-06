@@ -2,10 +2,12 @@ import './index.css';
 import { FaFacebookSquare, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { Empty } from 'antd';
 import { useGetDoctorsQuery } from '../../../redux/api/doctorApi';
+import defaultDoctorImage from "../../../images/img/default-doctor.png";
 
 const OurDoctors = () => {
     const { data, isLoading, isError } = useGetDoctorsQuery({ limit: 4 });
     const doctors = data?.doctors;
+    const defaultImage = defaultDoctorImage;
 
     let content = null;
     if (!isLoading && isError) content = <div>Something Went Wrong !</div>
@@ -17,7 +19,7 @@ const OurDoctors = () => {
                     <div className="col-lg-6 mt-3" key={key + 2}>
                         <div className="member d-flex align-items-start">
                             <div className="pic">
-                                {item.img && <img src={item.img} className="img-fluid" alt="" />}
+                                <img src={item.img || defaultImage} className="img-fluid" alt="" />
                             </div>
                             <div className="member-info">
                                 <h4>{item?.firstName + ' ' + item?.lastName}</h4>

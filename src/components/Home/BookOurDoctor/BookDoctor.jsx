@@ -8,6 +8,8 @@ import StarRatings from 'react-star-ratings';
 import { message } from 'antd';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
+import defaultDoctorImage from "../../../images/img/default-doctor.png";
+
 
 // Import Swiper styles
 import 'swiper/css';
@@ -18,6 +20,7 @@ import 'swiper/css/navigation';
 const BookDoctor = () => {
 	const { data, isError, isLoading } = useGetDoctorsQuery({ limit: 10 });
 	const doctors = data?.doctors;
+    const defaultImage = defaultDoctorImage;
 	const [addFavourite, { isSuccess, isLoading: FIsLoading, isError: fIsError, error }] = useAddFavouriteMutation();
 
 	const handleAddFavourite = (id) => {
@@ -37,61 +40,61 @@ const BookDoctor = () => {
 	let content = null;
 	if (!isLoading && isError) content = <div>Something Went Wrong !</div>
 	if (!isLoading && !isError && doctors?.length === 0) content = <div>Empty</div>
-	if (!isLoading && !isError && doctors?.length > 0) content =
-		<>
-			{
-				doctors && doctors?.map((item) => (
-					<SwiperSlide key={item.id}>
-						<div className="profile-widget">
-							<div className="doc-img">
-								<Link to={`/doctors/profile/${item?.id}`}>
-									{item?.img && <img className="img-fluid" alt="" src={item?.img} />}
-								</Link>
-								<a style={{ cursor: 'pointer' }} className="position-absolute top-0 end-0 me-2" onClick={() => handleAddFavourite(item?.id)}>
-									<FaRegHeart />
-								</a>
-							</div>
-							<div className="pro-content">
-								<h3 className="title">
+	content =
+			<>
+				{
+					doctors && doctors?.map((item) => (
+						<SwiperSlide key={item.id}>
+							<div className="profile-widget">
+								<div className="doc-img">
 									<Link to={`/doctors/profile/${item?.id}`}>
-										{item?.firstName + ' ' + item?.lastName}
+										<img className="img-fluid" alt="" src={item?.img || defaultImage} />
 									</Link>
-									<FaCheckCircle className='verified' />
-								</h3>
-								<p className="speciality">{item?.designation}, {item?.specialization}</p>
-								<div className="w-100 d-flex align-items-center">
-									<StarRatings
-										rating={5}
-										starRatedColor="#f4c150"
-										numberOfStars={5}
-										name='rating'
-										className="star"
-										starDimension="20px"
-										starSpacing="5px"
-									/>
-									<span className="d-inline-block text-secondary mt-2">(27)</span>
+									<a style={{ cursor: 'pointer' }} className="position-absolute top-0 end-0 me-2" onClick={() => handleAddFavourite(item?.id)}>
+										<FaRegHeart />
+									</a>
 								</div>
-								<ul className="available-info">
-									<li>
-										<FaLocationArrow className='icon' /> Georgia, USA
-									</li>
-									<li>
-										<FaClock className='icon' /> Available on Fri, 22 Mar
-									</li>
-									<li>
-										<FaRupeeSign className='icon' /> ₹100 - ₹400
-									</li>
-								</ul>
-								<div className="d-flex justify-content-between align-items-center">
-									<Link to={`/doctors/profile/${item?.id}`} className="btn  btn-outline-info btn-sm view-profile-btn">Profile</Link>
-									<Link to={`/booking/${item?.id}`} className="btn btn-sm book-btn">Book</Link>
+								<div className="pro-content">
+									<h3 className="title">
+										<Link to={`/doctors/profile/${item?.id}`}>
+											{item?.firstName + ' ' + item?.lastName}
+										</Link>
+										<FaCheckCircle className='verified' />
+									</h3>
+									<p className="speciality">{item?.designation}, {item?.specialization}</p>
+									<div className="w-100 d-flex align-items-center">
+										<StarRatings
+											rating={5}
+											starRatedColor="#f4c150"
+											numberOfStars={5}
+											name='rating'
+											className="star"
+											starDimension="20px"
+											starSpacing="5px"
+										/>
+										<span className="d-inline-block text-secondary mt-2">(27)</span>
+									</div>
+									<ul className="available-info">
+										<li>
+											<FaLocationArrow className='icon' /> Georgia, USA
+										</li>
+										<li>
+											<FaClock className='icon' /> Available on Fri, 22 Mar
+										</li>
+										<li>
+											<FaRupeeSign className='icon' /> ₹100 - ₹400
+										</li>
+									</ul>
+									<div className="d-flex justify-content-between align-items-center">
+										<Link to={`/doctors/profile/${item?.id}`} className="btn  btn-outline-info btn-sm view-profile-btn">Profile</Link>
+										<Link to={`/booking/${item?.id}`} className="btn btn-sm book-btn">Book</Link>
+									</div>
 								</div>
-							</div>
-						</div >
-					</SwiperSlide>
-				))
-			}
-		</>
+							</div >
+						</SwiperSlide>
+					))
+				}
+			</>
 	return (
 		<section className="section-doctor container">
 			<div className="container-fluid">

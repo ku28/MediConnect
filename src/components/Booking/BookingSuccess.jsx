@@ -64,11 +64,11 @@ const BookingSuccess = () => {
                                 </div>
                                 <div className='d-flex gap-3 mb-1'>
                                     <div><FaLocationArrow style={{ fontSize: '1rem' }} /></div>
-                                    <p className='text-start'>Sylhet, Bangladesh<br /><span className="form-text">1020BD, Amertam, NorthEast,Srimongol</span></p>
+                                    <p className='text-start'>ABC<br /><span className="form-text">DEF</span></p>
                                 </div>
                                 <div className='d-flex gap-3 mb-2'>
                                     <div><FaLink style={{ fontSize: '1rem' }} /></div>
-                                    <div><a href='https://meet.google.com/udx-kieq-sng' target='_blank' rel='noreferrer'>https://meet.google.com/udx-kieq-sng</a></div>
+                                    <div><a href='https://meet.google.com/' target='_blank' rel='noreferrer'>https://meet.google.com/</a></div>
                                 </div>
                                 <div className='d-flex gap-3'>
                                     <div><FaCalendarAlt style={{ fontSize: '1rem' }} /> </div>
