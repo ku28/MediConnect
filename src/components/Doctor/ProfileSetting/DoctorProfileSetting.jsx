@@ -240,18 +240,17 @@ const DoctorProfileSetting = () => {
           </div>
 
           {/* Save Changes Button */}
-<div className="d-flex justify-content-center my-3">
-  <Button
-    htmlType="submit"
-    type="primary"
-    size="large"
-    loading={isLoading}
-    disabled={isLoading ? true : false}
-  >
-    {isLoading ? 'Saving ...' : 'Save Changes'}
-  </Button>
-</div>
-
+          <div className="d-flex justify-content-center my-3">
+              <Button
+                htmlType="submit"
+                type="primary"
+                size="large"
+                loading={isLoading}
+                disabled={isLoading ? true : false}
+              >
+                {isLoading ? 'Saving ...' : 'Save Changes'}
+              </Button>
+            </div>
         </form>
       </div>
     </div>
