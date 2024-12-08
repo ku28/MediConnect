@@ -2,186 +2,204 @@
 
 /* Container styling */
 .review-img img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #ddd; /* Adds a subtle border around the profile image */
-    transition: all 0.3s ease;
-  }
-  
-  .review-img img:hover {
-    transform: scale(1.1); /* Slightly zooms in the image on hover */
-    border-color: #007bff; /* Adds a blue border on hover */
-  }
-  
-  .d-flex {
-    display: flex;
-  }
-  
-  .gap-3 {
-    gap: 1rem;
-  }
-  
-  .gap-4 {
-    gap: 1.5rem;
-  }
-  
-  .text-success {
-    color: #28a745;
-    font-weight: 600;
-  }
-  
-  .text-end {
-    text-align: end;
-  }
-  
-  .mb-4 {
-    margin-bottom: 1.5rem;
-  }
-  
-  .text-nowrap {
-    white-space: nowrap;
-  }
-  
-  .text-capitalize {
-    text-transform: capitalize;
-  }
-  
-  .form-text {
-    font-size: 0.875rem;
-    color: #6c757d;
-    line-height: 1.5;
-  }
-  
-  .w-100 {
-    width: 100%;
-  }
-  
-  .py-3 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-  
-  .px-2 {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-  
-  .rounded {
-    border-radius: 10px;
-  }
-  
-  .mb-3 {
-    margin-bottom: 1rem;
-  }
-  
-  .empty-container {
-    text-align: center;
-    padding: 2rem;
-  }
-  
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ddd; /* Adds a subtle border around the profile image */
+  transition: all 0.3s ease;
+}
+
+.review-img img:hover {
+  transform: scale(1.1); /* Slightly zooms in the image on hover */
+  border-color: #007bff; /* Adds a blue border on hover */
+}
+
+/* Flexbox layout for review content */
+.d-flex {
+  display: flex;
+}
+
+.gap-3 {
+  gap: 1rem;
+}
+
+.gap-4 {
+  gap: 1.5rem;
+}
+
+.text-success {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.form-text {
+  font-size: 0.875rem;
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.py-3 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.rounded {
+  border-radius: 10px;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+/* Styling individual review items */
+.review-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem; /* Margin between reviews */
+}
+
+.review-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Empty state */
+.empty-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Review Header Styles */
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.review-header:hover {
+  background-color: #f1f1f1; /* Adds a subtle background hover effect */
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+/* Review Details */
+.review-details {
+  display: flex;
+  align-items: center;
+}
+
+.review-details h5 {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #343a40;
+  transition: color 0.3s ease;
+}
+
+.review-details h5:hover {
+  color: #007bff; /* Changes text color on hover */
+}
+
+.review-details p {
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  font-style: italic;
+}
+
+/* Review Footer */
+.review-footer {
+  text-align: right;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.review-footer .rating {
+  margin-bottom: 0.5rem;
+}
+
+.review-footer .review-time {
+  color: #6c757d;
+}
+
+.empty-container .ant-empty-description {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+/* Responsive Styles */
+
+/* For screens smaller than 768px (tablets and mobile devices) */
+@media (max-width: 768px) {
   .review-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
-  }
-  
-  .review-header:hover {
-    background-color: #f1f1f1; /* Adds a subtle background hover effect */
-    padding: 1rem;
-    border-radius: 10px;
-  }
-  
-  .review-details {
-    display: flex;
-    align-items: center;
-  }
-  
-  .review-details h5 {
-    margin-bottom: 0;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #343a40;
-    transition: color 0.3s ease;
-  }
-  
-  .review-details h5:hover {
-    color: #007bff; /* Changes text color on hover */
-  }
-  
-  .review-details p {
-    font-size: 1rem;
-    margin-top: 0.2rem;
-    font-style: italic;
-  }
-  
-  .review-footer {
-    text-align: right;
-    margin-top: 0.5rem;
-    font-size: 0.875rem;
-  }
-  
-  .review-footer .rating {
-    margin-bottom: 0.5rem;
-  }
-  
-  .review-footer .review-time {
-    color: #6c757d;
-  }
-  
-  .empty-container .ant-empty-description {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #6c757d;
-  }
-  
-  @media (max-width: 768px) {
-    .review-header {
       flex-direction: column;
       align-items: flex-start;
-      padding: 1rem; /* Adds padding for smaller screens */
-    }
-  
-    .review-details {
+      padding: 1rem;
+  }
+
+  .review-details {
       margin-bottom: 0.5rem;
-    }
-  
-    .review-img img {
+  }
+
+  .review-img img {
       width: 40px;
       height: 40px;
-    }
-  
-    .review-details h5 {
-      font-size: 1.1rem;
-    }
-  
-    .review-footer .review-time {
-      font-size: 0.75rem;
-    }
   }
-  
-  @media (max-width: 480px) {
-    .review-header {
-      padding: 0.8rem; /* Reduced padding for extra small screens */
-    }
-  
-    .review-img img {
+
+  .review-details h5 {
+      font-size: 1.1rem;
+  }
+
+  .review-footer .review-time {
+      font-size: 0.75rem;
+  }
+}
+
+/* For screens smaller than 480px (very small screens, like phones in portrait mode) */
+@media (max-width: 480px) {
+  .review-header {
+      padding: 0.8rem;
+  }
+
+  .review-img img {
       width: 35px;
       height: 35px;
-    }
-  
-    .review-details h5 {
-      font-size: 1rem;
-    }
-  
-    .review-details p {
-      font-size: 0.9rem;
-    }
-  
-    .review-footer .review-time {
-      font-size: 0.7rem;
-    }
   }
-  
+
+  .review-details h5 {
+      font-size: 1rem;
+  }
+
+  .review-details p {
+      font-size: 0.9rem;
+  }
+
+  .review-footer .review-time {
+      font-size: 0.7rem;
+  }
+}
