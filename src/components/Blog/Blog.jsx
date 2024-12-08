@@ -49,7 +49,7 @@ const Blog = () => {
                                     <div className="d-flex text-start gap-2">
                                         <div className="d-flex gap-1 text-muted align-items-center justify-content-center">
                                             <FaRegUser className='form-text' />
-                                            <span className="form-text">{item?.user.firstName + ' ' + item?.user.firstName }</span>
+                                            <span className="form-text">{item?.user.firstName + ' ' + item?.user.lastName }</span>
                                         </div>
                                         <div className="d-flex gap-1 text-muted align-items-center justify-content-center">
                                             <FaBusinessTime className='form-text' />
