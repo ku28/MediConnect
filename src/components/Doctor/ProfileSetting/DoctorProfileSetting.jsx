@@ -240,7 +240,7 @@ const DoctorProfileSetting = () => {
           </div>
 
           {/* Save Changes Button */}
-          <div className="d-flex justify-content-center my-3">
+<div className="d-flex justify-content-center my-3">
   <Button
     htmlType="submit"
     type="primary"
