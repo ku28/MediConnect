@@ -26,7 +26,7 @@ const ChangePassword = () => {
                             <input type="password" placeholder='Confirm Password' className="form-control" />
                         </div>
                     </div>
-                    <div className='mt-5 text-center'>
+                    <div className='mt-4 d-flex justify-content-center my-3'>
                         <Button htmlType='submit' type="primary" size='large'>Save Changes</Button>
                     </div>
                 </form>
