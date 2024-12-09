@@ -204,22 +204,27 @@
     font-weight: 600;
     line-height:1;
     font-size: 1.5rem;
+    padding-right: 150px;
   }
   
   .panel p {
     font-size: 0.95rem;
     padding: 0.7rem 0;
+    padding-right: 150px;
   }
   
   .iBtn.transparent {
-    margin: 0;
-    background:none;
+    margin-top: 4px; 
+    margin-right: 140px; 
+    background: none;
     border: 2px solid #fff;
     width: 130px;
     height: 41px;
     font-weight: 600;
     font-size: 0.8rem;
   }
+  
+  
   
   .left-panel {
     pointer-events: all;
@@ -335,6 +340,7 @@
       padding-right: 15%;
       transition: transform 0.9s ease-in-out;
       transition-delay: 0.8s;
+      
     }
   
     .panel h3 {
