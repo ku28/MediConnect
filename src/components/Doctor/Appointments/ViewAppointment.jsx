@@ -22,7 +22,7 @@ const ViewAppointment = () => {
     if (isLoading && !isError) content = <h2>Loading...</h2>
     content =
         <>
-            <page size="A4" className="container mx-auto border border-primary-subtle p-3 pb-3">
+            <div className="page-container">
                 <div className='d-flex justify-content-between rounded p-2' style={{ background: '#f2f4fe' }}>
                     <div>
                         <p className='form-text text-black mb-0'>Creation Date : <Tag bordered={false} color="volcano">{moment(data?.createdAt).format('LL')}</Tag></p>
@@ -42,47 +42,43 @@ const ViewAppointment = () => {
                     </div>
                 </div>
 
-                <div>
-                    <h4 className='text-center my-3 fw-bold'>
-                        APPOINTMENT INFOMATION
-                    </h4>
-                    <div className='border border-light-subtle rounded p-3'>
-                        <p className='mb-1'>Place of Meeting : <Tag bordered={false} color="#f50">ONLINE</Tag></p>
-                        <p className='mb-1'>Meeting Link : <a href="https://meet.google.com/" target='_blank' rel='noreferrer'>https://meet.google.com/</a></p>
-                        <p className='mb-1'>Meeting Date : <Tag bordered={false} color="orange">{moment(data?.scheduleDate).format('LL')}</Tag></p>
-                        <p className='mb-1'>Meeting Time : <Tag bordered={false} color="orange">{data?.scheduleTime}</Tag></p>
-                    </div>
+                <div className="section-title">APPOINTMENT INFORMATION</div>
+                <div className="section-content">
+                    <p className='mb-1'>Place of Meeting : <Tag bordered={false} color="#f50">ONLINE</Tag></p>
+                    <p className='mb-1'>Meeting Link : <a href="https://meet.google.com/" target='_blank' rel='noreferrer'>https://meet.google.com/</a></p>
+                    <p className='mb-1'>Meeting Date : <Tag bordered={false} color="orange">{moment(data?.scheduleDate).format('LL')}</Tag></p>
+                    <p className='mb-1'>Meeting Time : <Tag bordered={false} color="orange">{data?.scheduleTime}</Tag></p>
                 </div>
 
-                <div>
-                    <h4 className='text-center my-3 fw-bold text-secondary'>DOCTOR INFOMATION</h4>
+                <div className="section-title">DOCTOR INFORMATION</div>
+                <div className="section-content">
                     {
                         data?.doctor &&
-                        <div className='border border-light-subtle rounded p-3 d-flex gap-3'>
+                        <div className='info-card'>
                             <div>
-                                <img src={data?.doctor?.img || defaultImage} alt="" style={{ border: '2px solid #ffbc21', width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', objectPosition: 'top' }} />
+                                <img src={data?.doctor?.img || defaultImage} alt="" />
                             </div>
-                            <div>
-                                <h4 className="mb-1">{data?.doctor?.firstName && data?.doctor?.lastName ? `${data.doctor.firstName} ${data.doctor.lastName}` : (data?.doctor?.firstName || data?.doctor?.lastName)}</h4>
-                                <p className="mb-1">{data?.doctor?.specialization}</p>
-                                <p className="mb-1 form-text">{data?.doctor?.designation}</p>
-                                <p className="mb-1 form-text">{data?.doctor?.college}</p>
+                            <div className="info-text">
+                                <h5>{data?.doctor?.firstName && data?.doctor?.lastName ? `${data.doctor.firstName} ${data.doctor.lastName}` : (data?.doctor?.firstName || data?.doctor?.lastName)}</h5>
+                                <p>{data?.doctor?.specialization}</p>
+                                <p>{data?.doctor?.designation}</p>
+                                <p>{data?.doctor?.college}</p>
                             </div>
                         </div>
                     }
                 </div>
 
-                <div>
-                    <h4 className='text-center my-3 fw-bold text-secondary'>PATIENT INFOMATION</h4>
-                    <div className='border border-light-subtle rounded p-3 d-flex gap-3'>
+                <div className="section-title">PATIENT INFORMATION</div>
+                <div className="section-content">
+                    <div className='info-card'>
                         <div>
-                            <img src={data?.patient?.img || defaultImage} alt="" style={{ border: '2px solid #ffbc21', width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', objectPosition: 'top' }} />
+                            <img src={data?.patient?.img || defaultImage} alt="" />
                         </div>
-                        <div>
-                            <h4 className="mb-1">{data?.patient?.firstName + ' ' + data?.patient?.lastName}</h4>
-                            <p className="mb-1 form-text">Age : {moment().diff(moment(data?.patient?.dateOfBirth), 'years')}</p>
-                            <p className="mb-1 form-text">Blood Group : {data?.patient?.bloodGroup}</p>
-                            <p className="mb-1 form-text">{data?.patient?.city + ' , ' + data?.patient?.state + ' , ' + data?.patient?.country}</p>
+                        <div className="info-text">
+                            <h5>{data?.patient?.firstName + ' ' + data?.patient?.lastName}</h5>
+                            <p>Age : {moment().diff(moment(data?.patient?.dateOfBirth), 'years')}</p>
+                            <p>Blood Group : {data?.patient?.bloodGroup}</p>
+                            <p>{data?.patient?.city + ' , ' + data?.patient?.state + ' , ' + data?.patient?.country}</p>
 
                             <div className='mt-2'>
                                 <p>Reason for Visit - <span className='text-warning'>{data?.reasonForVisit}</span></p>
@@ -91,13 +87,13 @@ const ViewAppointment = () => {
                         </div>
                     </div>
                 </div>
-            </page>
+            </div>
         </>
     return (
         <>
             <Header />
-            <div style={{ margin: '10rem 7rem' }}>
-                <div className="d-flex justify-content-end mb-4" style={{ marginRight: '8rem' }}>
+            <div style={{ margin: '3rem 0' }}>
+                <div className="d-flex justify-content-end mb-4">
                     <ReactToPrint
                         bodyClass="print-agreement"
                         content={() => ref.current}
@@ -113,4 +109,4 @@ const ViewAppointment = () => {
     )
 }
 
-export default ViewAppointment
+export default ViewAppointment;
