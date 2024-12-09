@@ -113,8 +113,10 @@ const AdminDashboard = () => {
                                             <tr>
                                                 <td>
                                                     <h2 className="table-avatar">
-                                                        <a className="avatar avatar-sm mr-2"></a>
-                                                        <a>Dr. Ruby Perrin</a>
+                                                        <a href="#" className="avatar avatar-sm mr-2">
+                                                            <img src="doctor-avatar.jpg" alt="Doctor Avatar" />
+                                                        </a>
+                                                        <a href="#">Dr. Ruby Perrin</a>
                                                     </h2>
                                                 </td>
                                                 <td>Dental</td>
@@ -155,7 +157,7 @@ const AdminDashboard = () => {
                                             <tr>
                                                 <td>
                                                     <h2 className="table-avatar">
-                                                        <a href="profile.html" className="avatar avatar-sm mr-2"></a>
+                                                        <a href="profile.html" className="avatar avatar-sm mr-2" aria-label="Patient Avatar">Patient Avatar</a>
                                                         <a href="profile.html">Charlene Reed </a>
                                                     </h2>
                                                 </td>
@@ -196,14 +198,14 @@ const AdminDashboard = () => {
                                             <tr>
                                                 <td>
                                                     <h2 className="table-avatar">
-                                                        <a href="profile.html" className="avatar avatar-sm mr-2"></a>
+                                                        <a href="profile.html" className="avatar avatar-sm mr-2" aria-label="Doctor Avatar">Doctor Avatar</a>
                                                         <a href="profile.html">Dr. Ruby Perrin</a>
                                                     </h2>
                                                 </td>
                                                 <td>Dental</td>
                                                 <td>
                                                     <h2 className="table-avatar">
-                                                        <a href="profile.html" className="avatar avatar-sm mr-2"></a>
+                                                        <a href="profile.html" className="avatar avatar-sm mr-2" aria-label="Profile"></a>
                                                         <a href="profile.html">Charlene Reed </a>
                                                     </h2>
                                                 </td>

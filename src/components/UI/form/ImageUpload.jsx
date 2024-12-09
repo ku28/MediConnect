@@ -17,7 +17,7 @@ const ImageUpload = ({ setSelectedImage, setFile }) => {
 
   return (
     <>
-      <div className="change-photo-btn">
+      <div className="change-photo-btn" onClick={() => document.querySelector('.upload').click()}>
         <span className="d-flex align-items-center justify-content-center gap-2">
           <FaCloudUploadAlt className="icon" style={{ fontSize: '2rem' }} />
           <span className="text">Upload Photo</span>
