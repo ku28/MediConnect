@@ -1,6 +1,5 @@
 import React from 'react'
 import AdminLayout from '../AdminLayout/AdminLayout'
-import userImg from '../../../images/avatar.jpg';
 import './Dashboard.css';
 
 const AdminDashboard = () => {
@@ -92,34 +91,7 @@ const AdminDashboard = () => {
                         </div>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-md-12 col-lg-6">
 
-                     
-                        <div className="card card-chart">
-                            <div className="card-header">
-                                <h4 className="card-title">Revenue</h4>
-                            </div>
-                            <div className="card-body">
-                                <div id="morrisArea"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className="col-md-12 col-lg-6">
-
-                     
-                        <div className="card card-chart">
-                            <div className="card-header">
-                                <h4 className="card-title">Status</h4>
-                            </div>
-                            <div className="card-body">
-                                <div id="morrisLine"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
                 <div className="row">
                     <div className="col-md-6 d-flex">
                         <div className="card card-table flex-fill">
@@ -141,18 +113,18 @@ const AdminDashboard = () => {
                                             <tr>
                                                 <td>
                                                     <h2 className="table-avatar">
-                                                        <a className="avatar avatar-sm mr-2"><img className="avatar-img rounded-circle" src={userImg} alt=""/></a>
+                                                        <a className="avatar avatar-sm mr-2"></a>
                                                         <a>Dr. Ruby Perrin</a>
                                                     </h2>
                                                 </td>
                                                 <td>Dental</td>
                                                 <td>₹3200.00</td>
                                                 <td>
-                                                    <i className="fe fe-star text-warning"></i>
-                                                    <i className="fe fe-star text-warning"></i>
-                                                    <i className="fe fe-star text-warning"></i>
-                                                    <i className="fe fe-star text-warning"></i>
-                                                    <i className="fe fe-star-o text-secondary"></i>
+                                                    <i className="fa-solid fa-star" id='star'></i>
+                                                    <i className="fa-solid fa-star" id='star'></i>
+                                                    <i className="fa-solid fa-star" id='star'></i>
+                                                    <i className="fa-solid fa-star" id='star'></i>
+                                                    <i className="fa-regular fa-star" id='star'></i>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -183,13 +155,13 @@ const AdminDashboard = () => {
                                             <tr>
                                                 <td>
                                                     <h2 className="table-avatar">
-                                                        <a href="profile.html" className="avatar avatar-sm mr-2"><img className="avatar-img rounded-circle" src={userImg} alt=""/></a>
+                                                        <a href="profile.html" className="avatar avatar-sm mr-2"></a>
                                                         <a href="profile.html">Charlene Reed </a>
                                                     </h2>
                                                 </td>
                                                 <td>8286329170</td>
-                                                <td>20 Oct 2019</td>
-                                                <td className="text-right">₹100.00</td>
+                                                <td>20 Oct 2024</td>
+                                                <td className="text-right">₹200.00</td>
                                             </tr>
                                            
                                         </tbody>
@@ -224,14 +196,14 @@ const AdminDashboard = () => {
                                             <tr>
                                                 <td>
                                                     <h2 className="table-avatar">
-                                                        <a href="profile.html" className="avatar avatar-sm mr-2"><img className="avatar-img rounded-circle" src={userImg} alt=""/></a>
+                                                        <a href="profile.html" className="avatar avatar-sm mr-2"></a>
                                                         <a href="profile.html">Dr. Ruby Perrin</a>
                                                     </h2>
                                                 </td>
                                                 <td>Dental</td>
                                                 <td>
                                                     <h2 className="table-avatar">
-                                                        <a href="profile.html" className="avatar avatar-sm mr-2"><img className="avatar-img rounded-circle" src={userImg} alt=""/></a>
+                                                        <a href="profile.html" className="avatar avatar-sm mr-2"></a>
                                                         <a href="profile.html">Charlene Reed </a>
                                                     </h2>
                                                 </td>
@@ -239,7 +211,7 @@ const AdminDashboard = () => {
                                                 <td>
                                                     <div className="status-toggle">
                                                         <input type="checkbox" id="status_1" className="check" checked/>
-                                                            <label for="status_1" className="checktoggle">checkbox</label>
+                                                            <label for="status_1" className="checktoggle">completed</label>
                                                     </div>
                                                 </td>
                                                 <td className="text-right">

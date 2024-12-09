@@ -15,9 +15,6 @@ const AdminSidebar = () => {
             <div className="sidebar-inner slimscroll">
                 <div id="sidebar-menu" className="sidebar-menu">
                     <ul>
-                        <li className="menu-title">
-                            <span>Main</span>
-                        </li>
                         <li className="active">
                             <Link to={'/admin/dashboard'}>
                                 <FaHome /> <span>Dashboard</span>
@@ -31,11 +28,6 @@ const AdminSidebar = () => {
 
                         </li>
                         <li>
-                            <Link to={'/admin/specialites'}>
-                                <FaPeopleArrows /> <span>Specialities</span>
-                            </Link>
-                        </li>
-                        <li>
                             <Link to={'/admin/doctors'}>
                                 <FaUserAstronaut /> <span>Doctors</span>
                             </Link>
@@ -46,25 +38,6 @@ const AdminSidebar = () => {
                                 <FaRegUser /> <span>Patients</span>
                             </Link>
 
-                        </li>
-                        <li>
-                            <Link to={'/admin/reviews'}>
-                                <FaRegStar /> <span>Reviews</span>
-                            </Link>
-
-                        </li>
-                        <li>
-                            <Link to={'/admin/transaction'}>
-                                <FaBriefcase /><span>Transactions</span>
-                            </Link>
-
-                        </li>
-
-                        <li className="submenu">
-                            <a href="#"><i className="fe fe-document"></i> <span> Reports</span> <span className="menu-arrow"></span></a>
-                            <ul style={{ display: "none" }}>
-                                <li><a >Invoice Reports</a></li>
-                            </ul>
                         </li>
                         <li className="menu-title">
                             <span>Pages</span>
