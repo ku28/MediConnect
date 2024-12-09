@@ -17,9 +17,6 @@ import AdminAppointments from './components/Admin/Appointments/Appointments';
 import Doctors from './components/Admin/Doctors/Doctors';
 import Patients from './components/Admin/Patients/Patients';
 import Profile from './components/Admin/Profile/Profile';
-import Transactions from './components/Admin/Transactions/Transactions';
-import Specialites from './components/Admin/Specialites/Specialites';
-import AdminReviews from './components/Admin/Reviews/Reviews'
 import PatientFavouriteDoctor from './components/Doctor/PatientFavourite/PatientFavourite';
 import DoctorInvoice from './components/Doctor/Invoice/DoctorInvoice';
 import SearchDoctor from './components/Doctor/SearchDoctor/SearchDoctor';
@@ -87,9 +84,6 @@ function App() {
         <Route path='/admin/doctors' element={<Doctors />} />
         <Route path='/admin/patients' element={<Patients />} />
         <Route path='/admin/profile' element={<Profile />} />
-        <Route path='/admin/reviews' element={<AdminReviews />} />
-        <Route path='/admin/transaction' element={<Transactions />} />
-        <Route path='/admin/specialites' element={<Specialites />} />
 
         <Route path='*' element={<NotFound/>}/>
       </Routes>

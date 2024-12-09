@@ -1,64 +1,43 @@
 import React from 'react'
 import AdminLayout from '../AdminLayout/AdminLayout'
+import Appoint from './Appoint';
 
 import './Appointments.css';
 
 const AdminAppointments = () => {
+	const appointments = [
+		{
+		  doctorName: "Dr. Ruby Perrin",
+		  speciality: "Dental",
+		  patientName: "Charlene Reed",
+		  date: "9 Nov 2024",
+		  time: "11:00 AM - 11:15 AM",
+		  status : true,
+		  amount: "₹200.00",
+		},
+		{
+		  doctorName: "Dr. James Smith",
+		  speciality: "Cardiology",
+		  patientName: "John Doe",
+		  date: "10 Nov 2024",
+		  time: "2:00 PM - 2:30 PM",
+		  status: false,
+		  amount: "₹300.00",
+		},
+		{
+			doctorName: "Dr. Khushi",
+			speciality: "Gynecologist",
+			patientName: "Riya Singla",
+			date: "12 Nov 2024",
+			time: "3:15 PM - 3:50 PM",
+			status: false,
+			amount: "₹500.00",
+		  },
+	  ];
     return (
         <>
             <AdminLayout >
-            <div className="row">
-						<div className="col-md-12">
-						
-						
-							<div className="card">
-								<div className="card-body">
-									<div className="table-responsive">
-										<table className="datatable table table-hover table-center mb-0">
-											<thead>
-												<tr>
-													<th>Doctor Name</th>
-													<th>Speciality</th>
-													<th>Patient Name</th>
-													<th>Apointment Time</th>
-													<th>Status</th>
-													<th className="text-right">Amount</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>
-														<h2 className="table-avatar">
-															<a href="profile.html" className="avatar avatar-sm mr-2"><img className="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-01.jpg" alt=""/></a>
-															<a href="profile.html">Dr. Ruby Perrin</a>
-														</h2>
-													</td>
-													<td>Dental</td>
-													<td>
-														<h2 className="table-avatar">
-															<a href="profile.html" className="avatar avatar-sm mr-2"><img className="avatar-img rounded-circle" src="assets/img/patients/patient1.jpg" alt=""/></a>
-															<a href="profile.html">Charlene Reed </a>
-														</h2>
-													</td>
-													<td>9 Nov 2024 <span className="text-primary d-block">11.00 AM - 11.15 AM</span></td>
-													<td>
-														<div className="status-toggle">
-															<input type="checkbox" id="status_1" className="check" checked/>
-															<label for="status_1" className="checktoggle">checkbox</label>
-														</div>
-													</td>
-													<td className="text-right">
-														₹200.00
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
-							
-						</div>
-					</div>
+            <Appoint appointments={appointments} />
             </AdminLayout>
         </>
     )
