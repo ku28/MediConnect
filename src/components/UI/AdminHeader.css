@@ -1,3 +1,16 @@
+.dropdown-menu {
+    display: none;
+    position: absolute; /* Make sure the dropdown appears over other elements */
+    right: 0;
+    top: 100%;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
 .header {
 	background: #fff;
 	border-bottom: 1px solid #f0f0f0;
@@ -23,12 +36,12 @@
 	line-height: 60px;
 }
 .header .header-left .logo img {
-    max-height: 40px;
-    width: auto;
+    max-height: 120px;
+    width: 100px;
 }
-.header-left .logo.logo-small {
+/* .header-left .logo.logo-small {
     display: none;
-}
+} */
 .header .dropdown-menu > li > a {
 	position: relative;
 }
