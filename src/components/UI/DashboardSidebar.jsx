@@ -76,7 +76,7 @@ const DashboardSidebar = () => {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>
+                                <NavLink to={'/login'}>
                                     <FaSignOutAlt className="icon" />
                                     <span>Logout</span>
                                 </NavLink>
@@ -149,7 +149,7 @@ const DashboardSidebar = () => {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>
+                                <NavLink to={'/login'}>
                                     <FaSignOutAlt className="icon" end />
                                     <span>Logout</span>
                                 </NavLink>
