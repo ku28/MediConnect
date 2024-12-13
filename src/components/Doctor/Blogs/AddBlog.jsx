@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useCreateBlogMutation } from '../../../redux/api/blogApi';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
@@ -32,48 +32,58 @@ const AddBlog = () => {
             message.error(error?.data?.message);
         }
         if (isSuccess) {
-            message.success('Successfully Blog Added !');
+            message.success('Successfully Blog Added!');
             navigate('/dashboard/blogs')
         }
-    }, [isLoading, isError, error, isSuccess])
+    }, [isLoading, isError, error, isSuccess]);
+
     return (
         <DashboardLayout>
-       
-            <div className="card mb-5 p-2 shadow-sm">
-                <form className="row form-row" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="col-md-12">
-                        <div className="form-group mb-2 card-label">
-                            <label>Title</label>
-                            <input placeholder='Title' {...register("title")} className="form-control" />
-                        </div>
-                    </div>
-
-                    <div className="col-md-12">
-                        <div className="form-group mb-2 card-label">
-                            <label>Description</label>
-                            <textarea placeholder='Description' {...register("description")} className="form-control" rows={5} />
-                        </div>
-                    </div>
-
-                    <div className="col-md-12">
-                        <div className='d-flex gap-2 align-items-center'>
-                            <div className="my-3">
-                                <img className='' style={{ maxWidth: '150px' }} src={selectedImage ? selectedImage : BlogIcon} alt="" />
-                            </div>
-                            <div className="mt-3">
-                                <ImageUpload setFile={setFile} setSelectedImage={setSelectedImage} />
+            <div className="d-flex justify-content-center align-items-center min-vh-100">
+                <div className="card p-5 shadow-sm" style={{ maxWidth: '600px', width: '100%' }}>
+                    <h3 className="text-center mb-4">Add New Blog</h3>
+                    <form className="form-row" onSubmit={handleSubmit(onSubmit)}>
+                        <div className="col-md-12 mb-3">
+                            <div className="form-group">
+                                <label className="mb-2">Title</label>
+                                <input placeholder="Title" {...register("title")} className="form-control" />
                             </div>
                         </div>
-                    </div>
-                    <div className='text-center my-3'>
-                        <Button htmlType='submit' type="primary" size='large' loading={isLoading} disabled={isLoading ? true : false} >
-                            {isLoading ? 'Saving ...' : 'Save Changes'}
-                        </Button>
-                    </div>
-                </form>
+
+                        <div className="col-md-12 mb-3">
+                            <div className="form-group">
+                                <label className="mb-2">Description</label>
+                                <textarea placeholder="Description" {...register("description")} className="form-control" rows={5} />
+                            </div>
+                        </div>
+
+                        <div className="col-md-12 mb-3">
+                            <div className="d-flex flex-column align-items-center">
+                                <div className="my-3">
+                                    <img className="img-fluid" style={{ maxWidth: '150px' }} src={selectedImage ? selectedImage : BlogIcon} alt="Blog Thumbnail" />
+                                </div>
+                                <div className="mt-3">
+                                    <ImageUpload setFile={setFile} setSelectedImage={setSelectedImage} />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className=" d-flex text-center justify-content-center">
+                            <Button 
+                                htmlType="submit" 
+                                type="primary" 
+                                size="large" 
+                                loading={isLoading} 
+                                disabled={isLoading}
+                            >
+                                {isLoading ? 'Saving ...' : 'Save Blog'}
+                            </Button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </DashboardLayout>
-    )
-}
+    );
+};
 
-export default AddBlog
+export default AddBlog;

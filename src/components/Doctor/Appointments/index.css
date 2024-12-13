@@ -20,3 +20,139 @@ page {
       box-shadow: 0;
     }
   }
+
+  /* General Layout Styling */
+.page-container {
+  margin: 5rem auto;
+  max-width: 1000px;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header/Footer Adjustment */
+.header, .footer {
+  padding: 2rem 3rem;
+  background-color: #f8f9fa;
+}
+
+h4 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+h6, p {
+  font-size: 1rem;
+}
+
+/* Section Styling */
+.section-title {
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  color: #1e3a8a;
+  text-align: center;
+}
+
+.section-content {
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Doctor/Patient Info Card */
+.info-card {
+  display: flex;
+  gap: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.info-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffbc21;
+}
+
+.info-card .info-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-card .info-text h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.info-card .info-text p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.3rem 0;
+}
+
+/* Tags and Buttons Styling */
+.ant-tag {
+  font-size: 0.9rem;
+}
+
+button {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3b82f6;
+}
+
+/* Print Button Styling */
+.print-btn {
+  padding: 0.6rem 1.5rem;
+  background-color: #34d399;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.print-btn:hover {
+  background-color: #10b981;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1rem;
+    margin: 2rem auto;
+  }
+
+  .info-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .info-card .info-text h5 {
+    font-size: 1rem;
+  }
+
+  .info-card .info-text p {
+    font-size: 0.8rem;
+  }
+}

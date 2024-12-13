@@ -39,14 +39,6 @@ const AdminSidebar = () => {
                             </Link>
 
                         </li>
-                        <li className="menu-title">
-                            <span>Pages</span>
-                        </li>
-                        <li className='text-white'>
-                            <Link to={'/admin/profile'}>
-                                <FaRegUser /> <span>Profile</span>
-                            </Link>
-                        </li>
                     </ul>
                 </div>
             </div>

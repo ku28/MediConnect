@@ -68,11 +68,11 @@ const Blogs = () => {
             render: function (data) {
                 return (
                     <div className='d-flex'>
-                        <Link to={`/blogs/${data.id}`}>
+                        {/* <Link to={`/blogs/${data.id}`}>
                             <Button type='primary' className="bg-primary" style={{ margin: "5px 5px" }}>
                                 <FaRegEye />
                             </Button>
-                        </Link>
+                        </Link> */}
                         <Link to={`/dashboard/blogs/${data.id}`}>
                             <Button type='primary' className="bg-primary" style={{ margin: "5px 5px" }}>
                                 <FaEdit />

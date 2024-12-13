@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useGetSingleBlogQuery, useUpdateBlogMutation } from '../../../redux/api/blogApi';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -17,62 +17,92 @@ const BlogsEdit = () => {
     const navigate = useNavigate();
 
     const onSubmit = (data) => {
-        const updates = Object.fromEntries(Object.entries(data).filter(([key, value]) => value !== ''))
+        const updates = Object.fromEntries(Object.entries(data).filter(([key, value]) => value !== ''));
         const formData = new FormData();
         selectedImage && formData.append('file', file);
-        const strData = JSON.stringify(updates)
-        formData.append('data', strData)
-        updateBlog({ data: formData, id: id, })
-    }
+        const strData = JSON.stringify(updates);
+        formData.append('data', strData);
+        updateBlog({ data: formData, id: id });
+    };
 
     useEffect(() => {
         if (!isLoading && isError) {
             message.error(error?.data?.message);
         }
         if (isSuccess) {
-            message.success('Successfully Blog Updated !');
-            navigate('/dashboard/blogs')
+            message.success('Successfully Blog Updated!');
+            navigate('/dashboard/blogs');
         }
-    }, [isLoading, isError, error, isSuccess])
+    }, [isLoading, isError, error, isSuccess]);
 
     return (
         <DashboardLayout>
-            <div className="mb-5 p-2" style={{ background: '#f8f9fa' }}>
-                <form className="row form-row" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="col-md-12">
-                        <div className="form-group mb-2 card-label">
-                            <label>Title</label>
-                            <input defaultValue={data?.title} {...register("title")} className="form-control" />
-                        </div>
+            <div
+                className="p-4"
+                style={{
+                    background: '#f8f9fa',
+                    borderRadius: '10px',
+                    maxWidth: '600px',
+                    margin: '0 auto',
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                }}
+            >
+                <h2 className="text-center mb-4" style={{ color: '#333', fontWeight: 'bold' }}>
+                    Edit Blog
+                </h2>
+                <form className="form" onSubmit={handleSubmit(onSubmit)}>
+                    <div className="mb-4">
+                        <label className="form-label" style={{ fontWeight: '500' }}>
+                            Title
+                        </label>
+                        <input
+                            defaultValue={data?.title}
+                            {...register('title')}
+                            className="form-control"
+                            placeholder="Enter blog title"
+                            style={{ borderRadius: '5px' }}
+                        />
                     </div>
 
-                    <div className="col-md-12">
-                        <div className="form-group mb-2 card-label">
-                            <label>Description</label>
-                            <textarea defaultValue={data?.description} {...register("description")} className="form-control" rows={5} />
-                        </div>
+                    <div className="mb-4">
+                        <label className="form-label" style={{ fontWeight: '500' }}>
+                            Description
+                        </label>
+                        <textarea
+                            defaultValue={data?.description}
+                            {...register('description')}
+                            className="form-control"
+                            rows={5}
+                            placeholder="Enter blog description"
+                            style={{ borderRadius: '5px' }}
+                        />
                     </div>
 
-                    <div className="col-md-12">
-                        <div className='d-flex gap-2 align-items-center'>
-                            <div className="my-3">
-                                <img className='' style={{ maxWidth: '150px' }} src={selectedImage ? selectedImage : data?.img || BlogIcon} alt="" />
-                            </div>
-                            <div className="mt-3">
-                                <ImageUpload setSelectedImage={setSelectedImage} setFile={setFile} />
-                            </div>
-                        </div>
+                    <div className="mb-4 text-center">
+                        <img
+                            src={selectedImage ? selectedImage : data?.img || BlogIcon}
+                            alt="Blog"
+                            style={{ maxWidth: '150px', borderRadius: '10px', marginBottom: '10px' }}
+                        />
+                        <ImageUpload setSelectedImage={setSelectedImage} setFile={setFile} />
                     </div>
 
-                    <div className='text-center my-3'>
-                        <Button htmlType='submit' type="primary" size='large' loading={isLoading} disabled={isLoading ? true : false} >
-                            {isLoading ? 'Saving ...' : 'Save Changes'}
+                    <div className="text-center d-flex justify-content-center">
+                        <Button
+                            htmlType="submit"
+                            type="primary"
+                            size="large"
+                            loading={isLoading}
+                            disabled={isLoading}
+                            style={{ borderRadius: '5px', width: '150px' }}
+                        >
+                            {isLoading ? 'Saving...' : 'Save Changes'}
                         </Button>
                     </div>
                 </form>
             </div>
         </DashboardLayout>
-    )
-}
+    );
+};
 
-export default BlogsEdit
+export default BlogsEdit;

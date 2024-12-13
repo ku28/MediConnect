@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DoctorData = ({ data }) => {
+const PatientData = ({ data }) => {
   return (
     <div>
       <div className="row">
@@ -11,34 +11,34 @@ const DoctorData = ({ data }) => {
                 <table className="datatable table table-hover table-center mb-0">
                   <thead>
                     <tr>
-                      <th>Doctor ID</th>
-                      <th>Doctor Name</th>
-                      <th>Speciality</th>
-                      <th>No. of patients viewed</th>
-                      <th>Revenue</th>
+                      <th>Patient Name</th>
+                      <th>Phone Number</th>
+                      <th>Symptomns</th>
+                      <th>Doctor visited</th>
+                      <th>Review</th>
                     </tr>
                   </thead>
                   <tbody>
                     {/* Iterate over the data array */}
                     {data.map((data, index) => (
                       <tr key={index}>
-                        <td>{data.doctorID} </td>
+                        <td>{data.patientName} </td>
                         <td>
                           <h2 className="table-avatar">
                             <a href="profile.html" className="avatar avatar-sm mr-2">
                             </a>
-                            <a href="profile.html">{data.doctorName}</a>
+                            <a href="profile.html">{data.phone}</a>
                           </h2>
                         </td>
-                        <td>{data.speciality}</td>
+                        <td>{data.symptomns}</td>
                         <td>
                           <h2 className="table-avatar">
                             <a href="profile.html" className="avatar avatar-sm mr-2">
                             </a>
-                            <a href="profile.html">{data.number}</a>
+                            <a href="profile.html">{data.visited}</a>
                           </h2>
                         </td>
-                        <td className="text-right">{data.amount}</td>
+                        <td className="text-right">{data.review}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -52,4 +52,4 @@ const DoctorData = ({ data }) => {
   );
 };
 
-export default DoctorData;
+export default PatientData;
