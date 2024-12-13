@@ -28,18 +28,18 @@ page {
   padding: 2rem;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Header/Footer Adjustment */
 .header, .footer {
   padding: 2rem 3rem;
-  background-color: #f8f9fa;
+  background-color: #f8f9fae8;
 }
 
 h4 {
   font-size: 1.5rem;
-  color: #333;
+  color: #333333dd;
 }
 
 h6, p {
@@ -76,7 +76,7 @@ h6, p {
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #ffbc21;
+  border: 2px solid #ffbc22;
 }
 
 .info-card .info-text {
@@ -113,13 +113,13 @@ button {
 }
 
 button:hover {
-  background-color: #3b82f6;
+  background-color: #3b82f7;
 }
 
 /* Print Button Styling */
 .print-btn {
   padding: 0.6rem 1.5rem;
-  background-color: #34d399;
+  background-color: #34d398;
   color: white;
   border: none;
   border-radius: 6px;
