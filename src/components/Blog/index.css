@@ -11,8 +11,174 @@
     transition: 0.6s ease-in;
 }
 .categories-title:hover > h6{
-    color: #7054F2;
+    color: green
 }
 .categories-title:hover > .icon{
-    color: #7054F2;
+    color: green;
+}
+
+.text-primary{
+    color:green ;
+}
+
+.blog-aside-container {
+    background-color: #f8f9fa; /* Retained original background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.blog-title {
+    font-weight: 600;
+    color: green;
+}
+
+/* Green text styles */
+.text-green {
+    color: green; /* Green shade */
+    transition: color 0.3s ease;
+}
+
+.text-green:hover {
+    color: green; /* Slightly darker green on hover */
+    text-decoration: underline;
+}
+
+/* Blog title hover */
+.blog-title-hover:hover {
+    color: green; /* Green shade */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Read More button hover */
+.read-more-btn:hover {
+    color: green; /* Green shade */
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+
+.blog-title-hover:hover {
+    color: #50c878;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #50c878;
+    box-shadow: 0 0 5px rgba(80, 200, 120, 0.3);
+}
+
+.image-hover:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+/* Hover effect for images */
+.image-hover:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for blog titles */
+.blog-title-hover:hover {
+    color: #50C878;
+    transition: color 0.3s ease;
+}
+
+/* Card style with subtle shadow and rounded borders */
+.blog-card {
+    border-radius: 15px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.blog-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+/* "Read More" button hover effect */
+.read-more-btn:hover {
+    color: #50C878;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+/* Pagination style and responsiveness */
+.ant-pagination {
+    margin-top: 20px;
+}
+
+.blog-content-container {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+
+/* General blog card styling */
+.blog-details-card {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.blog-details-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover effect on images */
+.image-hover:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Tags section styling */
+.tags-section {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #6c757d;
+}
+
+.tag-badge {
+    background-color: #e9ecef;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: #495057;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.tag-badge:hover {
+    background-color: #50c878;
+    color: #fff;
+}
+
+/* Social media icons */
+.social-icons a {
+    color: green;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: green;
+}
+
+/* Font size adjustments */
+h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
 }
