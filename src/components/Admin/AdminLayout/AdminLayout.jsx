@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AdminSidebar from '../../UI/AdminSidebar'
 import AdminHeader from '../../UI/AdminHeader'
 import './AdminLayout.css';
 const AdminLayout = ({ children }) => {
+    useEffect(() => {
+        document.title = "Admin Dashboard";
+    }, []);
     return (
         <div className="main-wrapper">
             <AdminHeader />

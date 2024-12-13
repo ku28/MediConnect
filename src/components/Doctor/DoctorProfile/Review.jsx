@@ -10,7 +10,7 @@ import { useForm } from 'react-hook-form';
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 
 const Review = ({ doctorId }) => {
-    const { register, handleSubmit, } = useForm({});
+    const { register, handleSubmit } = useForm({});
     const [value, setValue] = useState(null);
     const [recommend, setRecommend] = useState(null);
     const [showError, setShowError] = useState(false);

@@ -68,7 +68,6 @@ const PatientDashboard = () => {
                 return (
                     <Link to={`/booking/invoice/${data?.appointment?.id}`}>
                         <Button type='primary' size='medium'>View</Button>
-
                     </Link>
                 )
             }
