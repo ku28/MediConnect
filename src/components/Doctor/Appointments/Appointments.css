@@ -53,7 +53,7 @@
 /* Icon Styling */
 .icon {
     margin-right: 5px;
-    color: green; /* Consistent blue color */
+    color: rgba(0, 128, 0, 0.958); /* Consistent blue color */
 }
 
 /* Actions */
@@ -80,7 +80,7 @@ button.ant-btn-primary:hover {
 }
 
 button.ant-btn-primary.ant-btn-dangerous {
-    background-color: #ff4d4f;
+    background-color: #ff4d50f7;
     border-color: #ff4d4f;
 }
 
@@ -93,7 +93,7 @@ button.ant-btn-primary.ant-btn-dangerous:hover {
 .ant-tooltip-inner {
     font-size: 14px;
     color: #fff;
-    background-color: #004080;
+    background-color: #004080f6;
 }
 
 /* Mobile View */
