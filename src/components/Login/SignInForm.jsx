@@ -12,8 +12,8 @@ const SignInForm = () => {
     const navigate = useNavigate();
 
     const handleSignIn = (username, password) => {
-        const adminUsername = 'admin@admin.com';
-        const adminPassword = 'password123';
+        const adminUsername = process.env.REACT_APP_ADMIN_USERNAME;
+        const adminPassword = process.env.REACT_APP_ADMIN_PASSWORD;
 
         if (username === adminUsername && password === adminPassword) {
             navigate('/admin/dashboard');
