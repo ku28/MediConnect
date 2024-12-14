@@ -4,13 +4,13 @@ import './Patients.css';
 import PatientData from './PatientData';
 
 const Patients = () => {
-    const data = [
+	const data = [
 		{
-		  patientName: "Kesar Kumari",
-		  phone: "1234567890",
-		  symptomns: "Cold",
-          visited: "Dr. James Smith",
-		  review: "helpful",
+			patientName: "Kesar Kumari",
+			phone: "1234567890",
+			symptomns: "Cold",
+			visited: "Dr. James Smith",
+			review: "helpful",
 		},
 		{
 			patientName: "Diya",
@@ -20,19 +20,19 @@ const Patients = () => {
 			review: "helpful",
 		},
 		{
-            patientName: "Bhumika Aggarwal",
+			patientName: "Bhumika Aggarwal",
 			phone: "7568941023",
 			symptomns: "Cough",
 			visited: "Dr. John",
 			review: "helpful",
-		  },
-	  ];
-    return (
-        <>
-            <AdminLayout >
-               <PatientData data={data} />
-            </AdminLayout>
-        </>
-    )
+		},
+	];
+	return (
+		<>
+			<AdminLayout >
+				<PatientData data={data} />
+			</AdminLayout>
+		</>
+	)
 }
 export default Patients;
