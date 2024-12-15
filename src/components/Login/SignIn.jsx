@@ -22,9 +22,12 @@ const SignIn = ({ handleResponse }) => {
         setShow(false);
     }, 10000);
 
+    const adminUsername = process.env.REACT_APP_ADMIN_USERNAME;
+    const adminPassword = process.env.REACT_APP_ADMIN_PASSWORD;
+
     const onSubmit = async (event) => {
         console.log("here", event);
-        if (event && event.email === "admin@admin.com" && event.password === "password123") {
+        if (event && event.email === adminUsername && event.password === adminPassword) {
             navigate('/admin/dashboard');
         }
         userLogin({ ...event });
