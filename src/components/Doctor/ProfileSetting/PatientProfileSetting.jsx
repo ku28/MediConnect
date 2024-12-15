@@ -171,7 +171,7 @@ const PatientProfileSetting = () => {
                         </div>
                     </div>
                     <div className='text-center'>
-                        <button type="submit" className="btn btn-primary my-3" disabled={isLoading ? true : false}>{isLoading ? 'Updating..' : 'Save Changes'}</button>
+                        <button type="submit" className="btn btn-primary my-3" style={{ backgroundColor: '#50C878', color: 'white',outline: 'none',border: 'none'  }} disabled={isLoading ? true : false}>{isLoading ? 'Updating..' : 'Save Changes'}</button>
                     </div>
                 </form>
             </div>

@@ -30,7 +30,7 @@ const ImageUpload = ({ setSelectedImage, setFile }) => {
 
       <style jsx>{`
         .change-photo-btn {
-          background-color: #28a745; /* Green */
+          background-color: #50C878; /* Green */
           padding: 8px 20px;
           margin-left: 44px;
           border-radius: 40px;

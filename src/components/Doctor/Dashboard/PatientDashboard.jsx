@@ -210,7 +210,7 @@ const PatientDashboard = () => {
     const items = [
         {
             key: '1',
-            label: 'Appointment',
+            label: <span style={{ color: '#50C878' }}>Appointment</span>,
             children: <CustomTable
                 loading={pIsLoading}
                 columns={appointmentColumns}
@@ -222,7 +222,7 @@ const PatientDashboard = () => {
         },
         {
             key: '2',
-            label: 'Prescription',
+            label: <span style={{ color: '#50C878' }}>Prescription</span>,
             children: <CustomTable
                 loading={prescriptionIsLoading}
                 columns={prescriptionColumns}
@@ -235,7 +235,7 @@ const PatientDashboard = () => {
         },
         {
             key: '3',
-            label: 'Billing',
+            label: <span style={{ color: '#50C878' }}>Billing</span>,
             children: <CustomTable
                 loading={InvoicesIsLoading}
                 columns={InvoiceColumns}
@@ -251,3 +251,5 @@ const PatientDashboard = () => {
     )
 }
 export default PatientDashboard;
+
+

@@ -10,6 +10,7 @@ import { FaEye, FaCheck, FaTimes } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { FaClock, FaEnvelope, FaLocationArrow, FaPhoneAlt } from "react-icons/fa";
 import { clickToCopyClipBoard } from '../../../utils/copyClipBoard';
+import { hasUISelection } from '@testing-library/user-event/dist/cjs/document/UI.js';
 
 const Appointments = () => {
     const { data, isError, isLoading } = useGetDoctorAppointmentsQuery({});
