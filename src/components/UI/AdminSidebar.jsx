@@ -15,7 +15,7 @@ const AdminSidebar = () => {
             <div className="sidebar-inner slimscroll">
                 <div id="sidebar-menu" className="sidebar-menu">
                     <ul>
-                        <li className="active">
+                        <li>
                             <Link to={'/admin/dashboard'}>
                                 <FaHome /> <span>Dashboard</span>
                             </Link>
@@ -24,20 +24,16 @@ const AdminSidebar = () => {
                             <Link to={'/admin/appointments'}>
                                 <FaListUl /> <span>Appointments</span>
                             </Link>
-
-
                         </li>
                         <li>
                             <Link to={'/admin/doctors'}>
                                 <FaUserAstronaut /> <span>Doctors</span>
                             </Link>
-
                         </li>
                         <li>
                             <Link to={'/admin/patients'}>
                                 <FaRegUser /> <span>Patients</span>
                             </Link>
-
                         </li>
                     </ul>
                 </div>

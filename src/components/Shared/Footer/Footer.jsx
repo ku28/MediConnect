@@ -18,7 +18,7 @@ const Footer = () => {
 									</Link>
 								</div>
 								<div className="footer-about-content">
-									<p className='form-text' style={{maxWidth:200}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<p className='form-text' style={{maxWidth:200}}>Connecting doctors and patients seamlessly for appointments, consultations, telemedicine, profiles, personalized care, availability, and reliable health services. </p>
 								</div>
 							</div>
 						</div>
@@ -55,15 +55,15 @@ const Footer = () => {
 								<div className="footer-contact-info">
 									<div className="footer-address">
 										<span><i className="fas fa-map-marker-alt"></i></span>
-										<p> abc<br />def</p>
+										<p> Gurgaon<br />Haryana</p>
 									</div>
 									<p>
 										<i className="fas fa-phone-alt"></i>
-										1234567890
+										+91 76231-45201
 									</p>
 									<p className="mb-0">
 										<i className="fas fa-envelope"></i>
-										name@example.com
+										mediconnect@gmail.com
 									</p>
 								</div>
 							</div>
