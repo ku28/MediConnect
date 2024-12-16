@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import { Link } from 'react-router-dom';
 import Header from "../Shared/Header/Header";
 import Footer from "../Shared/Footer/Footer";
 import ImageHeading from "../../images/doc/doctor 5.jpg";
@@ -30,11 +31,13 @@ const About = () => {
       {doctors.map((item, id) => (
         <div className="col-lg-3 col-md-6 col-sm-6" key={id + item.id}>
         <div className="card">
+          <Link to={`/doctors/profile/${item?.id}`}>
           <img
-          src={item.img || defaultImage}
-          className="img-fluid"
-          alt={item.firstName}
+            src={item.img || defaultImage}
+            className="img-fluid"
+            alt={item.firstName}
           />
+          </Link>
           <div className="p-2">
           <h4 className="mt-4 mb-0 text-blue-800">
             {item?.firstName + " " + item?.lastName}
@@ -83,7 +86,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
       {/* Meet Our Specialists Section */}
       <div className="container my-5">
         <div className="row justify-content-center">
