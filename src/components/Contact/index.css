@@ -1,25 +1,88 @@
-.info .icon {
-    margin-top: 2px;
-    font-size: 22px;
-    color: #50C878;
-    padding: 5px;
-    background: #d6e9fa;
+/* CSS Fixes for Responsiveness and Overflow */
+
+/* Ensure no horizontal overflow */
+body {
+    overflow-x: hidden;
+}
+
+.container-fluid {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Adjust padding and margins for smaller screens */
+@media (max-width: 768px) {
+    .contact .info, .contact .form-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .contact .info {
+        padding: 20px;
+    }
+
+    .contact .form-wrapper {
+        padding: 20px;
+    }
+}
+
+/* General Styling Updates */
+.contact .info {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact .info .icon {
+    font-size: 24px;
+    color: #28a745;
+    background: #e0ffe0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50px;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease;
 }
+
+.contact .info .icon:hover {
+    transform: scale(1.1);
+}
+
 .contact .info h4 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
 }
+
 .contact .info p {
     font-size: 14px;
-    color: #4b7dab;
+    color: #555;
 }
-.contact .appointment-btn {
-    border: 0 !important;
+
+.contact .form-wrapper {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact .form-wrapper .form-control {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.contact .form-wrapper .btn-success {
+    background: #28a745;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.contact .form-wrapper .btn-success:hover {
+    background: #1e7e34;
 }
