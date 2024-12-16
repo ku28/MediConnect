@@ -1,8 +1,8 @@
 import React from 'react';
 import './index.css';
-import img from '../../../images/doc/doc1.jpg'
-import img2 from '../../../images/doc/doc4.jpg'
-import img3 from '../../../images/doc/doctor 5.jpg'
+import img from '../../../images/doc/med1.jpg'
+import img2 from '../../../images/doc/med2.jpg'
+import img3 from '../../../images/doc/med3.jpg'
 import { Link } from 'react-router-dom';
 
 const Service = () => {
