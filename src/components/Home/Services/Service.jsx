@@ -10,7 +10,7 @@ const Service = () => {
         <section className="container" style={{marginTop: 200, marginBottom:200}}>
             <div className='mb-5 section-title text-center'>
                 <h2>Services</h2>
-                <p className='m-0'>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                <p className='m-0'>Efficient healthcare, expert care, anytime.</p>
             </div>
             <div className="container">
                 <div className="row align-items-center">
