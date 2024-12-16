@@ -1,91 +1,59 @@
+/* Full Section Styling */
 .section-doctor {
-	background-color: #f8f9fa;
-	padding: 80px 0;
-    margin-bottom: 7rem;
+    padding: 0;
+    margin: 0;
+    background: #f4f4f4;
 }
-.profile-widget {
-    background-color: #fff;
-    border: 1px solid #f0f0f0;
-    border-radius:4px;
-    margin-bottom:30px;
-    position:relative;
-    -webkit-transition:all .3s ease 0s;
-    -moz-transition:all .3s ease 0s;
-    -o-transition:all .3s ease 0s;
-    transition:all .3s ease 0s;
-	padding: 15px;
-}
-.doc-img {
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    border-radius: 4px;
-}
-.doc-img img {
-    border-radius: 4px;
-	transform: translateZ(0);
-	transition: all 2000ms cubic-bezier(.19,1,.22,1) 0ms;
+
+.full-section-swiper {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
-    object-position: top;
+    height: 100vh; /* Full viewport height */
+}
+
+.profile-widget {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     overflow: hidden;
 }
-.doc-img:hover img {
-    -webkit-transform: scale(1.15);
-    -moz-transform: scale(1.15);
-    transform: scale(1.15);
+
+.profile-widget:hover {
+    transform: translateY(-5px);
+}
+
+.doc-img img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.heart-icon {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    padding: 5px;
+    color: red;
+    transition: color 0.3s ease;
+}
+
+.heart-icon:hover {
+    color: darkred;
 }
 
 .pro-content {
-    padding: 15px 0 0;
-}
-.pro-content .title {
-    font-size: 17px;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-.profile-widget .pro-content .title a {
-    display: inline-block;
-}
-.profile-widget .verified {
-	color: #28a745;
-	margin-left: 3px;
-}
-.profile-widget p.speciality {
-    font-size: 13px;
-    color: #757575;
-    margin-bottom: 5px;
-    min-height: 40px;
-}
-.view-profile-btn{
-    border-color: #50C878 !important;
-    color: #50C878 !important;
-}
-.view-profile-btn:hover{
-    color: #fff !important;
-    background-color: #50C878 !important;
-}
-.book-btn{
-    background-color: #50C878 !important;
-    border: none;
-    color: #fff !important;    
+    padding: 15px;
 }
 
-.star {
-	font-size: 14px !important;
+.pro-content .title {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
-.available-info {
-    font-size: 13px;
-    color: #757575;
-    font-weight: 400;
-    list-style: none;
-    padding: 0;
-    margin-bottom: 15px;
+
+.verified {
+    color: #28a745;
 }
-.available-info li + li {
-	margin-top: 5px;
-}
-.available-info li .icon {
-	width: 22px;
+
+.speciality {
+    color: #6c757d;
+    font-size: 0.9rem;
 }
