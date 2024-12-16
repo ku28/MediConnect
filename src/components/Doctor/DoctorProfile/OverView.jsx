@@ -95,10 +95,6 @@ const OverView = () => {
                         <h6 className="text-white">Miami, FL</h6>
                         <p style={{ fontSize: '14px' }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, dignissimos.</p>
                     </VerticalTimelineElement>
-
-
-                  
-
                 </VerticalTimeline>
                 
             </div>

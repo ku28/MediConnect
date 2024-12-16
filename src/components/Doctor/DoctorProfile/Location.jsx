@@ -1,5 +1,7 @@
 import React from 'react'
+import './index.css';
 import img from '../../../images/chair.png'
+
 const Location = () => {
     return (
         <div className="location-list ">
@@ -7,7 +9,6 @@ const Location = () => {
                 Array(2).fill(null).map((_item, index) => (
                     <div className='card shadow p-3 border-0 mb-3'>
                         <div className="row">
-
                             <div className="col-md-6">
                                 <div className=" clinic-content">
                                     <h4 className="clinic-name"><a href="#">Smile Cute Dental Care Center</a></h4>

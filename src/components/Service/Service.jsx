@@ -34,7 +34,7 @@ const Service = () => {
       description: "Personalized nutrition plans for a healthier lifestyle.",
     },
     {
-      img: "https://th.bing.com/th/id/R.747c4b8039548b8f40b81f810aee0734?rik=t9Ds%2fMjmXh315A&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f0%2f2%2f5%2f1516067-mental-health-wallpaper-1920x1080-for-xiaomi.jpg&ehk=rLWCRztbHmHahMNkOA0Dfm7g5CkDwxxrGDFBsZVHlmg%3d&risl=&pid=ImgRaw&r=0",
+      img: "https://st2.depositphotos.com/3837271/5966/i/950/depositphotos_59669859-stock-photo-mental-health-written-on-board.jpg",
       title: "Mental Health",
       description: "Compassionate support for your emotional and mental well-being.",
     },
@@ -98,7 +98,7 @@ const Service = () => {
                   <p className="form-text">
                     At MediConnect, we prioritize your well-being by connecting you with expert healthcare professionals across various specialties. Let us guide your journey to better health.
                   </p>
-                  <Link to={"/doctors"} className="btn btn-primary">
+                  <Link to={"/doctors"} className="btn btn-primary get-started">
                     Get Started
                   </Link>
                 </div>

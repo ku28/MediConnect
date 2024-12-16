@@ -10,6 +10,7 @@ import SubHeader from '../Shared/SubHeader';
 import { truncate } from '../../utils/truncate';
 import { FaRegUser, FaBusinessTime } from "react-icons/fa";
 import moment from 'moment';
+import './index.css';
 
 const Blog = () => {
     const query = {};
@@ -88,7 +89,7 @@ const Blog = () => {
                                     showSizeChanger={true}
                                     showPrevNextJumpers={true}
                                     pageSize={size}
-                                    onChange={(page, pageSize) => setSize(pageSize)} // Dynamically change page size
+                                    onChange={(page, pageSize) => setSize(pageSize)}
                                 />
                             </div>
                         </div>

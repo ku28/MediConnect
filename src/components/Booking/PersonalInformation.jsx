@@ -48,7 +48,7 @@ const PersonalInformation = ({ handleChange, selectValue, setPatientId = () => {
 
         .custom-input:focus {
           outline: none;
-          border-color: #007bff;
+          border-color: #0e783c;
           box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
         }
 
@@ -64,17 +64,17 @@ const PersonalInformation = ({ handleChange, selectValue, setPatientId = () => {
         }
 
         .custom-input:focus + .card-label label {
-          color: #007bff;
+          color: #0e783c;
         }
 
         .checkbox-label {
           font-size: 1.1em;
-          color: #007bff;
+          color: #0e783c;
           transition: color 0.3s ease;
         }
 
         .checkbox-label:hover {
-          color: #0056b3;
+          color: #0e783c;
           cursor: pointer;
         }
 
@@ -90,7 +90,7 @@ const PersonalInformation = ({ handleChange, selectValue, setPatientId = () => {
 
         .form-group input:focus,
         .form-group textarea:focus {
-          border-color: #007bff;
+          border-color: #0e783c;
           box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
         }
 

@@ -74,7 +74,7 @@ const styles = `
 }
 
 .date-picker:hover {
-    border-color: #007bff;
+    border-color: #0e783c;
 }
 
 .date-card {
@@ -90,7 +90,7 @@ const styles = `
 }
 
 h5.text-title:hover {
-    color: #007bff;
+    color: #0e783c;
     transition: color 0.3s ease;
 }
 `;

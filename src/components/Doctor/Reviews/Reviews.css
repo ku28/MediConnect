@@ -12,7 +12,7 @@
 
 .review-img img:hover {
   transform: scale(1.1); /* Slightly zooms in the image on hover */
-  border-color: #007bff; /* Adds a blue border on hover */
+  border-color: #0e783c; /* Adds a blue border on hover */
 }
 
 /* Flexbox layout for review content */
@@ -122,7 +122,7 @@
 }
 
 .review-details h5:hover {
-  color: #007bff; /* Changes text color on hover */
+  color: #0e783c; /* Changes text color on hover */
 }
 
 .review-details p {

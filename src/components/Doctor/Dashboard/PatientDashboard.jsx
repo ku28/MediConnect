@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import dayjs from 'dayjs';
 import { FaRegEye } from "react-icons/fa";
 import { clickToCopyClipBoard } from '../../../utils/copyClipBoard';
+import './index.css';
 
 const PatientDashboard = () => {
     const { data, isLoading: pIsLoading } = useGetPatientAppointmentsQuery();

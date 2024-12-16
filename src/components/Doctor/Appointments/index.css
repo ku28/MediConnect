@@ -1,24 +1,24 @@
 page {
-    background: white;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 0.5cm;
-    /* border: 1px solid gray; */
-    /* box-shadow: 0 0 0.5cm rgba(0,0,0,0.5); */
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  /* border: 1px solid gray; */
+  /* box-shadow: 0 0 0.5cm rgba(0,0,0,0.5); */
   }
   page[size="A4"] {  
-    width: 21cm;
-    height: 29.7cm; 
+  width: 21cm;
+  height: 29.7cm; 
   }
   page[size="A4"][layout="portrait"] {
-    width: 29.7cm;
-    height: 21cm;  
+  width: 29.7cm;
+  height: 21cm;  
   }
   @media print {
-    body, page {
-      margin: 0;
-      box-shadow: 0;
-    }
+  body, page {
+    margin: 0;
+    box-shadow: 0;
+  }
   }
 
   /* General Layout Styling */
@@ -50,7 +50,7 @@ h6, p {
 .section-title {
   margin-bottom: 1.5rem;
   font-weight: bold;
-  color: #1e3a8a;
+  color: #0e783c;
   text-align: center;
 }
 
@@ -105,7 +105,7 @@ h6, p {
 button {
   margin-left: 1rem;
   padding: 0.5rem 1rem;
-  background-color: #1e3a8a;
+  background-color: #0e783c;
   color: white;
   border: none;
   border-radius: 5px;
@@ -116,7 +116,6 @@ button:hover {
   background-color: #3b82f7;
 }
 
-/* Print Button Styling */
 .print-btn {
   padding: 0.6rem 1.5rem;
   background-color: #34d398;
@@ -133,26 +132,26 @@ button:hover {
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .page-container {
-    padding: 1rem;
-    margin: 2rem auto;
+  padding: 1rem;
+  margin: 2rem auto;
   }
 
   .info-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   }
 
   .info-card img {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
   }
 
   .info-card .info-text h5 {
-    font-size: 1rem;
+  font-size: 1rem;
   }
 
   .info-card .info-text p {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
   }
 }

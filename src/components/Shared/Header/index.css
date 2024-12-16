@@ -130,7 +130,7 @@
     font-size: 14px;
     font-weight: 500;
     text-transform: none;
-    color: #082744;
+    color: #50C878;
     border: none;
 }
 
@@ -163,6 +163,7 @@
     visibility: visible;
 }
 
+
 @media (max-width: 1366px) {
     .navbar .dropdown .dropdown ul {
         left: -90%;
@@ -171,6 +172,18 @@
     .navbar .dropdown .dropdown:hover>ul {
         left: -100%;
     }
+}
+
+.nav-popover .logout-button {
+    background-color: #50C878 !important;
+    border-color: #50C878 !important;
+    color: white !important;
+}
+
+.nav-popover .logout-button:hover {
+    background-color: #62d2a2 !important;
+    border-color: #62d2a2 !important;
+    color: white !important;
 }
 
 .mobile-nav-toggle {

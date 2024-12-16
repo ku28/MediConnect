@@ -1,9 +1,20 @@
 .card-hover {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .card-hover:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
-  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn.get-started {
+  background-color: #50C878;
+  border-color: #50C878;
+  color: white;
+}
+
+.btn.get-started:hover {
+  background-color: #62d2a2;
+  border-color: #62d2a2;
+  color: white;
+}

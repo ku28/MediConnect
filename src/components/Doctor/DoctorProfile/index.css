@@ -3,11 +3,14 @@
 	margin: 0;
 	padding: 0;
 }
-.doc-department {color: #50C878;}
+.doc-department {
+    color: #50C878;
+}
 .doc-department img{
     width: 1.5rem;
     margin-right: 2px;
 }
+
 .clinic-details ul li {
 	display: inline-block;
 	padding-right: 5px;
@@ -77,4 +80,15 @@
 .overview-text {
     color: #000000;
     font-weight: 600;
+}
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #50C878 !important;
+}
+
+.ant-tabs-tab:hover {
+    color: #50C878 !important;
+}
+
+.ant-tabs-ink-bar {
+    background-color: #50C878 !important;
 }
