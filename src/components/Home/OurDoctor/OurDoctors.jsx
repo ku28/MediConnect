@@ -41,7 +41,7 @@ const OurDoctors = () => {
             <div className="container">
                 <div className="section-title text-center mb-3">
                     <h2>OUR DOCTORS</h2>
-                    <p className='form-text'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, adipisci?</p>
+                    <p className='form-text'>Our doctors are dedicated, experienced professionals committed to providing personalized, compassionate care.?</p>
                 </div>
 
                 <div className="row">
