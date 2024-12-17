@@ -41,12 +41,11 @@ const SearchContent = ({ data }) => {
                                     starSpacing="2px"
                                 />
                             </div>
-                            <div>(4)</div>
                         </div>
 
                         <div className="clinic-details">
                             <p className="form-text text-secondary"><FaLocationArrow /> {data?.address}, {data?.country}</p>
-                            <ul className="clinic-gallery mt-3">
+                            {/* <ul className="clinic-gallery mt-3">
                                 <li>
                                     <img src={showImg} alt="Feature" style={{ maxWidth: "30px" }} />
                                 </li>
@@ -59,7 +58,7 @@ const SearchContent = ({ data }) => {
                                 <li>
                                     <img src={showImg} alt="Feature" style={{ maxWidth: "30px" }} />
                                 </li>
-                            </ul>
+                            </ul> */}
                         </div>
                     </div>
                 </div>
