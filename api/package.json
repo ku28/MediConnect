@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "start": "npx ts-node-dev --respawn --transpile-only src/server.ts",
     "compile": "node ./dist/server.js",
     "vercel-build": "npm run build",
     "lint:check": "eslint --ignore-path .eslintignore --ext .js,.ts .",
