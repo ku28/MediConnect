@@ -62,35 +62,19 @@ const BookDoctor = () => {
                             <div className="pro-content">
                                 <h3 className="title mb-2">
                                     <Link to={`/doctors/profile/${item?.id}`}>
-                                        {item?.firstName + ' ' + item?.lastName}
+                                        {item?.firstName + ' ' + item?.lastName + ' '}
                                     </Link>
                                     <FaCheckCircle className='verified' />
                                 </h3>
-                                <p className="speciality">{item?.designation}, {item?.specialization}</p>
-                                <div className="d-flex align-items-center gap-1 mb-2">
-                                    <StarRatings
-                                        rating={5}
-                                        starRatedColor="#f4c150"
-                                        numberOfStars={5}
-                                        starDimension="18px"
-                                        starSpacing="2px"
-                                    />
-                                    <span className="text-secondary">(27)</span>
-                                </div>
-                                <ul className="available-info list-unstyled mb-3">
-                                    <li>
-                                        <FaLocationArrow className='icon text-muted me-2' />
-                                        Georgia, USA
-                                    </li>
-                                    <li>
-                                        <FaClock className='icon text-muted me-2' />
-                                        Available on Fri, 22 Mar
-                                    </li>
-                                    <li>
-                                        <FaRupeeSign className='icon text-muted me-2' />
-                                        ₹100 - ₹400
-                                    </li>
-                                </ul>
+                                {item?.designation && item?.specialization ? (
+                                    <p className="speciality">{item?.designation}, {item?.specialization}</p>
+                                ) : item?.specialization ? (
+                                    <p className="speciality">{item?.specialization}</p>
+                                ): item?.designation ? (
+                                    <p className="speciality">{item?.designation}</p>
+                                ) : (
+                                    <p className="speciality"><br /></p>
+                                )}
                                 <div className="d-flex justify-content-between">
                                     <Link to={`/doctors/profile/${item?.id}`} className="btn btn-outline-info btn-sm">
                                         Profile
@@ -111,23 +95,21 @@ const BookDoctor = () => {
         <section className="section-doctor container">
             <div className="row">
                 <div className="col-md-3">
-                    <h2 className="text-center mb-3">Book Our Doctor</h2>
+                    <h2 className="mb-3 section-title text-center book">Book Our Doctor</h2>
                     <p className="text-secondary">
-                        Booking an appointment with our expert doctors is quick and easy through our HMS platform.
-                        Browse through a list of qualified doctors, check their availability, and select the time that works best for you.
+                        Quick and easy appointment booking with expert doctors through MediConnect.
                     </p>
                     <div className="text-center">
-                        <Link to={'/doctors'} className='btn btn-outline-primary'>See More</Link>
+                        <Link to={'/doctors'} className='btn btn-outline-primary see-more'>See More</Link>
                     </div>
                 </div>
-                <div className="col-md-9 swipe1">
+                <div className="col-md-9 container">
                     <Swiper
                         spaceBetween={20}
                         slidesPerView={1}
                         navigation
-                        autoplay={{ delay: 3000 }} // Auto-play is enabled
                         loop={true}               // Enables continuous looping
-                        modules={[Navigation, Autoplay]}
+                        modules={[Navigation]}
                         breakpoints={{
                             640: { slidesPerView: 2 },
                             1024: { slidesPerView: 3 },

@@ -4,7 +4,7 @@ import Footer from '../../Shared/Footer/Footer';
 import Testimonial from '../Testimonial/Testimonial';
 import ClinicAndSpecialities from '../ClinicAndSpecialities/ClinicAndSpecialities';
 import BookDoctor from '../BookOurDoctor/BookDoctor';
-import Availabe from '../AvailableFeatures/Available';
+// import Availabe from '../AvailableFeatures/Available';
 import HeroSection from '../HeroSection/HeroSection';
 import InfoPage from '../InfoPage/InfoPage';
 import Header from '../../Shared/Header/Header';
@@ -22,7 +22,6 @@ const Home = () => {
             <ClinicAndSpecialities />
             <BookDoctor />
             <Blog />
-            <Availabe />
             <OurDoctors/>
             <Testimonial />
             <Gallery/>

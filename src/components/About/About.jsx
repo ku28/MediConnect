@@ -9,7 +9,7 @@ import whattoSay from "../../images/doc/doc4.jpg";
 import SubHeader from "../Shared/SubHeader";
 import { Empty } from "antd";
 import { useGetDoctorsQuery } from "../../redux/api/doctorApi";
-//hello
+
 const About = () => {
   const { data: doctorData, isLoading, isError } = useGetDoctorsQuery({
     limit: 4,
@@ -64,17 +64,17 @@ const About = () => {
         <div className="row align-items-center">
           <div className="col-lg-4">
             <div className="section-title">
-              <h2 className="text-uppercase text-blue-800">Our Achievements</h2>
+              <h2 className="text-uppercase text-blue-800">Our Pledge</h2>
               <p className="text-muted">
-                Celebrating milestones in our journey to make healthcare
-                accessible for all.
+              Committed to accessible quality healthcare.
               </p>
             </div>
             <p>
-              At MediConnect, we take pride in the milestones that mark our
-              journey toward revolutionizing healthcare accessibility. With over
-              10,000 successful consultations and a network of 5,000+ certified
-              doctors, we have earned the trust of countless users worldwide.
+              At MediConnect, we pledge to bridge the gap between patients and
+              doctors by providing reliable, efficient, and affordable
+              healthcare solutions. Our mission is to empower individuals with
+              access to top-notch medical professionals, ensuring that no one is
+              left behind in their healthcare journey.
             </p>
           </div>
           <div className="col-lg-8">

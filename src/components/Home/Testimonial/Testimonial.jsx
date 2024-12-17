@@ -64,7 +64,7 @@ const Testimonial = () => {
         <div className="container my-5">
             {/* Section Title */}
             <div className="text-center mb-5">
-                <h2 className="fw-bold">TESTIMONIAL</h2>
+                <h2 className="fw-bold">Reviews</h2>
                 <p className="text-muted">What Our Patients Say</p>
             </div>
 

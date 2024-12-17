@@ -2,7 +2,6 @@
 .section-doctor {
     padding: 0;
     margin: 0;
-    background: #f4f4f4;
 }
 
 .full-section-swiper {
@@ -10,10 +9,32 @@
     height: 100vh; /* Full viewport height */
 }
 
+.book {
+    padding-top: 130px;
+}
+
 .swipe1 {
     width: 100%;
     padding: 0;
     margin: 0;
+}
+
+.container {
+    padding: 0;
+    margin: 0;
+    border: 50% solid #ffffff;
+}
+
+.see-more {
+    background-color: #50C878 !important;
+    border-color: #50C878 !important;
+    color: white !important;
+}
+
+.see-more:hover {
+    background-color: #62d2a2 !important;
+    border-color: #62d2a2 !important;
+    color: white !important;
 }
 
 .profile-widget {
@@ -76,16 +97,3 @@
     font-size: 0.9rem;
 }
 
-/* Swiper container adjustments */
-.swiper-container {
-    width: 100%;
-    height: 100%;
-}
-
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto; /* Ensure slides adjust to content */
-    padding: 10px; /* Add padding to avoid black space */
-}

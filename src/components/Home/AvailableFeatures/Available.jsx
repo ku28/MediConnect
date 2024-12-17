@@ -14,8 +14,8 @@ const Availabe = () => {
 					</div>
 					<div className="col-md-7">
 						<div className='mb-4 section-title text-center'>
-							<h2 className='text-uppercase'>Availabe Service</h2>
-							<p className='m-0'>Your health, our priority—appointments, consultations, and support at your fingertips</p>
+							<h2 className='text-uppercase'>Available Services</h2>
+							<p className='m-0'>Health at your fingertips</p>
 						</div>
 						<AvailableServiceContent/>
 					</div>
