@@ -290,20 +290,20 @@ const BookDoctor = () => {
                         spaceBetween={20}
                         slidesPerView={1}
                         navigation
-                        autoplay={{ delay: 3000 }}
-                        loop={true}
+                        autoplay={{ delay: 3000 }} // Auto-play is enabled
+                        loop={true}               // Enables continuous looping
                         modules={[Navigation, Autoplay]}
                         breakpoints={{
                             640: { slidesPerView: 2 },
                             1024: { slidesPerView: 3 },
                         }}
-                        
                     >
-                        {content}
+                        {content} {/* Render the slides here */}
                     </Swiper>
-                </div>
+                </div>            
             </div>
         </section>
+        
     );
 };
 

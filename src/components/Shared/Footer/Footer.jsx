@@ -58,15 +58,15 @@ const Footer = () => {
 								<div className="footer-contact-info">
 									<p>
 										<i className="fas fa-map-marker-alt"></i>
-										123 Health Street, MediCity, Careland
+										123 Health Street, MediCity, Gurugram
 									</p>
 									<p>
 										<i className="fas fa-phone-alt"></i>
-										+1 (234) 567-890
+										+91 76231-45201
 									</p>
 									<p>
 										<i className="fas fa-envelope"></i>
-										support@mediconnect.com
+										mediconnect@gmail.com
 									</p>
 								</div>
 							</div>
