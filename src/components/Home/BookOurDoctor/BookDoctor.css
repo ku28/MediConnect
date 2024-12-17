@@ -10,16 +10,33 @@
     height: 100vh; /* Full viewport height */
 }
 
+.swipe1 {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
 .profile-widget {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure the widget takes full height */
 }
 
 .profile-widget:hover {
     transform: translateY(-5px);
+}
+
+.doc-img {
+    flex: 1; /* Allow image to take available space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .doc-img img {
@@ -42,6 +59,7 @@
 
 .pro-content {
     padding: 15px;
+    flex: 0 0 auto; /* Ensure content does not stretch */
 }
 
 .pro-content .title {
@@ -56,4 +74,18 @@
 .speciality {
     color: #6c757d;
     font-size: 0.9rem;
+}
+
+/* Swiper container adjustments */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Ensure slides adjust to content */
+    padding: 10px; /* Add padding to avoid black space */
 }
