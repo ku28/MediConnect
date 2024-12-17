@@ -1,7 +1,6 @@
-#hero {
+/* #hero {
     width: 100%;
     height: 90vh;
-    background: url("../../../images/img/hero-bg.jpg") top center;
     background-size: cover;
     margin-bottom: -115px;
     margin-top: 80px;
@@ -81,4 +80,95 @@
       font-size: 12px;
       padding: 8px 10px;
     }
-  }
+  } */
+
+
+  #hero {
+    width: 100%;
+    height: 100vh;
+    background: #f9f9f9; /* Light background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    background: url("../../../images/img/hero-bg.jpg") top center;
+
+}
+
+#hero .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#hero .content {
+    max-width: 600px;
+}
+
+#hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.2;
+}
+
+#hero p {
+    font-size: 16px;
+    color: #555;
+    margin: 15px 0 30px;
+    line-height: 1.5;
+}
+
+#hero .btn-get-started,
+#hero .btn-secondary {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    border-radius: 5px;
+    color: #fff;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+#hero .btn-get-started {
+    background-color: #50C878; /* Blue button */
+}
+
+#hero .btn-get-started:hover {
+    opacity: 0.8; /* Darker blue */
+}
+
+#hero .btn-secondary {
+    background-color: #e0e0e0;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+#hero .btn-secondary:hover {
+    background-color: #ccc;
+}
+
+#hero .doctor-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #hero {
+        height: auto;
+        padding: 50px 0;
+    }
+
+    #hero h1 {
+        font-size: 32px;
+    }
+
+    #hero p {
+        font-size: 14px;
+    }
+}
