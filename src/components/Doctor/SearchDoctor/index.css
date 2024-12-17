@@ -1,38 +1,42 @@
 .doc-img-fluid img {
   height: 200px;
   width: 200px;
-  border: 8px solid #e0e0e0;
+  border: 10px solid #d3d3d3; 
   border-radius: 50%;
   overflow: hidden;
   object-fit: cover;
-  object-position: top;
+  object-position: center; 
 }
-.doc-info a{
-  color: #50C878 !important;
+
+.doc-info a {
+  color: #4CAF50 !important; 
+  text-decoration: underline; 
+}
+
+.doc-info a:hover {
+  color: #388E3C !important; 
+  text-decoration: none; 
 }
 
 .ant-btn-primary {
-  background-color: #13ba71 !important;
-  border-color: #13ba71 !important;
+  background-color: #28a745 !important; 
+  border-color: #28a745 !important;
 }
-  
+
 .ant-btn-primary:hover {
-  background-color: #0e783c !important;
-  border-color: #0e783c !important;
+  background-color: #218838 !important;
+  border-color: #218838 !important;
 }
 
 .ant-slider-track {
-  background-color: #13ba71 !important;
+  background-color: #28a745 !important; 
 }
 
 .ant-slider-handle {
-  background-color: #13ba71 !important;
-  border-color: #13ba71 !important;
+  background-color: #28a745 !important;
+  border-color: #28a745 !important;
 }
 
 .ant-slider-rail {
-  background-color: #d9d9d9 !important;
+  background-color: #e0e0e0 !important; 
 }
-
-
-  
