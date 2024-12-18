@@ -1,15 +1,119 @@
+/* Prescription Page */
+.prescription-page {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.card-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styling */
+.ant-table {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ant-table-thead > tr > th {
+    background-color: #f0f2f5;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 600;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+/* Adjust Created At Column Width */
+.ant-table-column[data-column-key="createdAt"] {
+    width: 200px; /* Increase width of the Created At column */
+}
+
+/* Tag Styling */
+.ant-tag {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+.ant-tag.orange {
+    background-color: #ff6f6f;
+    color: white;
+}
+
+.ant-tag.green {
+    background-color: #87d068;
+    color: white;
+}
+
+.ant-tag.blue {
+    background-color: #108ee9;
+    color: white;
+}
+
+.ant-tag.red {
+    background-color: #f50;
+    color: white;
+}
+
+/* Action Buttons Styling */
 .action-btn {
-    background-color: #1890ff;
-    border-color: #1890ff;
-    transition: all 0.3s ease-in-out;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 6px 10px;
 }
 
 .action-btn:hover {
+    background-color: #1890ff;
+    color: white;
+}
+
+.ant-btn-primary {
+    background-color: #1890ff;
+    border-color: #1890ff;
+}
+
+.ant-btn-primary:hover {
     background-color: #40a9ff;
     border-color: #40a9ff;
 }
 
-.action-btn:focus {
-    background-color: #096dd9;
-    border-color: #096dd9;
+/* Tooltip Styling */
+.ant-tooltip-inner {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+}
+
+.ant-tooltip-placement-top {
+    top: -30px;
+}
+
+/* Table Pagination and Size Changer */
+.ant-pagination {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+}
+
+.ant-pagination-item-link {
+    font-size: 0.9rem;
+    border-radius: 5px;
+    padding: 6px 10px;
+}
+
+.ant-pagination-prev, .ant-pagination-next {
+    font-size: 1rem;
+    background-color: #f0f2f5;
+    padding: 6px 12px;
+}
+
+/* Table Scroll for Larger Data */
+.ant-table-scroll .ant-table-body {
+    max-height: 500px;
+    overflow-y: auto;
 }

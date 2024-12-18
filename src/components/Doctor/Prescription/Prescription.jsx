@@ -5,7 +5,7 @@ import { FaRegEye, FaEdit, FaRegTimesCircle } from "react-icons/fa";
 import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
 import { useDeletePrescriptionMutation, useGetAllPrescriptionsQuery } from '../../../redux/api/prescriptionApi';
-import './Prescription.css'
+import './Prescription.css';
 
 const Prescription = () => {
     const { data, isLoading } = useGetAllPrescriptionsQuery();
@@ -22,7 +22,7 @@ const Prescription = () => {
         },
         {
             title: 'Disease',
-            sorter: true,
+            // sorter: true,
             dataIndex: "disease",
             key: 3,
         },
@@ -46,7 +46,7 @@ const Prescription = () => {
             title: 'Created At',
             dataIndex: 'createdAt',
             key: 5,
-            sorter: true,
+            // sorter: true,
             render: (data) => data && dayjs(data).format('MMM D, YYYY hh:mm A')
         },
         {
@@ -92,15 +92,12 @@ const Prescription = () => {
 
     return (
         <DashboardLayout>
-            <Card className="w-100 mb-3 rounded" style={{ background: '#f8f9fa', padding: '20px' }}>
+            <Card className="card-container w-100 mb-3">
                 <CustomTable
                     loading={isLoading}
                     columns={columns}
                     dataSource={data}
-                    showPagination={true}
-                    pageSize={20}
-                    showSizeChanger={true}
-                    style={{ padding: '20px', borderRadius: '8px' }}
+                    pagination={false}  
                 />
             </Card>
         </DashboardLayout>
