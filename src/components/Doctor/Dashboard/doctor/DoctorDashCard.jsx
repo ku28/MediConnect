@@ -35,7 +35,7 @@ const DoctorDashCard = () => {
             icon: <FaHospital className="icon" />,
             title: 'Patients',
             amount: totalPatients,
-            bgColor: 'bg-light-green'
+            bgColor: 'bg-light-green',
         },
         {
             icon: <FaCalendarAlt className="icon" />,
