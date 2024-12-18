@@ -7,7 +7,7 @@ const Location = () => {
         <div className="location-list ">
             {
                 Array(1).fill(null).map((_item, index) => (
-                    <div className='card shadow p-3 border-0 mb-3' key={index}>
+                    <div className='shadow p-3 border-0 mb-3' key={index}>
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="clinic-content">
