@@ -1,92 +1,212 @@
-import React, { useEffect } from 'react';
-import Footer from '../Shared/Footer/Footer';
-import { FaBriefcase, FaCalendarCheck, FaRegClock, FaLocationArrow, FaCalendarAlt, FaLink, FaAlignLeft  } from "react-icons/fa";
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button, Tag, Tooltip } from 'antd';
-import moment from 'moment';
-import { Empty } from 'antd';
-import Header from '../Shared/Header/Header';
-import { useGetSingleAppointmentQuery } from '../../redux/api/appointmentApi';
-import { clickToCopyClipBoard } from '../../utils/copyClipBoard';
+import React, { useEffect } from "react";
+import Footer from "../Shared/Footer/Footer";
+import {
+  FaBriefcase,
+  FaCalendarCheck,
+  FaRegClock,
+  FaLocationArrow,
+  FaCalendarAlt,
+  FaLink,
+  FaAlignLeft,
+} from "react-icons/fa";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { Button, Tag, Tooltip, Empty } from "antd";
+import moment from "moment";
+import Header from "../Shared/Header/Header";
+import { useGetSingleAppointmentQuery } from "../../redux/api/appointmentApi";
+import { clickToCopyClipBoard } from "../../utils/copyClipBoard";
 
 const BookingSuccess = () => {
-    const { id } = useParams();
-    const { data } = useGetSingleAppointmentQuery(id);
+  const { id } = useParams();
+  const { data } = useGetSingleAppointmentQuery(id);
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      if (!data?.id) {
+        navigate("/");
+      }
+    }, 5000);
+    return () => clearTimeout(timeOut);
+  }, [navigate, data]);
 
-    useEffect(() => {
-        const timeOut = setTimeout(() => {
-            if (!data?.id) {
-                navigate('/');
-            }
-        }, 5000)
-        return () => clearTimeout(timeOut)
-    }, [navigate, data])
-
-    return (
-        <>
-            <Header />
-            <div className="container mx-auto d-flex justify-content-center align-items-center text-center">
-                {
-                    data?.id ?
-
-                        <div className=" p-3" style={{ marginTop: '8rem', marginBottom: '5rem', height: '60vh', background: '#f8f9fa', maxWidth: '400px' }}>
-
-                            <div className='border-bottom my-2'>
-                                <FaCalendarCheck style={{ fontSize: '2.5rem' }} className='text-success' />
-                                <h6 className='py-2'>Meeting is scheduled</h6>
-                                <p className='text-secondary border rounded-pill form-text text-success border-success'>Check your Inbox an email with all details!</p>
-                            </div>
-
-
-                            <div>
-                                <Tooltip title="Copy Tracking Id">
-                                    <Button>
-                                        <h6>Tracking<Tag color="#87d068" className='ms-2 text-uppercase' onClick={() => clickToCopyClipBoard(data?.trackingId)}>{data?.trackingId}</Tag></h6>
-                                    </Button>
-                                </Tooltip>
-                            </div>
-
-
-                            <div className='card border-0 p-3 rounded mb-5'>
-                                <div className='d-flex gap-3 mb-2 align-items-center'>
-                                    <FaAlignLeft style={{ fontSize: '1rem' }}/>
-                                    <Link to={`/dashboard/appointments/${id}`}><h5 className='text-primary'>View Appointment Details</h5></Link>
-                                </div>
-                                <div className='d-flex gap-3 mb-1'>
-                                    <FaBriefcase style={{ fontSize: '1rem' }} />
-                                    <p>With Doctor</p>
-                                </div>
-                                <div className='d-flex gap-3 mb-1'>
-                                    <FaRegClock style={{ fontSize: '1rem' }} />
-                                    <p>30 Min</p>
-                                </div>
-                                <div className='d-flex gap-3 mb-1'>
-                                    <div><FaLocationArrow style={{ fontSize: '1rem' }} /></div>
-                                    <p className='text-start'>ABC<br /><span className="form-text">DEF</span></p>
-                                </div>
-                                <div className='d-flex gap-3 mb-2'>
-                                    <div><FaLink style={{ fontSize: '1rem' }} /></div>
-                                    <div><a href='https://meet.google.com/' target='_blank' rel='noreferrer'>https://meet.google.com/</a></div>
-                                </div>
-                                <div className='d-flex gap-3'>
-                                    <div><FaCalendarAlt style={{ fontSize: '1rem' }} /> </div>
-                                    <p>{(data.scheduleDate && data.scheduleTime) && moment(data.scheduleDate).format('LL') + ' ' + data.scheduleTime}</p>
-                                </div>
-                            </div>
-                        </div>
-                        :
-                        <div className='rounded p-3 d-flex flex-column justify-content-center align-items-center' style={{ background: "#f8f9fa", marginTop: '8rem', marginBottom: '5rem' }} >
-                            <Empty />
-                            <h6 className='p-2 my-3'>You will be redirect to homepage !</h6>
-                        </div>
-                }
+  return (
+    <>
+      <Header />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+          minHeight: "100vh",
+          background: "#f0f2f5",
+        }}
+      >
+        {data?.id ? (
+          <div
+            style={{
+              padding: "20px",
+              marginTop: "8rem",
+              marginBottom: "5rem",
+              background: "#fff",
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+              borderRadius: "10px",
+              maxWidth: "400px",
+              width: "100%",
+            }}
+          >
+            <div
+              style={{
+                borderBottom: "1px solid #e8e8e8",
+                marginBottom: "20px",
+                paddingBottom: "10px",
+              }}
+            >
+              <FaCalendarCheck
+                style={{ fontSize: "2.5rem", color: "#52c41a" }}
+              />
+              <h6 style={{ marginTop: "10px" }}>Meeting is scheduled</h6>
+              <p
+                style={{
+                  color: "#52c41a",
+                  background: "#f6ffed",
+                  padding: "5px 15px",
+                  borderRadius: "20px",
+                  display: "inline-block",
+                  fontSize: "14px",
+                }}
+              >
+                Check your inbox for an email with all details!
+              </p>
             </div>
-            <Footer />
-        </>
 
-    )
-}
+            <div
+              style={{
+                marginBottom: "20px",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <Tooltip title="Copy Tracking Id">
+                <Button
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: "10px 20px",
+                    gap: "10px",
+                  }}
+                >
+                  <h6 style={{ margin: 0 }}>Tracking</h6>
+                  <Tag
+                    color="#87d068"
+                    className="text-uppercase"
+                    onClick={() => clickToCopyClipBoard(data?.trackingId)}
+                    style={{ fontSize: "14px", cursor: "pointer" }}
+                  >
+                    {data?.trackingId}
+                  </Tag>
+                </Button>
+              </Tooltip>
+            </div>
 
-export default BookingSuccess
+            <div
+              style={{
+                background: "#fafafa",
+                padding: "15px",
+                borderRadius: "10px",
+                border: "1px solid #e8e8e8",
+                marginBottom: "20px",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  gap: "10px",
+                  alignItems: "center",
+                  marginBottom: "10px",
+                }}
+              >
+                <FaAlignLeft style={{ fontSize: "1rem" }} />
+                <Link
+                  to={`/dashboard/appointments/${id}`}
+                  style={{ color: "#1890ff" }}
+                >
+                  <h5 style={{ margin: 0 }}>View Appointment Details</h5>
+                </Link>
+              </div>
+              <div
+                style={{ display: "flex", gap: "10px", marginBottom: "8px" }}
+              >
+                <FaBriefcase style={{ fontSize: "1rem" }} />
+                <p style={{ margin: 0 }}>With Doctor</p>
+              </div>
+              <div
+                style={{ display: "flex", gap: "10px", marginBottom: "8px" }}
+              >
+                <FaRegClock style={{ fontSize: "1rem" }} />
+                <p style={{ margin: 0 }}>30 Min</p>
+              </div>
+              <div
+                style={{ display: "flex", gap: "10px", marginBottom: "8px" }}
+              >
+                <FaLocationArrow style={{ fontSize: "1rem" }} />
+                <p style={{ margin: 0 }}>
+                  ABC
+                  <br />
+                  <span style={{ fontSize: "12px", color: "#8c8c8c" }}>
+                    DEF
+                  </span>
+                </p>
+              </div>
+              <div
+                style={{ display: "flex", gap: "10px", marginBottom: "8px" }}
+              >
+                <FaLink style={{ fontSize: "1rem" }} />
+                <a
+                  href="https://meet.google.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: "#1890ff" }}
+                >
+                  https://meet.google.com/
+                </a>
+              </div>
+              <div style={{ display: "flex", gap: "10px" }}>
+                <FaCalendarAlt style={{ fontSize: "1rem" }} />
+                <p style={{ margin: 0 }}>
+                  {data.scheduleDate &&
+                    data.scheduleTime &&
+                    moment(data.scheduleDate).format("LL") +
+                      " " +
+                      data.scheduleTime}
+                </p>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div
+            style={{
+              background: "#fff",
+              padding: "20px",
+              borderRadius: "10px",
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+              marginTop: "8rem",
+              marginBottom: "5rem",
+              textAlign: "center",
+            }}
+          >
+            <Empty />
+            <h6 style={{ padding: "10px", marginTop: "20px" }}>
+              You will be redirected to the homepage!
+            </h6>
+          </div>
+        )}
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export default BookingSuccess;
