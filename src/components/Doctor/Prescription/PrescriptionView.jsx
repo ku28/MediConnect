@@ -44,7 +44,6 @@ const PrescriptionView = () => {
                 )
             }
         },
-
     ];
 
     let content = null;
@@ -77,9 +76,9 @@ const PrescriptionView = () => {
                                 <div className="invoice-info p-2 rounded" style={{ background: '#c9c9c92b' }}>
                                     <div className="invoice-details invoice-details-two " >
                                         <h3>Dr.{data?.doctor?.firstName + ' ' + data?.doctor?.lastName}</h3>
-                                        <p>{data?.doctor?.designation} ,</p>
-                                        <p>{data?.doctor?.college}</p>
-                                        <span className="form-text">{data?.doctor?.address}, {data?.doctor?.state},{data?.doctor?.country}</span>
+                                        {/* <p>{data?.doctor?.designation} ,</p>
+                                        <p>{data?.doctor?.college}</p> */}
+                                        {/* <span className="form-text">{data?.doctor?.address}, {data?.doctor?.state},{data?.doctor?.country}</span> */}
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +112,7 @@ const PrescriptionView = () => {
                                         <p>{data?.disease}</p>
                                     </div>
                                     <div>
-                                        <h5>DAIGNOSIS</h5>
+                                        <h5>DIAGNOSIS</h5>
                                         <p>{data?.daignosis}</p>
                                     </div>
                                     <div>
@@ -121,7 +120,7 @@ const PrescriptionView = () => {
                                         <p>{data?.test}</p>
                                     </div>
                                     <div>
-                                        <h5>NEXT APOINTMENT</h5>
+                                        <h5>NEXT APPOINTMENT</h5>
                                         <p>
                                             <span>Date : {moment(data?.followUpdate).format('LL')}</span> <br />
                                             <span>Time : {moment(data?.followUpdate).format('LT')}</span>
@@ -164,4 +163,4 @@ const PrescriptionView = () => {
     )
 }
 
-export default PrescriptionView
+export default PrescriptionView;

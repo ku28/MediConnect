@@ -1,10 +1,54 @@
-.symptoms-section h5{
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.symptoms-section p{
-    font-size: 13px;
-    font-weight: 500;
-    color: #3f3f3ff6;
+/* A4 Size Print Media Query */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .content {
+        max-width: 210mm;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20mm;
+        box-sizing: border-box;
+    }
+    .invoice-content {
+        font-family: 'Arial', sans-serif;
+        font-size: 12px;
+        line-height: 1.5;
+        color: #333;
+    }
+    .invoice-logo img {
+        max-width: 100px;
+    }
+    .invoice-item {
+        margin-bottom: 20px;
+    }
+    .invoice-details h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .invoice-info {
+        margin-bottom: 20px;
+    }
+    .symptoms-section h5 {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .symptoms-section p {
+        font-size: 12px;
+    }
+    .ant-table {
+        margin-top: 20px;
+        border: 1px solid #ddd;
+    }
+    .ant-table-tbody > tr > td {
+        padding: 8px 12px;
+    }
+    .ant-table-thead > tr > th {
+        background-color: #f1f1f1;
+        font-weight: bold;
+    }
+    .ant-btn-primary {
+        display: none;
+    }
 }

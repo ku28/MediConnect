@@ -168,7 +168,6 @@ const createAppointmentByUnAuthenticateUser = async (payload: any): Promise<Appo
         const pathName = path.join(__dirname, '../../../../template/meeting.html')
         const replacementObj = appointmentObj;
         const subject = `Appointment Confirm at ${appointment.scheduleDate} ${appointment.scheduleTime}`
-
         const toMail = `${appointment.email}`;
         EmailtTransporter({ pathName, replacementObj, toMail, subject })
         return appointment;

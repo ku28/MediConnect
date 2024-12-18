@@ -2,15 +2,12 @@ import React, { useEffect } from 'react';
 import DashboardLayout from '../DashboardLayout/DashboardLayout';
 import img from '../../../images/avatar.jpg';
 
-import './Appointments.css';
 import { useGetDoctorAppointmentsQuery, useUpdateAppointmentMutation } from '../../../redux/api/appointmentApi';
 import moment from 'moment';
-import { Button, Empty, message, Tag, Tooltip } from 'antd';
-import { FaEye, FaCheck, FaTimes } from "react-icons/fa";
+import { Button, Empty, message, Tag, Tooltip, Table, Space } from 'antd';
+import { FaEye, FaCheck, FaTimes, FaClock, FaEnvelope, FaLocationArrow, FaPhoneAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import { FaClock, FaEnvelope, FaLocationArrow, FaPhoneAlt } from "react-icons/fa";
 import { clickToCopyClipBoard } from '../../../utils/copyClipBoard';
-import { hasUISelection } from '@testing-library/user-event/dist/cjs/document/UI.js';
 
 const Appointments = () => {
     const { data, isError, isLoading } = useGetDoctorAppointmentsQuery({});
@@ -32,91 +29,108 @@ const Appointments = () => {
         }
     }, [isSuccess, updateIsError, error]);
 
-    const getInitPatientName = (patient) => {
-        const fullName = `${patient?.firstName ?? ''} ${patient?.lastName ?? ''}`;
-        return fullName.trim() || "Private Patient";
-    };
-
-    let content = null;
-    if (!isLoading && isError) content = <div>Something Went Wrong!</div>;
-    if (!isLoading && !isError && data?.length === 0) content = <Empty />;
-    if (!isLoading && !isError && data?.length > 0) {
-        content = (
-            <table className="appointment-table">
-                <thead>
-                    <tr>
-                        <th>Patient</th>
-                        <th>Tracking ID</th>
-                        <th>Details</th>
-                        <th>Appointment Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data.map((item) => (
-                        <tr key={item.id}>
-                            <td>
-                                <Link to={`/`} className="patient-img">
-                                    <img src={item?.patient?.img || img} alt="Patient" />
-                                </Link>
-                                <div>{getInitPatientName(item.patient)}</div>
-                            </td>
-                            <td>
-                                <Tooltip title="Copy Tracking ID">
-                                    <Button onClick={() => clickToCopyClipBoard(item.trackingId)}>
-                                        <Tag color="#87d068" className="text-uppercase">{item.trackingId}</Tag>
-                                    </Button>
-                                </Tooltip>
-                            </td>
-                            <td>
-                                <p><FaClock className="icon" /> {moment(item?.appointmentTime).format("MMM Do YY")}</p>
-                                {item?.patient?.address && <p><FaLocationArrow className="icon" /> {item?.patient?.address}</p>}
-                                {item?.patient?.email && <p><FaEnvelope className="icon" /> {item?.patient?.email}</p>}
-                                {item?.patient?.phone && <p><FaPhoneAlt className="icon" /> {item?.patient?.phone}</p>}
-                            </td>
-                            <td>
-                                <p><Tag color="#f50">{item.status}</Tag></p>
-                                <p>Follow-Up: <Tag color={item.isFollowUp ? "#2db7f5" : "#ccc"}>{item.isFollowUp ? "Yes" : "No"}</Tag></p>
-                                <p>Paid: <Tag color="#87d068">{item.paymentStatus}</Tag></p>
-                                <p>Prescribed: <Tag color="#2db7f5">{item.prescriptionStatus}</Tag></p>
-                            </td>
-                            <td>
-                                <div className="actions">
-                                    <Link to={`/dashboard/appointments/${item.id}`}>
-                                        <Button type="primary" icon={<FaEye />} size="small">View</Button>
-                                    </Link>
-                                    {item.prescriptionStatus === 'notIssued' ? (
-                                        <Link to={`/dashboard/appointment/treatment/${item.id}`}>
-                                            <Button type="primary" icon={<FaCheck />} size="small">Treatment</Button>
-                                        </Link>
-                                    ) : (
-                                        <Link to={`/dashboard/prescription/${item.prescription[0]?.id}`}>
-                                            <Button type="primary" icon={<FaEye />} size="small">Prescription</Button>
-                                        </Link>
-                                    )}
-                                    {item.isFollowUp && (
-                                        <Link to={`/dashboard/appointment/treatment/edit/${item.prescription[0]?.id}`}>
-                                            <Button type="primary" icon={<FaCheck />} size="small">Follow-Up</Button>
-                                        </Link>
-                                    )}
-                                    {item.status === 'pending' && (
-                                        <>
-                                            <Button type="primary" icon={<FaCheck />} size="small" onClick={() => updatedApppointmentStatus(item.id, 'scheduled')}>Accept</Button>
-                                            <Button type="primary" icon={<FaTimes />} size="small" danger onClick={() => updatedApppointmentStatus(item.id, 'cancel')}>Cancel</Button>
-                                        </>
-                                    )}
-                                </div>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        );
-    }
+    const columns = [
+        {
+            title: 'Patient',
+            dataIndex: 'patient',
+            key: 'patient',
+            render: (_, record) => (
+                <Space >
+                    <img
+                        src={record?.patient?.img || img}
+                        alt="Patient"
+                        style={{ width: '40px', height: '40px', borderRadius: '50%' }}
+                    />
+                    <div>{record?.patient?.firstName ?? "Private Patient"}</div>
+                </Space>
+            ),
+        },
+        {
+            title: 'Tracking ID',
+            dataIndex: 'trackingId',
+            key: 'trackingId',
+            render: (trackingId) => (
+                <Tooltip title="Copy Tracking ID">
+                    <Button onClick={() => clickToCopyClipBoard(trackingId)}>
+                        <Tag color="#87d068" className="text-uppercase">{trackingId}</Tag>
+                    </Button>
+                </Tooltip>
+            ),
+        },
+        {
+            title: 'Date Scheduled',
+            key: 'details',
+            width: 350,
+            render: (_, record) => (
+                <>
+                    <p><FaClock className="icon" /> {moment(record?.appointmentTime).format("MMM Do YY")}</p>
+                    {/* {record?.patient?.address && <p><FaLocationArrow className="icon" /> {record?.patient?.address}</p>} */}
+                    {record?.patient?.email && <p><FaEnvelope className="icon" /> {record?.patient?.email}</p>}
+                    {/* {record?.patient?.phone && <p><FaPhoneAlt className="icon" /> {record?.patient?.phone}</p>} */}
+                </>
+            ),
+        },
+        {
+            title: 'Status',
+            key: 'status',
+            width: 450, // Increased width
+            render: (_, record) => (
+                <div>
+                    <Tag color="#f50">{record.status}</Tag>
+                    <p>Follow-Up: <Tag color={record.isFollowUp ? "#2db7f5" : "#ccc"}>{record.isFollowUp ? "Yes" : "No"}</Tag></p>
+                    <p>Paid: <Tag color="#87d068">{record.paymentStatus}</Tag></p>
+                    <p>Prescribed: <Tag color="#2db7f5">{record.prescriptionStatus}</Tag></p>
+                </div>
+            ),
+        },
+        {
+            title: 'Actions',
+            key: 'actions',
+            width: 300, // Decreased width
+            render: (_, record) => (
+                <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
+                    <Link to={`/dashboard/appointments/${record.id}`}>
+                        <Button type="primary" icon={<FaEye />} size="small">View</Button>
+                    </Link>
+                    {record.prescriptionStatus === 'notIssued' ? (
+                        <Link to={`/dashboard/appointment/treatment/${record.id}`}>
+                            <Button type="primary" icon={<FaCheck />} size="small">Treatment</Button>
+                        </Link>
+                    ) : (
+                        <Link to={`/dashboard/prescription/${record.prescription[0]?.id}`}>
+                            <Button type="primary" icon={<FaEye />} size="small">Prescription</Button>
+                        </Link>
+                    )}
+                    {record.status === 'pending' && (
+                        <Space>
+                            <Button type="primary" icon={<FaCheck />} size="small" onClick={() => updatedApppointmentStatus(record.id, 'scheduled')}>Accept</Button>
+                            <Button type="primary" icon={<FaTimes />} size="small" danger onClick={() => updatedApppointmentStatus(record.id, 'cancel')}>Cancel</Button>
+                        </Space>
+                    )}
+                </Space>
+            ),
+        },
+    ];
+    
 
     return (
         <DashboardLayout>
-            {content}
+            {isLoading ? (
+                <p>Loading...</p>
+            ) : isError ? (
+                <div>Something Went Wrong!</div>
+            ) : data?.length > 0 ? (
+                <Table
+                    columns={columns}
+                    dataSource={data}
+                    pagination={{ pageSize: 10 }}
+                    rowKey="id"
+                    bordered
+                    style={{ background: '#fff', borderRadius: '8px' }}
+                />
+            ) : (
+                <Empty />
+            )}
         </DashboardLayout>
     );
 };

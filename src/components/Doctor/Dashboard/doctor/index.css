@@ -1,17 +1,67 @@
-.dash-card-icon{
-	text-align: center;
-    border: 6px solid #50C878;
+.dashboard-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    background: #f4f6f9;
+    border-radius: 10px;
+}
+
+.dashboard-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 330px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.bg-light-blue {
+    background: #e0f7fa;
+    color: #00796b;
+}
+
+.bg-light-green {
+    background: #e8f5e9;
+    color: #388e3c;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
     border-radius: 50%;
-    height: 75px;
-    width: 75px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: #0e783c;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
 }
-.dash-card-icon .icon{
-	font-size: 2.5rem;
+
+.info-container {
+    flex-grow: 1;
 }
-.dash-card{
-	border-right: 1px solid #c0bebef4;
+
+.card-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #555;
+}
+
+.card-amount {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
 }

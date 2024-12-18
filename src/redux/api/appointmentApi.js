@@ -43,6 +43,23 @@ export const appointmentApi = baseApi.injectEndpoints({
             }),
             providesTags: [tagTypes.appointments]
         }),
+        getDoctorAppointmentsCount: build.query({
+            query: () => ({
+                url: '/api/v1/appointment/totalAppointments',  // No need for doctorId in the URL anymore
+                method: 'GET',
+            }),
+            providesTags: [tagTypes.appointments]
+        }),
+        
+        getDistinctPatientCount: build.query({
+            query: () => ({
+                url: '/api/v1/appointment/totalPatients',  // This still fetches the count of distinct patients
+                method: 'GET',
+            }),
+            providesTags: [tagTypes.appointments]
+        }),
+        
+        
         getSingleAppointment: build.query({
             query: (id) => ({
                 url: `${APPOINTMENT_URL}/${id}`,

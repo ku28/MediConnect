@@ -7,27 +7,34 @@ import { Tag } from "antd";
 const TreatmentOverview = ({ data, isAppointment = false }) => {
     return (
         <>
-            <div className="w-100 mb-3 rounded p-3 text-center d-flex justify-content-between bg-gray-g">
-                <div className="container row">
-                    <div className="col-5 p-2 rounded text-white border border-success">
+            <div className="w-100 mb-3 rounded p-4 bg-gray-g">
+                <div className="container d-flex flex-column flex-lg-row align-items-center">
+                    {/* Patient Info Section */}
+                    <div className="patient-info w-100 w-lg-4 d-flex flex-column align-items-center text-center mb-4 mb-lg-0 border-left border-success px-4 py-3">
                         <Link to={'/'} className="my-3 patient-img">
-                            <img src={data?.patient?.img ? data?.patient?.img : profileImg} alt="" style={{ height: '90px', width: '90px' }} />
+                            <img
+                                src={data?.patient?.img ? data?.patient?.img : profileImg}
+                                alt="Patient"
+                                className="rounded-circle"
+                                style={{ height: '120px', width: '120px' }}
+                            />
                         </Link>
                         <div className="patients-info mt-3">
                             <h5>{data?.patient?.firstName + ' ' + data?.patient?.lastName}</h5>
                             <div className="info">
-                                <p><FaClock className='icon' /> {moment(data?.createdAt).format('LL')} </p>
-                                <p><FaLocationArrow className='icon' /> {data?.address + data?.city}</p>
+                                <p><FaClock className='icon' /> {moment(data?.createdAt).format('LL')}</p>
+                                <p><FaLocationArrow className='icon' /> {data?.address + ', ' + data?.city}</p>
                                 <p><FaEnvelope className='icon' /> {data?.patient?.email}</p>
                                 <p><FaPhoneAlt className='icon' /> {data?.patient?.contact ? data?.patient?.contact : '+8801751040425'}</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="col-7 px-5">
+                    {/* Overview Section */}
+                    <div className="overview w-100 w-lg-8 ps-lg-5">
                         <h5>Patient Overview</h5>
                         <hr />
-                        <div className="p-2 rounded" style={{ background: 'rgb(218 218 219)' }}>
+                        <div className="p-3 rounded" style={{ background: 'rgb(218 218 219)' }}>
                             <p className="form-text text-start m-0">{isAppointment ? data?.appointment?.description : data?.description}</p>
                         </div>
 
@@ -54,14 +61,10 @@ const TreatmentOverview = ({ data, isAppointment = false }) => {
                             </h6>
                         </div>
                     </div>
-
                 </div>
             </div>
-
-            <div className="w-100 mb-3 rounded p-2 text-start bg-gray-g">
-                <Link to={'/'}>Show Previous Medical History ? </Link>
-            </div>
         </>
-    )
+    );
 }
-export default TreatmentOverview
+
+export default TreatmentOverview;

@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import img from '../../../../images/avatar.jpg';
 import { FaEye, FaCheck, FaTimes, FaBriefcaseMedical } from "react-icons/fa";
 import { useGetDoctorAppointmentsQuery, useUpdateAppointmentMutation } from '../../../../redux/api/appointmentApi';
 import moment from 'moment';
-import { Button, Tag, message } from 'antd';
+import { Button, Tag, message, Tooltip, Tabs } from 'antd';
 import CustomTable from '../../../UI/component/CustomTable';
-import { Tabs } from 'antd';
 import { Link } from 'react-router-dom';
 
 const DashboardPage = () => {
@@ -14,138 +13,120 @@ const DashboardPage = () => {
     const [updateAppointment, { isError, isSuccess, error }] = useUpdateAppointmentMutation();
 
     const handleOnselect = (value) => {
-        // eslint-disable-next-line eqeqeq
-        setSortBy(value == 1 ? 'upcoming' : value == 2 ? 'today' : sortBy)
-        refetch()
-    }
+        setSortBy(value === 1 ? 'upcoming' : value === 2 ? 'today' : sortBy);
+        refetch();
+    };
 
-
-    const updatedApppointmentStatus = (data, type) => {
-        const changeObj = {
-            status: type
-        }
+    const updatedAppointmentStatus = (data, type) => {
+        const changeObj = { status: type };
         if (data.id) {
-            updateAppointment({ id: data.id, data: changeObj })
+            updateAppointment({ id: data.id, data: changeObj });
         }
-    }
+    };
 
     useEffect(() => {
         if (isSuccess) {
-            message.success("Succcessfully Appointment Updated")
+            message.success("Appointment status updated successfully.");
         }
         if (isError) {
-            message.error(error?.data?.message);
+            message.error(error?.data?.message || "Error updating appointment.");
         }
-    }, [isSuccess, isError, error])
+    }, [isSuccess, isError, error]);
 
-    const upcomingColumns = [
+    const columns = [
         {
-            title: 'Patient Name',
+            title: <div style={{ textAlign: 'center' }}>Patient Info</div>,
             key: '1',
-            width: 100,
-            render: function (data) {
-                const fullName = `${data?.patient?.firstName ?? ''} ${data?.patient?.lastName ?? ''}`;
-                const patientName = fullName.trim() || "Un Patient";
-                const imgdata = data?.patient?.img ? data?.patient?.img : img
-                return <>
-                    <div className="table-avatar">
-                        <a className="avatar avatar-sm mr-2 d-flex gap-2">
-                            <img className="avatar-img rounded-circle" src={imgdata} alt="" />
-                            <div>
-                                <p className='p-0 m-0 text-nowrap'>
-                                    {patientName}
-                                </p>
-                                <p className='p-0 m-0'>{data?.patient?.designation}</p>
-                            </div>
-                        </a>
-                    </div>
-                </>
-            }
-        },
-        {
-            title: 'App Date',
-            key: '2',
-            width: 100,
-            render: function (data) {
+            width: 200,
+            render: (data) => {
+                const fullName = `${data?.patient?.firstName ?? ''} ${data?.patient?.lastName ?? ''}`.trim() || "Unnamed Patient";
+                const imgData = data?.patient?.img || img;
                 return (
-                    <div>{moment(data?.scheduleDate).format("LL")} <span className="d-block text-[#50C878]">{data?.scheduleTime}</span></div>
-                )
+                    <div className="table-avatar d-flex align-items-center gap-2">
+                        <img className="avatar-img rounded-circle" src={imgData} alt="" style={{ width: '40px', height: '40px' }} />
+                        <div>
+                            <p className="m-0 fw-bold">{fullName}</p>
+                            {/* <p className="m-0 text-muted text-truncate">{data?.patient?.designation || "No designation"}</p> */}
+                        </div>
+                    </div>
+                );
             }
         },
         {
-            title: 'Status',
+            title: <div style={{ textAlign: 'center' }}>Scheduled</div>,
+            key: '2',
+            width: 150,
+            render: (data) => (
+                <div className="text-center">
+                    <p className="m-0">{moment(data?.scheduleDate).format("LL")}</p>
+                    <span className="text-success fw-bold">{data?.scheduleTime}</span>
+                </div>
+            )
+        },
+        {
+            title: <div style={{ textAlign: 'center' }}>Status</div>,
+            key: '3',
+            width: 120,
+            render: (data) => (
+                <Tag style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} color="#50C878" className="fw-bold">{data?.status.toUpperCase()}</Tag>
+            )
+        },
+        {
+            title: <div style={{ textAlign: 'center' }}>Actions</div>,
             key: '4',
-            width: 100,
-            render: function (data) {
-                return (
-                    <Tag color="#50C878" className='text-uppercase'>{data?.status}</Tag>
-                )
-            }
-        },
-        {
-            title: 'Action',
-            key: '5',
-            width: 100,
-            render: function (data) {
-                return (
-                    <div className='d-flex gap-2'>
-                        {
-                            data.prescriptionStatus === 'notIssued'
-                                ?
-                                <Link to={`/dashboard/appointment/treatment/${data?.id}`}>
-                                    <Button type="primary" icon={<FaBriefcaseMedical />} size="small">Treatment</Button>
-                                </Link>
-
-                                :
-                                <Link to={`/dashboard/prescription/${data?.prescription[0]?.id}`}>
-                                    <Button type="primary" shape="circle" icon={<FaEye />} size="small" />
-                                </Link>
-                        }
-                        {
-                            data?.status === 'pending' &&
-                            <>
-                                <Button type="primary" icon={<FaCheck />} size="small" onClick={() => updatedApppointmentStatus(data, 'accept')}>Accept</Button>
-                                <Button type='primary' icon={<FaTimes />} size='small' danger onClick={() => updatedApppointmentStatus(data, 'cancel')}>Cancel</Button>
-                            </>
-                        }
-                    </div>
-                )
-            }
-        },
+            width: 250,
+            render: (data) => (
+                <div className="d-flex justify-content-center gap-2">
+                    {data.prescriptionStatus === 'notIssued' ? (
+                        <Tooltip title="Start Treatment">
+                            <Link to={`/dashboard/appointment/treatment/${data?.id}`}>
+                                <Button type="primary" icon={<FaBriefcaseMedical />} size="small">Treat</Button>
+                            </Link>
+                        </Tooltip>
+                    ) : (
+                        <Tooltip title="View Prescription">
+                            <Link to={`/dashboard/prescription/${data?.prescription[0]?.id}`}>
+                                <Button type="primary" shape="circle" icon={<FaEye />} size="small" />
+                            </Link>
+                        </Tooltip>
+                    )}
+                    {data?.status === 'pending' && (
+                        <>
+                            <Tooltip title="Accept Appointment">
+                                <Button type="primary" icon={<FaCheck />} size="small" onClick={() => updatedAppointmentStatus(data, 'accept')} />
+                            </Tooltip>
+                            <Tooltip title="Cancel Appointment">
+                                <Button type="primary" icon={<FaTimes />} size="small" danger onClick={() => updatedAppointmentStatus(data, 'cancel')} />
+                            </Tooltip>
+                        </>
+                    )}
+                </div>
+            )
+        }
     ];
-    const items = [
+
+    const tabItems = [
         {
             key: '1',
-            label: <span style={{ color: '#006400' }}>Upcoming</span>, // Dark green color for text
-            children: <CustomTable
-                loading={isLoading}
-                columns={upcomingColumns}
-                dataSource={data}
-                showPagination={true}
-                pageSize={10}
-                showSizeChanger={true}
-            />,
-        },
-        {
-            key: '2',
-            label: <span style={{ color: '#006400' }}>Today</span>, // Dark green color for text
-            children: <CustomTable
-                loading={isLoading}
-                columns={upcomingColumns}
-                dataSource={data}
-                showPagination={true}
-                pageSize={10}
-                showSizeChanger={true}
-            />,
-        },
+            label: <span className="fw-bold text-primary"></span>,
+            children: (
+                <CustomTable
+                    loading={isLoading}
+                    columns={columns}
+                    dataSource={data}
+                    showPagination={true}
+                    pageSize={10}
+                    showSizeChanger={true}
+                />
+            )
+        }
     ];
-    
+
     return (
-        <Tabs defaultActiveKey="1" items={items} onChange={handleOnselect} />
-    )
-}
+        <div className="appointments-container p-3" style={{ backgroundColor: '#f0f2f5', borderRadius: '8px' }}>
+            <Tabs defaultActiveKey="1" items={tabItems} onChange={handleOnselect} />
+        </div>
+    );
+};
 
 export default DashboardPage;
-
-
-

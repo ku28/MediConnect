@@ -1,0 +1,15 @@
+.action-btn {
+    background-color: #1890ff;
+    border-color: #1890ff;
+    transition: all 0.3s ease-in-out;
+}
+
+.action-btn:hover {
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+}
+
+.action-btn:focus {
+    background-color: #096dd9;
+    border-color: #096dd9;
+}

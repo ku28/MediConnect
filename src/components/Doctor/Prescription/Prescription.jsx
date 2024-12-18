@@ -1,10 +1,11 @@
 import DashboardLayout from '../DashboardLayout/DashboardLayout';
 import CustomTable from '../../UI/component/CustomTable';
-import { Button, Tag, message } from 'antd';
+import { Button, Tag, message, Card, Tooltip } from 'antd';
 import { FaRegEye, FaEdit, FaRegTimesCircle } from "react-icons/fa";
 import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
 import { useDeletePrescriptionMutation, useGetAllPrescriptionsQuery } from '../../../redux/api/prescriptionApi';
+import './Prescription.css'
 
 const Prescription = () => {
     const { data, isLoading } = useGetAllPrescriptionsQuery();
@@ -15,11 +16,9 @@ const Prescription = () => {
             title: 'Appointment Id',
             dataIndex: "appointment",
             key: 1,
-            render: ({trackingId}) =>{
-                return (
-                    <Tag color="#f50">{trackingId}</Tag>
-                )
-            }
+            render: ({ trackingId }) => (
+            <Tag color="#ff6f6f">{trackingId}</Tag>
+            )
         },
         {
             title: 'Disease',
@@ -31,49 +30,51 @@ const Prescription = () => {
             title: 'Follow-Update',
             dataIndex: "followUpdate",
             key: 4,
-            render: function (data) {
-                return <Tag color="#87d068">{dayjs(data).format('MMM D, YYYY hh:mm A')}</Tag>;
-            }
+            render: (data) => (
+                <Tag color="#87d068">{dayjs(data).format('MMM D, YYYY hh:mm A')}</Tag>
+            )
         },
         {
             title: 'Archived',
             dataIndex: "isArchived",
             key: 4,
-            render: function ({isArchived}) {
-                return <Tag color={isArchived ? "#f50" : "#108ee9"}>{isArchived ? "Yes" :"Under Treatment"}</Tag>;
-            }
+            render: ({ isArchived }) => (
+                <Tag color={isArchived ? "#f50" : "#108ee9"}>{isArchived ? "Yes" : "Under Treatment"}</Tag>
+            )
         },
         {
-            title: 'createdAt',
+            title: 'Created At',
             dataIndex: 'createdAt',
             key: 5,
             sorter: true,
-            render: function (data) {
-                return data && dayjs(data).format('MMM D, YYYY hh:mm A');
-            }
+            render: (data) => data && dayjs(data).format('MMM D, YYYY hh:mm A')
         },
         {
             title: 'Action',
             key: 4,
-            render: function (data) {
-                return (
-                    <div className='d-flex'>
+            render: (data) => (
+                <div className="d-flex justify-content-start">
+                    <Tooltip title="View Prescription">
                         <Link to={`/dashboard/prescription/${data.id}`}>
-                            <Button type='primary' size='small' className="bg-primary" style={{ margin: "5px 5px" }}>
+                            <Button type="primary" size="small" className="action-btn" style={{ margin: "5px" }}>
                                 <FaRegEye />
                             </Button>
                         </Link>
+                    </Tooltip>
+                    <Tooltip title="Edit Treatment">
                         <Link to={`/dashboard/appointment/treatment/edit/${data.id}`}>
-                            <Button type='primary' size='small' className="bg-primary" style={{ margin: "5px 5px" }}>
+                            <Button type="primary" size="small" className="action-btn" style={{ margin: "5px" }}>
                                 <FaEdit />
                             </Button>
                         </Link>
-                        <Button onClick={() => deleteHandler(data.id)} size='small' type='primary' style={{ margin: "5px 5px" }} danger>
+                    </Tooltip>
+                    <Tooltip title="Delete Prescription">
+                        <Button onClick={() => deleteHandler(data.id)} size="small" type="primary" style={{ margin: "5px" }} danger>
                             <FaRegTimesCircle />
                         </Button>
-                    </div>
-                )
-            }
+                    </Tooltip>
+                </div>
+            )
         },
     ];
 
@@ -91,7 +92,7 @@ const Prescription = () => {
 
     return (
         <DashboardLayout>
-            <div className="w-100 mb-3 rounded" style={{ background: '#f8f9fa' }}>
+            <Card className="w-100 mb-3 rounded" style={{ background: '#f8f9fa', padding: '20px' }}>
                 <CustomTable
                     loading={isLoading}
                     columns={columns}
@@ -99,8 +100,9 @@ const Prescription = () => {
                     showPagination={true}
                     pageSize={20}
                     showSizeChanger={true}
+                    style={{ padding: '20px', borderRadius: '8px' }}
                 />
-            </div>
+            </Card>
         </DashboardLayout>
     )
 }
