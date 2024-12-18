@@ -69,7 +69,17 @@ const PatientProfileSetting = () => {
                         <div className="form-group">
                             <div className='change-avatar d-flex gap-2 align-items-center'>
                                 <Link to={'/'} className="my-3 patient-img">
-                                    <img src={selectedImage ? selectedImage : data?.img || pImage} alt="" />
+                                    {/* <img src={selectedImage ? selectedImage : data?.img || pImage} alt="" /> */}
+                                    <img 
+                                        src={selectedImage ? selectedImage : data?.img || pImage} 
+                                        alt="" 
+                                        style={{
+                                            width: '80px',
+                                            height: '80px',
+                                            borderRadius: '50%',
+                                            objectFit: 'cover'
+                                        }}
+                                    />
                                 </Link>
                                 <div className="mt-3">
                                     <ImageUpload setSelectedImage={setSelectedImage} setFile={setFile}/>
