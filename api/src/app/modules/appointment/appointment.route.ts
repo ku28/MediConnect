@@ -1,3 +1,4 @@
+
 import express from 'express';
 import { auth } from '../../middlewares/auth';
 import { AuthUser } from '../../../enums';
@@ -6,6 +7,8 @@ import { AppointmentController } from './appointment.controller';
 const router = express.Router();
 
 router.get('/', AppointmentController.getAllAppointment);
+router.get('/totalAppointments', AppointmentController.getTotalAppointmentsCount);
+router.get('/totalPatients', AppointmentController.getDistinctPatientCount);
 
 router.get('/patient/appointments',auth(AuthUser.PATIENT), AppointmentController.getPatientAppointmentById);
 router.get('/patient/invoices',auth(AuthUser.PATIENT), AppointmentController.getPatientPaymentInfo);
