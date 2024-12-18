@@ -39,7 +39,6 @@ const PatientFavouriteDoctor = () => {
                         <div style={{ cursor: 'pointer' }} className="m-2 text-success position-absolute top-0 end-0 me-2" onClick={() => handleRemoveFavourite(item?.doctor?.id)}>
                             <FaBookmark />
                         </div>
-
                         <div className='p-2'>
                             <h5 className="d-flex align-items-center gap-2 mb-0" style={{ color: '#50C878' }}>
                                 <Link to={`/doctors/profile/${item?.doctor?.id}`}>
@@ -73,7 +72,7 @@ const PatientFavouriteDoctor = () => {
                             </ul>
                             <div className="d-flex justify-content-between mb-3 mt-2">
                                 <Link to={'/doctors/profile'} className="btn  btn-outline-info" style={{ borderColor: '#50C878', color: '#50C878' }}>Profile</Link>
-                                <Link to={`/booking/${item?.doctor?.id}`} className="btn book-btn" style={{ backgroundColor: '#50C878' }}>Book Now</Link>
+                                <Link to={`/booking/${item?.doctor?.id}`} className="btn book-btn" style={{ backgroundColor: '#50C878', color: '#fff' }}>Book Now</Link>
                             </div>
                         </div>
                     </div>

@@ -8,9 +8,12 @@
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
-  width: 90%; /* Adjust the width to make the cards smaller */
-  max-width: 300px; /* Set a maximum width for the cards */
-  min-height: 100px; /* Ensure the card has a minimum height */
+}
+
+.doc-con {
+  width: 90%;
+  max-width: 300px;
+  min-height: 100px;
 }
 
 .card:hover {
@@ -19,7 +22,7 @@
 
 /* Fix for Image Overflow in Cards */
 .card img {
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
   height: 200px; /* Set a fixed height for all images to make them equal */
   object-position: top; /* Crop the images from the bottom */

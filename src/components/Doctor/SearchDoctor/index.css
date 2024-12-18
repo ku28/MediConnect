@@ -3,6 +3,11 @@
   border: 1px solid #fff;
 }
 
+.sidebar-content {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: 1px solid #fff;
+}
+
 .doc-img-fluid img {
   height: 200px;
   width: 200px;

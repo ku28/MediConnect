@@ -30,7 +30,7 @@ const About = () => {
       <div className="row doctors-content">
       {doctors.map((item, id) => (
         <div className="col-lg-3 col-md-6 col-sm-6" key={id + item.id}>
-        <div className="card">
+        <div className="card doc-con">
           <Link to={`/doctors/profile/${item?.id}`}>
           <img
             src={item.img || defaultImage}
