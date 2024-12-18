@@ -1,0 +1,31 @@
+/* Add to your CSS file or Tailwind config */
+.patient-info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.patient-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.patient-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.tracking-id-btn {
+    border: none;
+}
+
+.status-info p {
+    margin: 5px 0;
+}
+
+.appointments-table .ant-table-cell {
+    padding: 16px;
+    font-size: 14px;
+}

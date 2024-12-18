@@ -8,6 +8,7 @@ import { Button, Empty, message, Tag, Tooltip, Table, Space } from 'antd';
 import { FaEye, FaCheck, FaTimes, FaClock, FaEnvelope, FaLocationArrow, FaPhoneAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { clickToCopyClipBoard } from '../../../utils/copyClipBoard';
+import './Appointment.css'
 
 const Appointments = () => {
     const { data, isError, isLoading } = useGetDoctorAppointmentsQuery({});
@@ -35,13 +36,13 @@ const Appointments = () => {
             dataIndex: 'patient',
             key: 'patient',
             render: (_, record) => (
-                <Space >
+                <Space className="patient-info">
                     <img
                         src={record?.patient?.img || img}
                         alt="Patient"
-                        style={{ width: '40px', height: '40px', borderRadius: '50%' }}
+                        className="patient-avatar"
                     />
-                    <div>{record?.patient?.firstName ?? "Private Patient"}</div>
+                    <div className="patient-name">{record?.patient?.firstName ?? "Private Patient"}</div>
                 </Space>
             ),
         },
@@ -51,7 +52,10 @@ const Appointments = () => {
             key: 'trackingId',
             render: (trackingId) => (
                 <Tooltip title="Copy Tracking ID">
-                    <Button onClick={() => clickToCopyClipBoard(trackingId)}>
+                    <Button
+                        onClick={() => clickToCopyClipBoard(trackingId)}
+                        className="tracking-id-btn"
+                    >
                         <Tag color="#87d068" className="text-uppercase">{trackingId}</Tag>
                     </Button>
                 </Tooltip>
@@ -64,29 +68,27 @@ const Appointments = () => {
             render: (_, record) => (
                 <>
                     <p><FaClock className="icon" /> {moment(record?.appointmentTime).format("MMM Do YY")}</p>
-                    {/* {record?.patient?.address && <p><FaLocationArrow className="icon" /> {record?.patient?.address}</p>} */}
                     {record?.patient?.email && <p><FaEnvelope className="icon" /> {record?.patient?.email}</p>}
-                    {/* {record?.patient?.phone && <p><FaPhoneAlt className="icon" /> {record?.patient?.phone}</p>} */}
                 </>
             ),
         },
         {
             title: 'Status',
             key: 'status',
-            width: 450, // Increased width
+            width: 450,
             render: (_, record) => (
-                <div>
-                    <Tag color="#f50">{record.status}</Tag>
+                <div className="status-info">
+                    <Tag color={record.status === 'pending' ? 'orange' : 'green'}>{record.status}</Tag>
                     <p>Follow-Up: <Tag color={record.isFollowUp ? "#2db7f5" : "#ccc"}>{record.isFollowUp ? "Yes" : "No"}</Tag></p>
-                    <p>Paid: <Tag color="#87d068">{record.paymentStatus}</Tag></p>
-                    <p>Prescribed: <Tag color="#2db7f5">{record.prescriptionStatus}</Tag></p>
-                </div>
+                    <p>Paid: <Tag color={record.paymentStatus === 'paid' ? '#87d068' : '#ccc'}>{record.paymentStatus}</Tag></p>
+                    <p>Prescribed: <Tag color={record.prescriptionStatus === 'notIssued' ? "#ff4d4f" : "#87d068"}>{record.prescriptionStatus === 'notIssued' ? "Not Issued" : record.prescriptionStatus}</Tag></p>
+                    </div>
             ),
         },
         {
             title: 'Actions',
             key: 'actions',
-            width: 300, // Decreased width
+            width: 300,
             render: (_, record) => (
                 <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
                     <Link to={`/dashboard/appointments/${record.id}`}>
@@ -94,7 +96,7 @@ const Appointments = () => {
                     </Link>
                     {record.prescriptionStatus === 'notIssued' ? (
                         <Link to={`/dashboard/appointment/treatment/${record.id}`}>
-                            <Button type="primary" icon={<FaCheck />} size="small">Treatment</Button>
+                            <Button type="primary" icon={<FaCheck />} size="small" style={{ backgroundColor: '#52c41a' }}>Treatment</Button>
                         </Link>
                     ) : (
                         <Link to={`/dashboard/prescription/${record.prescription[0]?.id}`}>
@@ -103,7 +105,7 @@ const Appointments = () => {
                     )}
                     {record.status === 'pending' && (
                         <Space>
-                            <Button type="primary" icon={<FaCheck />} size="small" onClick={() => updatedApppointmentStatus(record.id, 'scheduled')}>Accept</Button>
+                            <Button type="primary" icon={<FaCheck />} size="small" onClick={() => updatedApppointmentStatus(record.id, 'scheduled')} style={{ backgroundColor: '#87d068' }}>Accept</Button>
                             <Button type="primary" icon={<FaTimes />} size="small" danger onClick={() => updatedApppointmentStatus(record.id, 'cancel')}>Cancel</Button>
                         </Space>
                     )}
@@ -111,7 +113,6 @@ const Appointments = () => {
             ),
         },
     ];
-    
 
     return (
         <DashboardLayout>
@@ -127,6 +128,7 @@ const Appointments = () => {
                     rowKey="id"
                     bordered
                     style={{ background: '#fff', borderRadius: '8px' }}
+                    className="appointments-table"
                 />
             ) : (
                 <Empty />
