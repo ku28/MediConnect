@@ -4,7 +4,6 @@ import { Empty, message } from 'antd';
 import { useGetAllBlogsQuery } from "../../../redux/api/blogApi";
 import { Link } from 'react-router-dom';
 import { truncate } from '../../../utils/truncate';
-
 const Blog = () => {
     const { data, isError, isLoading } = useGetAllBlogsQuery({ limit: 3 });
     const blogData = data?.blogs;
@@ -21,13 +20,13 @@ const Blog = () => {
                 <div className="card shadow text-center border-0 rounded-bottom">
 
                     <div className="flex-column p-0 border-0 d-flex justify-content-center align-items-center" style={{ height: '11rem', overflow: 'hidden' }}>
-                    {item?.img && <img src={item?.img} alt="blog Image" width={300} height={300} className="w-100 h-100 rounded-top image-hover" style={{objectFit:'cover'}}/>}
+                    {item?.img && <img src={item?.img} alt="blog Image" width={300} height={300} className="w-100 h-100 rounded-top image-hover" style={{objectFit:'fill'}}/>}
                     </div>
 
                     <div className="card-body p-0">
                     <div className="p-2">
                         <Link to={`/blog/${item?.id}`} style={{ textDecoration: 'none' }}>
-                        <h6 className="text-black text-start mb-1" style={{ color: '#50C878' }}>{truncate(item?.title, 60)}</h6>
+                        <h6 className="text-black text-start mb-1" style={{ color: '#50C878' }}>{truncate(item?.title, 50)}</h6>
                         </Link>
                         <div className="d-flex text-start gap-2">
                         <div className="d-flex gap-1 text-muted align-items-center justify-content-center">

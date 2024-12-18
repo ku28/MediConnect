@@ -79,34 +79,69 @@ const Service = () => {
       </div>
 
       <section style={weArePleaseStyle}>
-        <div
-          className="container"
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
-        >
-          <div className="row">
-            <div className="col-lg-7">
-              <div className="d-flex align-items-center">
-                <div className="mb-4 section-title text-center">
-                  <h2 className="text-uppercase">
-                    We are pleased to offer you the best care
-                  </h2>
-                  <p className="form-text">
-                    At MediConnect, we prioritize your well-being by connecting you with expert healthcare professionals across various specialties. Let us guide your journey to better health.
-                  </p>
-                  <Link to={"/doctors"} className="btn btn-primary get-started">
-                    Get Started
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  {/* Dark overlay */}
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent dark overlay
+    }}
+  ></div>
+
+  {/* Centered content */}
+  <div
+    className="d-flex justify-content-center align-items-center"
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      zIndex: 1, // Ensure content appears above the overlay
+    }}
+  >
+    <div className="text-center text-light">
+      <h2
+        style={{
+          fontSize: "3rem",
+          fontWeight: "bold",
+          textTransform: "uppercase",
+        }}
+      >
+        We are pleased to offer you the best care
+      </h2>
+      <p
+        style={{
+          fontSize: "0.8rem",
+          margin: "20px 0",
+          lineHeight: "1.6",
+          maxWidth: "800px",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+      >
+        At MediConnect, we prioritize your well-being by connecting you with
+        expert healthcare professionals across various specialties. Let us guide
+        your journey to better health.
+      </p>
+      <Link
+        to={"/doctors"}
+        className="btn get-started"
+        style={{
+          padding: "10px 30px",
+          fontSize: "1rem",
+          fontWeight: "bold",
+        }}
+      >
+        Get Started
+      </Link>
+    </div>
+  </div>
+</section>
+
 
       <Footer />
     </>
