@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import Footer from '../../Shared/Footer/Footer'
+import React, { useEffect, useState } from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import img from "../../../images/img/default-doctor.png";
 import './index.css';
 import { Link, useNavigate, useParams } from 'react-router-dom';
@@ -18,8 +18,7 @@ import Header from '../../Shared/Header/Header';
 import useAuthCheck from '../../../redux/hooks/useAuthCheck';
 
 const DoctorBooking = () => {
-    // console.log("here");
-    
+    // Initial values and hooks
     const dispatch = useDispatch();
     let initialValue = {
         paymentMethod: 'paypal',
@@ -36,9 +35,9 @@ const DoctorBooking = () => {
         expiredMonth: '',
         cardExpiredYear: '',
         cvv: '',
-    }
-    const {data:loggedInUser, role} = useAuthCheck();
-    const [current, setCurrent] = useState(0);
+    };
+    const { data: loggedInUser, role } = useAuthCheck();
+    const [current, setCurrent] = useState(0); // Start at the first step
     const [selectedDate, setSelectedDate] = useState('');
     const [selectDay, setSelecDay] = useState('');
     const [selectTime, setSelectTime] = useState('');
@@ -54,7 +53,7 @@ const DoctorBooking = () => {
     const [IsdDisable, setIsDisable] = useState(true);
     const [IsConfirmDisable, setIsConfirmDisable] = useState(true);
 
-    const handleChange = (e) => { setSelectValue({ ...selectValue, [e.target.name]: e.target.value }) }
+    const handleChange = (e) => { setSelectValue({ ...selectValue, [e.target.name]: e.target.value }); }
 
     useEffect(() => {
         const { firstName, lastName, email, phone, nameOnCard, cardNumber, expiredMonth, cardExpiredYear, cvv, reasonForVisit } = selectValue;
@@ -62,24 +61,24 @@ const DoctorBooking = () => {
         const isConfirmInputEmpty = !nameOnCard || !cardNumber || !expiredMonth || !cardExpiredYear || !cvv || !isCheck;
         setIsDisable(isInputEmpty);
         setIsConfirmDisable(isConfirmInputEmpty);
-    }, [selectValue, isCheck])
-
+    }, [selectValue, isCheck]);
 
     const handleDateChange = (_date, dateString) => {
-        setSelectedDate(dateString)
+        setSelectedDate(dateString);
         setSelecDay(moment(dateString).format('dddd').toLowerCase());
         refetch();
-    }
-    const disabledDateTime = (current) => current && (current < moment().add(1, 'day').startOf('day') || current > moment().add(8, 'days').startOf("day"))
-    const handleSelectTime = (date) => { setSelectTime(date) }
+    };
 
-    const next = () => { setCurrent(current + 1) };
-    const prev = () => { setCurrent(current - 1) };
+    const disabledDateTime = (current) => current && (current < moment().add(1, 'day').startOf('day') || current > moment().add(8, 'days').startOf("day"));
+    const handleSelectTime = (date) => { setSelectTime(date); }
+
+    const next = () => { setCurrent(current + 1); };
+    const prev = () => { setCurrent(current - 1); };
 
     let dContent = null;
-    if (dIsLoading) dContent = <div>Loading ...</div>
-    if (!dIsLoading && dIsError) dContent = <div>Something went Wrong!</div>
-    if (!dIsLoading && !dIsError && time.length === 0) dContent = <Empty children="Doctor Is not Available" />
+    if (dIsLoading) dContent = <div>Loading ...</div>;
+    if (!dIsLoading && dIsError) dContent = <div>Something went wrong!</div>;
+    if (!dIsLoading && !dIsError && time.length === 0) dContent = <Empty children="Doctor is not available" />;
     if (!dIsLoading && !dIsError && time.length > 0) dContent =
         <>
             {
@@ -89,12 +88,12 @@ const DoctorBooking = () => {
                     </div>
                 ))
             }
-        </>
+        </>;
 
-    //What to render
+    // What to render
     let content = null;
-    if (!isLoading && isError) content = <div>Something Went Wrong!</div>
-    if (!isLoading && !isError && data?.id === undefined) content = <Empty />
+    if (!isLoading && isError) content = <div>Something Went Wrong!</div>;
+    if (!isLoading && !isError && data?.id === undefined) content = <Empty />;
     if (!isLoading && !isError && data?.id) content =
         <>
             <div className="booking-doc-img my-3 mb-3 rounded">
@@ -106,42 +105,62 @@ const DoctorBooking = () => {
                     <p className="form-text mb-0"><FaArchway /> {data?.specialization + ',' + data?.experienceHospitalName}</p>
                 </div>
             </div>
-        </>
+        </>;
 
-    const steps = [
-        {
-            title: 'Select Appointment Date & Time',
-            content: <SelectDateAndTime
-                content={content}
-                handleDateChange={handleDateChange}
-                disabledDateTime={disabledDateTime}
-                selectedDate={selectedDate}
-                dContent={dContent}
-                selectTime={selectTime}
-            />
-        },
-        {
-            title: 'Patient Information',
-            content: <PersonalInformation handleChange={handleChange} selectValue={selectValue} setPatientId={setPatientId}/>
-        },
-        {
-            title: 'Payment',
-            content: <CheckoutPage
-                handleChange={handleChange}
-                selectValue={selectValue}
-                isCheck={isCheck}
-                setIsChecked={setIsChecked}
-                data={data}
-                selectedDate={selectedDate}
-                selectTime={selectTime}
-            />,
-        },
-    ]
+const steps = [
+    {
+        title: (
+            <span style={{ fontSize: '20px', fontFamily: 'Arial, sans-serif' }}>
+                Select Appointment Date & Time
+            </span>
+        ),
+        content: <SelectDateAndTime
+            content={content}
+            handleDateChange={handleDateChange}
+            disabledDateTime={disabledDateTime}
+            selectedDate={selectedDate}
+            dContent={dContent}
+            selectTime={selectTime}
+            style={{ fontSize: '16px', fontFamily: 'Arial, sans-serif' }} // Apply font size and style to the content
+        />
+    },
+    {
+        title: (
+            <span style={{ fontSize: '20px',  fontFamily: 'Arial, sans-serif' }}>
+                Patient Information
+            </span>
+        ),
+        content: <PersonalInformation 
+            handleChange={handleChange} 
+            selectValue={selectValue} 
+            setPatientId={setPatientId} 
+            style={{ fontSize: '16px', fontFamily: 'Arial, sans-serif' }} // Apply font size and style to the content
+        />
+    },
+    {
+        title: (
+            <span style={{ fontSize: '20px', fontFamily: 'Arial, sans-serif' }}>
+                Payment
+            </span>
+        ),
+        content: <CheckoutPage
+            handleChange={handleChange}
+            selectValue={selectValue}
+            isCheck={isCheck}
+            setIsChecked={setIsChecked}
+            data={data}
+            selectedDate={selectedDate}
+            selectTime={selectTime}
+            style={{ fontSize: '16px', fontFamily: 'Arial, sans-serif' }} // Apply font size and style to the content
+        />
+    },
+];
+
 
     const items = steps.map((item) => ({
         key: item.title,
         title: item.title,
-    }))
+    }));
 
     const handleConfirmSchedule = () => {
         const obj = {};
@@ -154,7 +173,7 @@ const DoctorBooking = () => {
             scheduleTime: selectTime,
             doctorId: doctorId,
             patientId: role !== '' && role === 'patient' ? patientId : undefined,
-        }
+        };
         obj.payment = {
             paymentType: selectValue.paymentType,
             paymentMethod: selectValue.paymentMethod,
@@ -163,39 +182,70 @@ const DoctorBooking = () => {
             cvv: selectValue.cvv,
             expiredMonth: selectValue.expiredMonth,
             nameOnCard: selectValue.nameOnCard
-        }
+        };
         createAppointment(obj);
-    }
+    };
 
     useEffect(() => {
         if (createIsSuccess) {
-            message.success("Succcessfully Appointment Scheduled")
+            message.success("Successfully Appointment Scheduled");
             setSelectValue(initialValue);
-            dispatch(addInvoice({ ...appointmentData }))
-            navigation(`/booking/success/${appointmentData.id}`)
+            dispatch(addInvoice({ ...appointmentData }));
+            navigation(`/booking/success/${appointmentData.id}`);
         }
         if (createIsError) {
             message.error(error?.data?.message);
         }
-    }, [createIsSuccess, createError])
+    }, [createIsSuccess, createError]);
+
     return (
         <>
             <Header />
-            <div className="container" style={{ marginBottom: '12rem', marginTop: '8rem' }}>
+            <div className="container" style={{ 
+                marginBottom: '12rem', 
+                marginTop: '8rem', 
+                padding: '10px',  
+                borderRadius: '5px',
+                fontSize: '16px', // Increases overall font size for content in the container
+                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)' // Adds a soft shadow
+            }}>
+
                 <Steps current={current} items={items} />
                 <div className='mb-5 mt-3 mx-3'>{steps[current].content}</div>
-                <div className='text-end mx-3' >
-                    {current < steps.length - 1 && (<Button type="primary"
-                        disabled={current === 0 ? (selectTime ? false : true) : IsdDisable || !selectTime}
-                        onClick={() => next()}>Next</Button>)}
+                <div className='text-end mx-3'>
+                    {current > 0 && (
+                        <Button style={{ margin: '0 8px', float: 'left', fontSize: '18px' }} onClick={() => prev()}>
+                            Previous
+                        </Button>
+                    )}
 
-                    {current === steps.length - 1 && (<Button type="primary" disabled={IsConfirmDisable} loading={createIsLoading} onClick={handleConfirmSchedule}>Confirm</Button>)}
-                    {current > 0 && (<Button style={{ margin: '0 8px', }} onClick={() => prev()} >Previous</Button>)}
+                    {current < steps.length - 1 && (
+                        <Button
+                            type="primary"
+                            disabled={current === 0 ? !selectTime : IsdDisable || !selectTime}
+                            onClick={() => next()}
+                            style={{ color: 'white', fontSize: '18px' }}
+                        >
+                            Next
+                        </Button>
+                    )}
+
+                    {current === steps.length - 1 && (
+                        <Button
+                            type="primary"
+                            disabled={IsConfirmDisable}
+                            loading={createIsLoading}
+                            onClick={handleConfirmSchedule}
+                            style={{ fontSize: '18px' }}
+                        >
+                            Confirm
+                        </Button>
+                    )}
                 </div>
             </div>
             <Footer />
         </>
-    )
-}
+    );
+};
 
-export default DoctorBooking
+export default DoctorBooking;
