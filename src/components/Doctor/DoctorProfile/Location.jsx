@@ -6,18 +6,19 @@ const Location = () => {
     return (
         <div className="location-list ">
             {
-                Array(2).fill(null).map((_item, index) => (
-                    <div className='card shadow p-3 border-0 mb-3'>
+                Array(1).fill(null).map((_item, index) => (
+                    <div className='card shadow p-3 border-0 mb-3' key={index}>
                         <div className="row">
                             <div className="col-md-6">
-                                <div className=" clinic-content">
-                                    <h4 className="clinic-name"><a href="#">Smile Cute Dental Care Center</a></h4>
-                                    <p className="doc-speciality">MDS - Periodontology and Oral Implantology, BDS</p>
+                                <div className="clinic-content">
+                                    <h4 className="clinic-name" style={{ color: '#50C878' }}><a href="#">Care Center</a></h4>
+                                    <p className="doc-speciality">MBBS</p>
                                     <div className="clinic-details mb-0">
-                                        <h5 className="clinic-direction"> <i className="fas fa-map-marker-alt"></i> 2286  Sundown Lane, Austin, Texas 78749, USA <br /><a>Get Directions</a></h5>
+                                        <h5 className="clinic-direction"> <i className="fas fa-map-marker-alt"></i>India</h5>
+                                        <button className="btn btn-primary mt-2 mb-3" style={{ backgroundColor: '#50C878', borderColor: 'transparent' }}>Get Directions</button>
                                         <ul>
                                             {
-                                                Array(4).fill(null).map((_item, index) => (
+                                                Array(3).fill(null).map((_item, index) => (
                                                     <li key={index + 2}>
                                                         <a>
                                                             <img src={img} alt="Feature Image" />
@@ -25,7 +26,6 @@ const Location = () => {
                                                     </li>
                                                 ))
                                             }
-
                                         </ul>
                                     </div>
                                 </div>

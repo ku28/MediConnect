@@ -97,14 +97,11 @@ const Review = ({ doctorId }) => {
                 <div className="w-100 mb-3 rounded py-3 px-2" style={{ background: '#f8f9fa' }}>
                     {content}
                 </div>
-
                 <div className="text-center">
-                    <Link to={'/'} className='more-btn'>Show all feedback <strong>(167)</strong></Link>
+                    <Link to={'/'} className='more-btn'>Show all feedback</Link>
                 </div>
-
                 <div className="mt-5">
                     <h4>Write a review..</h4>
-
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-group mb-3">
                             <div className='d-flex flex-column'>
@@ -122,7 +119,6 @@ const Review = ({ doctorId }) => {
                                 </Space>
                             </Radio.Group>
                         </div>
-
                         <div className="form-group">
                             <label className='form-label'>Your review</label>
                             <textarea className="form-control" {...register("description")} placeholder="Description..." rows={8} />
@@ -132,12 +128,8 @@ const Review = ({ doctorId }) => {
                             <Button htmlType='submit' size='medium' type='primary' disabled={!showError}>Add Review</Button>
                         </div>
                     </form>
-
                 </div>
-
             </div>
-
-
         </>
     )
 }

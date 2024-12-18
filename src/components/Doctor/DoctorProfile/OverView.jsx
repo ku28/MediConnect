@@ -8,162 +8,110 @@ const OverView = () => {
         <div className="col-md-12 col-lg-9">
             <div className='mb-3'>
                 <h5 className='overview-text'>About Me</h5>
-                <p className='text-secondary'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p className='text-secondary'>I am a dedicated gynecologist with over 5 years of experience in women's health. My passion lies in providing comprehensive care to women of all ages, ensuring their reproductive health and well-being. I specialize in prenatal care, childbirth, and the diagnosis and treatment of disorders related to the female reproductive system.</p>
             </div>
-
+            <div>
+                <h5 className='overview-text'>Services</h5>
+                <p className='text-secondary'>Prenatal Care, Childbirth, Reproductive Health, Minimally Invasive Surgery, Menopause Management, Contraceptive Counseling</p>
+            </div>
+            <div>
+                <h5 className='overview-text'>Specializations</h5>
+                <p className='text-secondary'>Obstetrics, Gynecology, Reproductive Endocrinology, Minimally Invasive Surgery, Menopause Management, Contraceptive Counseling</p>
+            </div>
             <div>
                 <h5 className='overview-text'>Education</h5>
-
                 <VerticalTimeline>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#50C878', color: '#000' }}
                         contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
-                        date="2011 - 2000"
+                        date="2018 - 2019"
                         iconStyle={{ background: '#50C878', color: '#fff' }}
                         icon={<FaBriefcase />}
                     >
-                        <h5 className="text-white">American Dental Medical University</h5>
-                        <h6 className="text-white">Miami, FL</h6>
+                        <h5 className="text-white">Medical University</h5>
+                        <h6 className="text-white">India</h6>
                         <p style={{ fontSize: '14px' }}>
-                            Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+                            Obstetrics and Gynecology, Women's Health, Reproductive Endocrinology, Minimally Invasive Surgery
                         </p>
                     </VerticalTimelineElement>
-
-
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#50C878', color: '#000' }}
                         contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
-                        date="2003 - 2005"
+                        date="2020 - 2021"
                         iconStyle={{ background: '#50C878', color: '#fff' }}
                         icon={<FaBriefcase />}
                     >
-                        <h5 className="text-white">American Dental Medical University</h5>
-                        <h6 className="text-white">Miami, FL</h6>
+                        <h5 className="text-white">Medical University</h5>
+                        <h6 className="text-white">India</h6>
                         <p style={{ fontSize: '14px' }}>
-                            Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+                            Obstetrics and Gynecology, Women's Health, Reproductive Endocrinology, Minimally Invasive Surgery
                         </p>
                     </VerticalTimelineElement>
-
                 </VerticalTimeline>
-
             </div>
             <div className='my-5'>
                 <h5 className='overview-text'>Work & Experience</h5>
-
                 <VerticalTimeline>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#50C878', color: '#000' }}
                         contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
-                        date="2010 - Present (5 years)"
+                        date="2021 - 2023 (2 years)"
                         iconStyle={{ background: '#50C878', color: '#fff' }}
                         icon={<FaBriefcase />}
                     >
-                        <h5 className="text-white">Glowing Smiles Family Dental Clinic</h5>
-                        <h6 className="text-white">Miami, FL</h6>
+                        <h5 className="text-white">Women's Health Clinic</h5>
+                        <h6 className="text-white">India</h6>
                         <p style={{ fontSize: '14px' }}>
-                            Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+                            Obstetrics and Gynecology, Women's Health, Reproductive Endocrinology, Minimally Invasive Surgery
                         </p>
                     </VerticalTimelineElement>
-
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#50C878', color: '#000' }}
                         contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
-                        date="2007 - 2010 (3 years)"
+                        date="2023 - Present (1 years)"
                         iconStyle={{ background: '#50C878', color: '#fff' }}
                         icon={<FaBriefcase />}
                     >
-                        <h5 className="text-white">Comfort Care Dental Clinic</h5>
-                        <h6 className="text-white">Miami, FL</h6>
+                        <h5 className="text-white">Family Health Clinic</h5>
+                        <h6 className="text-white">India</h6>
                         <p style={{ fontSize: '14px' }}>
-                            Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+                            Obstetrics and Gynecology, Women's Health, Reproductive Endocrinology, Minimally Invasive Surgery
                         </p>
-                    </VerticalTimelineElement>
-
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        contentStyle={{ background: '#50C878', color: '#000' }}
-                        contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
-                        date="2005 - 2007 (2 years)"
-                        iconStyle={{ background: '#50C878', color: '#fff' }}
-                        icon={<FaBriefcase />}
-                    >
-                        <h5 className="text-white">Dream Smile Dental Practice</h5>
-                        <h6 className="text-white">Miami, FL</h6>
-                        <p style={{ fontSize: '14px' }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, dignissimos.</p>
                     </VerticalTimelineElement>
                 </VerticalTimeline>
-                
             </div>
-            <div >
+            <div>
                 <h5 className='overview-text'>Awards</h5>
-
                 <VerticalTimeline>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#50C878', color: '#000' }}
                         contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
-                        date="July 2019"
+                        date="July 2021"
                         iconStyle={{ background: '#50C878', color: '#fff' }}
                         icon={<FaBriefcase />}
                     >
                         <h5 className="text-white">Humanitarian Award</h5>
-                        <h6 className="text-white">Miami, FL</h6>
-                        <p style={{ fontSize: '14px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                        <h6 className="text-white">India</h6>
+                        <p style={{ fontSize: '14px' }}>Obstetrics and Gynecology, Women's Health, Reproductive Endocrinology, Minimally Invasive Surgery</p>
                     </VerticalTimelineElement>
-
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        contentStyle={{ background: '#50C878', color: '#000' }}
-                        contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
-                        date="March 2011"
-                        iconStyle={{ background: '#50C878', color: '#fff' }}
-                        icon={<FaBriefcase />}
-                    >
-                        <h5 className="text-white">Certificate for International Volunteer Service</h5>
-                        <h6 className="text-white">Miami, FL</h6>
-                        <p style={{ fontSize: '14px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                    </VerticalTimelineElement>
-
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#50C878', color: '#00' }}
                         contentArrowStyle={{ borderRight: '7px solid  #50C878' }}
-                        date="March 2011"
+                        date="March 2023"
                         iconStyle={{ background: '#50C878', color: '#fff' }}
                         icon={<FaBriefcase />}
                     >
-                        <h5 className="text-white">The Dental Professional of The Year Award</h5>
-                        <h6 className="text-white">Miami, FL</h6>
-                        <p style={{ fontSize: '14px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                        <h5 className="text-white">The Medical Professional of The Year Award</h5>
+                        <h6 className="text-white">India</h6>
+                        <p style={{ fontSize: '14px' }}>Obstetrics and Gynecology, Women's Health, Reproductive Endocrinology, Minimally Invasive Surgery</p>
                     </VerticalTimelineElement>
-
                 </VerticalTimeline>
-            </div>
-            <div>
-                <h5 className='overview-text'>Services</h5>
-                <ul>
-                    <li>Tooth cleaning </li>
-                    <li>Root Canal Therapy</li>
-                    <li>Implants</li>
-                    <li>Composite Bonding</li>
-                    <li>Fissure Sealants</li>
-                    <li>Surgical Extractions</li>
-                </ul>
-            </div>
-            <div>
-                <h5 className='overview-text'>Specializations</h5>
-                <ul className="clearfix">
-                    <li>Children Care</li>
-                    <li>Dental Care</li>
-                    <li>Oral and Maxillofacial Surgery </li>
-                    <li>Orthodontist</li>
-                    <li>Periodontist</li>
-                    <li>Prosthodontics</li>
-                </ul>
             </div>
         </div>
     )

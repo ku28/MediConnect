@@ -13,7 +13,7 @@ const SearchContent = ({ data }) => {
     const services = data?.services?.split(',')
     const defaultImage = defaultDoctorImage;
     return (
-        <div className="mb-4 rounded" style={{ background: '#f3f3f3' }}>
+        <div className="mb-4 rounded doctor-card">
             <div className='d-flex p-3 justify-content-between'>
                 <div className='d-flex gap-3'>
                     <div className='doc-img-fluid d-flex align-items-center'>
@@ -29,7 +29,6 @@ const SearchContent = ({ data }) => {
                                 ))
                             }
                         </p>
-
                         <div className='d-flex align-items-center'>
                             <div>
                                 <StarRatings
@@ -42,7 +41,6 @@ const SearchContent = ({ data }) => {
                                 />
                             </div>
                         </div>
-
                         <div className="clinic-details">
                             <p className="form-text text-secondary"><FaLocationArrow /> {data?.address}, {data?.country}</p>
                             {/* <ul className="clinic-gallery mt-3">

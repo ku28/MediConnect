@@ -49,7 +49,7 @@ const BookDoctor = () => {
             <>
                 {uniqueDoctors.map((item) => (
                     <SwiperSlide key={item.id}>
-                        <div className="profile-widget shadow-sm" style={{ margin: '10px', borderRadius: '8px' }}>
+                        <div className="profile-widget shadow-sm">
                             <div className="doc-img position-relative">
                                 <Link to={`/doctors/profile/${item.id}`}>
                                     <img
@@ -87,14 +87,14 @@ const BookDoctor = () => {
                                     <Link
                                         to={`/doctors/profile/${item.id}`}
                                         className="btn btn-outline-info btn-sm"
-                                        style={{ fontSize: '0.8rem' }}
+                                        style={{ fontSize: '0.8rem', backgroundColor: '#50C878', color: '#fff', borderColor: 'transparent' }}
                                     >
                                         Profile
                                     </Link>
                                     <Link
                                         to={`/booking/${item.id}`}
                                         className="btn btn-success btn-sm"
-                                        style={{ fontSize: '0.8rem' }}
+                                        style={{ fontSize: '0.8rem', backgroundColor: '#fff', borderColor: '#50C878', color: '#50C878' }}
                                     >
                                         Book
                                     </Link>
@@ -110,7 +110,7 @@ const BookDoctor = () => {
     return (
         <section className="section-doctor container" style={{ marginTop: '20px' }}>
             <div className="row">
-                <div className="col-md-3">
+                <div className="col-md-3 book">
                     <h2 className="mb-3 section-title text-center" style={{ fontSize: '1.8rem', fontWeight: '700' }}>
                         Book Our Doctor
                     </h2>
@@ -120,14 +120,13 @@ const BookDoctor = () => {
                     <div className="text-center">
                         <Link
                             to={'/doctors'}
-                            className="btn btn-outline-primary"
-                            style={{ padding: '5px 20px', fontSize: '0.9rem' }}
+                            className="btn btn-outline-primary see-more"
                         >
                             See More
                         </Link>
                     </div>
                 </div>
-                <div className="col-md-9">
+                <div className="col-md-9 doctor-row">
                     <Swiper
                         spaceBetween={10}
                         slidesPerView={uniqueDoctors.length >= 4 ? 4 : uniqueDoctors.length}

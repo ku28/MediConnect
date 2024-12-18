@@ -47,7 +47,7 @@ const PatientFavouriteDoctor = () => {
                                 </Link>
                                 <FaCheckCircle className='verified text-success' />
                             </h5>
-                            <p className="form-text">MBBS, MD - General Medicine, DNB - Cardiology</p>
+                            <p className="form-text">MBBS, DNB - Cardiology</p>
                             <div className="w-100 d-flex align-items-center">
                                 <StarRatings
                                     rating={5}
@@ -58,14 +58,14 @@ const PatientFavouriteDoctor = () => {
                                     starDimension="20px"
                                     starSpacing="5px"
                                 />
-                                <span className="d-inline-block text-secondary mt-2">(27)</span>
+                                {/* <span className="d-inline-block text-secondary mt-2">(27)</span> */}
                             </div>
                             <ul className="available-info">
                                 <li>
-                                    <FaLocationArrow className='icon' /> Georgia, USA
+                                    <FaLocationArrow className='icon' /> Location
                                 </li>
                                 <li>
-                                    <FaClock className='icon' /> Available on Fri, 22 Mar
+                                    <FaClock className='icon' /> Available on Date
                                 </li>
                                 <li>
                                     <FaRupeeSign className='icon' /> ₹100 - ₹400

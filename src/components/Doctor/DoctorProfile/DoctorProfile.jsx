@@ -11,7 +11,7 @@ import { Tabs } from 'antd';
 import OverView from './OverView';
 import Location from './Location';
 import Review from './Review';
-import Availibility from './Availibility';
+// import Availibility from './Availibility';
 
 const DoctorProfile = () => {
     const { id } = useParams();
@@ -37,11 +37,11 @@ const DoctorProfile = () => {
             label: 'Reviews',
             children: <Review doctorId={id}/>,
         },
-        {
-            key: '4',
-            label: 'Availability',
-            children: <Availibility />,
-        },
+        // {
+        //     key: '4',
+        //     label: 'Availability',
+        //     children: <Availibility />,
+        // },
     ];
 
     
@@ -49,9 +49,11 @@ const DoctorProfile = () => {
         <>
             <Header />
             <SubHeader title='Doctor Details' subtitle='See our doctors' />
-            <div className="container" style={{ marginBottom: '4rem', marginTop: '6rem' }}>
-                {content}
-                <div className='p-4 rounded' style={{ marginBottom: '7rem', backgroundColor: '#f3f3f3' }}>
+            <div className="container">
+                <div className="doc-details">
+                    {content}
+                </div>
+                <div className='p-4 rounded content1'>
                     <Tabs defaultActiveKey="1" items={items} />
                 </div>
             </div>

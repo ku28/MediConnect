@@ -27,7 +27,7 @@ const About = () => {
     const defaultImage = defaultDoctorImage;
 
     doctorContent = (
-      <div className="row">
+      <div className="row doctors-content">
       {doctors.map((item, id) => (
         <div className="col-lg-3 col-md-6 col-sm-6" key={id + item.id}>
         <div className="card">
@@ -89,7 +89,7 @@ const About = () => {
       {/* Meet Our Specialists Section */}
       <div className="container my-5">
         <div className="row justify-content-center">
-          <div className="col-lg-6">
+          <div className="col-lg-6 speciality">
             <div className="section-title">
               <h2 className="text-uppercase text-blue-800">
                 Meet Our Specialists
@@ -106,7 +106,7 @@ const About = () => {
 
       {/* What Doctors Say Section */}
       <div className="container my-5">
-        <div className="row align-items-center">
+        <div className="row align-items-center speciality">
           <div className="col-lg-6">
             <div className="section-title">
               <h2 className="text-uppercase text-blue-800">What Doctors Say</h2>
