@@ -49,12 +49,12 @@ const PersonalInformation = ({ handleChange, selectValue, setPatientId = () => {
         .custom-input:focus {
           outline: none;
           border-color: #0e783c;
-          box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+          box-shadow: 0 0 2px  #0e783c;
         }
 
         .custom-input:hover {
          
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px  #0e783c;
         }
 
         .card-label label {
@@ -91,7 +91,7 @@ const PersonalInformation = ({ handleChange, selectValue, setPatientId = () => {
         .form-group input:focus,
         .form-group textarea:focus {
           border-color: #0e783c;
-          box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+          box-shadow: 0 0 2px  #0e783c;
         }
 
         .form-group input:not(:focus),

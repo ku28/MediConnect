@@ -29,12 +29,12 @@
 
 /* Heading Styling */
 #hero h1 {
+  font: 100% system-ui, sans-serif;
   margin: 0;
-  font-size: 48px;
-  font-weight: 700;
   line-height: 56px;
-  text-transform: uppercase;
   color: #000;
+  font-size: 60px;
+  font-weight: 700;
 }
 
 /* Paragraph Styling */

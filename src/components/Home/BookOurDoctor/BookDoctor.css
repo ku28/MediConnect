@@ -2,12 +2,39 @@
 .section-doctor {
     padding: 0;
     margin: 0;
-    background: #f4f4f4;
 }
 
 .full-section-swiper {
     width: 100%;
     height: 100vh; /* Full viewport height */
+}
+
+.book {
+    padding-top: 130px;
+}
+
+.swipe1 {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    padding: 0;
+    margin: 0;
+    border: 50% solid #ffffff;
+}
+
+.see-more {
+    background-color: #50C878 !important;
+    border-color: #50C878 !important;
+    color: white !important;
+}
+
+.see-more:hover {
+    background-color: #62d2a2 !important;
+    border-color: #62d2a2 !important;
+    color: white !important;
 }
 
 .profile-widget {
@@ -16,10 +43,21 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure the widget takes full height */
 }
 
 .profile-widget:hover {
     transform: translateY(-5px);
+}
+
+.doc-img {
+    flex: 1; /* Allow image to take available space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .doc-img img {
@@ -42,6 +80,7 @@
 
 .pro-content {
     padding: 15px;
+    flex: 0 0 auto; /* Ensure content does not stretch */
 }
 
 .pro-content .title {
@@ -57,3 +96,4 @@
     color: #6c757d;
     font-size: 0.9rem;
 }
+

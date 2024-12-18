@@ -22,35 +22,30 @@ const ClinicAndSpecialities = () => {
 							<div className="speicality-item text-center">
 								<div className="speicality-img">
 									<img src={img1} className="img-fluid" alt="" />
-									<span><i><FaCheckDouble/></i></span>
 								</div>
 								<p>Urology</p>
 							</div>
 							<div className="speicality-item text-center">
 								<div className="speicality-img">
 									<img src={img2} className="img-fluid" alt="" />
-									<span><i><FaCheckDouble/></i></span>
 								</div>
 								<p>Neurology</p>
 							</div>
 							<div className="speicality-item text-center">
 								<div className="speicality-img">
 									<img src={img3} className="img-fluid" alt="" />
-									<span><i><FaCheckDouble/></i></span>
 								</div>
 								<p>Orthopedic</p>
 							</div>
 							<div className="speicality-item text-center">
 								<div className="speicality-img">
 									<img src={img4} className="img-fluid" alt="" />
-									<span><i><FaCheckDouble/></i></span>
 								</div>
 								<p>Cardiologist</p>
 							</div>
 							<div className="speicality-item text-center">
 								<div className="speicality-img">
 									<img src={img5} className="img-fluid" alt="" />
-									<span><i><FaCheckDouble/></i></span>
 								</div>
 								<p>Dentist</p>
 							</div>

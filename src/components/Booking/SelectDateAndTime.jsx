@@ -5,45 +5,45 @@ const SelectDateAndTime = ({ content, handleDateChange, disabledDateTime, select
     return (
         <div style={{ marginTop: '5rem' }}>
             <div className="doctor-name hover-effect">
+                
                 <h5 className='text-title'>Selected Doctor</h5>
                 {content}
             </div>
 
-            <div className="row">
-                <div className="col-md-5 col-sm-12 mt-3">
-                    <h5 className='text-title mb-3'>Please Select Date</h5>
-                    <DatePicker
-                        format="YYYY-MM-DD"
-                        disabledDate={disabledDateTime}
-                        onChange={handleDateChange}
-                        className="date-picker"
-                    />
-                </div>
+            <div className="row justify-content-center">
+    <div className="col-md-5 col-sm-12 mt-5 d-flex flex-column align-items-center">
+        <h5 className="text-title mb-3">Please Select Date</h5>
+        <DatePicker
+            format="YYYY-MM-DD"
+            disabledDate={disabledDateTime}
+            onChange={handleDateChange}
+            className="date-picker"
+        />
+    </div>
 
-                <div className="col-md-7 col-sm-12 mt-3">
-                    {selectedDate && (
-                        <h5 className='text-title mb-3'>
-                            Selected Date: {moment(selectedDate).format('LL')} {selectTime && 'Time: ' + selectTime}
-                        </h5>
-                    )}
-                    <div className="date-card rounded hover-effect">
-                        <div className="row text-center mt-3">
-                            {
-                                !selectedDate ? (
-                                    <h5 className='text-title d-flex justify-content-center align-items-center mt-5'>
-                                        Please Select A Date First
-                                    </h5>
-                                ) : (
-                                    dContent
-                                )
-                            }
+                <div className="date-card rounded">
+    <div className="row justify-content-center">
+        <div className="col-12">
+            {
+                !selectedDate ? (
+                    <h5 className='text-title d-flex justify-content-center align-items-center mt-10'>
+                        Please Select A Date First
+                    </h5>
+                ) : (
+                    <div className="row">
+                            {dContent}
                         </div>
-                    </div>
-                </div>
+                )
+            }
+        </div>
+    </div>
+</div>
+
             </div>
         </div>
     );
 };
+
 
 // Inline CSS
 const styles = `
@@ -82,7 +82,11 @@ const styles = `
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 300px;
+    width: 800px;
+    margin-top: 20px;
 }
+
 
 .date-card.hover-effect:hover {
     transform: scale(1.05);

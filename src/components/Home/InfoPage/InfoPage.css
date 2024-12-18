@@ -23,6 +23,7 @@
   color: #fff;
   border-radius: 50px;
   transition: all ease-in-out 0.4s;
+  border-color: #50C878;
 }
 
 .why-us .content .more-btn i {
@@ -30,8 +31,7 @@
 }
 
 .why-us .content .more-btn:hover {
-  color: #50C878;
-  background: #fff;
+  background-color: #329051;
 }
 
 .why-us .icon-boxes .icon-box {
