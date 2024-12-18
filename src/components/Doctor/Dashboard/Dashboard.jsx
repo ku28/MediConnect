@@ -20,8 +20,8 @@ const Dashboard = () => {
                         </div>
                     }
                     {role === 'doctor' &&
-                        <div className="col-md-12 rounded" style={{ background: '#f8f9fa' }}>
-                            <h5 className="text-title py-3" style={{ textAlign: 'center' }}>Appointments</h5>
+                        <div className="col-md-12 rounded mt-3" style={{ background: '#f8f9fa' }}>
+                            <h5 className="text-title px-2 mb-0 pt-4" style={{ textAlign: 'center' }}>Appointments</h5>
                             <DashboardPage />
                         </div>
                     }

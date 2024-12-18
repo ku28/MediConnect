@@ -53,7 +53,7 @@ const DashboardPage = () => {
             }
         },
         {
-            title: <div style={{ textAlign: 'center' }}>Scheduled</div>,
+            title: <div style={{ textAlign: 'center' }}>Appointment Scheduled</div>,
             key: '2',
             width: 150,
             render: (data) => (
@@ -123,7 +123,7 @@ const DashboardPage = () => {
     ];
 
     return (
-        <div className="appointments-container p-3" style={{ backgroundColor: '#f0f2f5', borderRadius: '8px' }}>
+        <div className="appointments-container p-3">
             <Tabs defaultActiveKey="1" items={tabItems} onChange={handleOnselect} />
         </div>
     );

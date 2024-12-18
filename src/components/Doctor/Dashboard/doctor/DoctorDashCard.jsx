@@ -33,19 +33,19 @@ const DoctorDashCard = () => {
     const cardData = [
         {
             icon: <FaHospital className="icon" />,
-            title: 'Total Patients',
+            title: 'Patients',
             amount: totalPatients,
             bgColor: 'bg-light-green'
         },
         {
             icon: <FaCalendarAlt className="icon" />,
-            title: 'Total Appointments',
+            title: 'Appointments',
             amount: totalAppointments,
             bgColor: 'bg-light-green'
         },
         {
             icon: <FaCalendarAlt className="icon" />,
-            title: 'Total Earnings',
+            title: 'Earnings',
             amount: totalAppointments,
             bgColor: 'bg-light-green'
         }
