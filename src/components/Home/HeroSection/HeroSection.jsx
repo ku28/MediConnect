@@ -29,7 +29,7 @@ const HeroSection = () => {
                             marginBottom: '20px',
                         }}
                     >
-                        Your health matters. Connect with experienced healthcare professionals.
+                        Get the right care, right away.
                     </p>
                     <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
                         <Link 
