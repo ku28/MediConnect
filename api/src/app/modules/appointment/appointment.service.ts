@@ -1,5 +1,6 @@
-import { Appointments, Patient, Payment, paymentStatus } from "@prisma/client";
-import prisma from "../../../shared/prisma";
+
+import { Appointments, Patient, Payment, paymentStatus, PrismaClient } from "@prisma/client";
+// import prisma from "../../../shared/prisma";
 import ApiError from "../../../errors/apiError";
 import httpStatus from "http-status";
 import moment from 'moment';
@@ -180,6 +181,7 @@ const getAllAppointments = async (): Promise<Appointments[] | null> => {
     const result = await prisma.appointments.findMany();
     return result;
 }
+
 
 const getAppointment = async (id: string): Promise<Appointments | null> => {
     const result = await prisma.appointments.findUnique({
@@ -446,6 +448,85 @@ const updateAppointmentByDoctor = async (user: any, payload: Partial<Appointment
     return result;
 }
 
+const getTotalAppointmentsCount = async (): Promise<number> => {
+    // Get total appointments without filtering by doctorId
+    const count = await prisma.appointments.count();
+    return count;
+}
+
+const getDistinctPatientCount = async (): Promise<number> => {
+    // Get distinct patient count across all appointments
+    const result = await prisma.appointments.groupBy({
+        by: ['patientId'],  // Group by patientId to get distinct patients
+        _count: {
+            patientId: true,  // Count occurrences of distinct patientId
+        },
+    });
+
+    return result.length; // The number of distinct patientId values
+}
+
+
+const prisma = new PrismaClient();
+
+const getTotalEarnings = async (doctorId?: string): Promise<number> => {
+  try {
+    if (doctorId) {
+      const isDoctorExist = await prisma.doctor.findUnique({
+        where: { id: doctorId },
+      });
+
+      if (!isDoctorExist) {
+        throw new ApiError(httpStatus.NOT_FOUND, "Doctor Account is not found!");
+      }
+
+      const earnings = await prisma.payment.aggregate({
+        where: { appointment: { doctorId } },
+        _sum: { totalAmount: true },
+      });
+
+      return earnings._sum.totalAmount || 0;
+    } else {
+      const earnings = await prisma.payment.aggregate({
+        _sum: { totalAmount: true },
+      });
+
+      return earnings._sum.totalAmount || 0;
+    }
+  } catch (error) {
+    console.error("Error calculating total earnings:", error);
+    throw new ApiError(httpStatus.INTERNAL_SERVER_ERROR, "Error calculating total earnings");
+  }
+};
+
+
+const getDoctorEarnings = async (doctorId: string): Promise<Payment[] | null> => {
+    const doctor = await prisma.doctor.findUnique({
+        where: { id: doctorId }
+    });
+    if (!doctor) {
+        throw new ApiError(httpStatus.NOT_FOUND, 'Doctor not found!');
+    }
+
+    // Fetch payments related to this doctor
+    const earnings = await prisma.payment.findMany({
+        where: { appointment: { doctorId: doctorId } },
+        include: {
+            appointment: {
+                include: {
+                    patient: {
+                        select: { firstName: true, lastName: true }
+                    }
+                }
+            }
+        }
+    });
+
+    return earnings;
+}
+
+
+
 export const AppointmentService = {
     createAppointment,
     getAllAppointments,
@@ -460,5 +541,9 @@ export const AppointmentService = {
     getPatientPaymentInfo,
     getDoctorInvoices,
     createAppointmentByUnAuthenticateUser,
-    getAppointmentByTrackingId
+    getAppointmentByTrackingId,
+    getTotalAppointmentsCount,
+    getDistinctPatientCount,
+    getTotalEarnings,
+    getDoctorEarnings,
 }

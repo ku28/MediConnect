@@ -3,6 +3,7 @@ import catchAsync from "../../../shared/catchAsync";
 import sendResponse from "../../../shared/sendResponse";
 import { AppointmentService } from "./appointment.service";
 import { Appointments, Patient } from "@prisma/client";
+import prisma from "../../../shared/prisma";
 
 const createAppointment = catchAsync(async (req: Request, res: Response) => {
     const result = await AppointmentService.createAppointment(req.body);
@@ -144,6 +145,41 @@ const getDoctorInvoices = catchAsync(async (req: Request, res: Response) => {
     })
 })
 
+
+// Controller: Get total appointments across all doctors
+const getTotalAppointmentsCount = catchAsync(async (req: Request, res: Response) => {
+    // Get the count of total appointments across all doctors
+    const count = await prisma.appointments.count();
+
+    // Send the response with the count
+    res.status(200).json({
+        success: true,
+        message: 'Successfully Retrieved Total Appointments!',
+        data: { totalAppointments: count },
+    });
+});
+
+
+// Controller: Get the count of distinct patients across all appointments
+const getDistinctPatientCount = catchAsync(async (req: Request, res: Response) => {
+    // Get the distinct patients by grouping appointments by patientId
+    const result = await prisma.appointments.groupBy({
+        by: ['patientId'], // Group by patientId to get distinct patients
+        _count: {
+            patientId: true, // Count occurrences of distinct patientId
+        },
+    });
+
+    // Return the number of distinct patients
+    res.status(200).json({
+        success: true,
+        message: 'Successfully Retrieved Distinct Patients Count!',
+        data: { totalDistinctPatients: result.length },
+    });
+});
+
+
+
 export const AppointmentController = {
     getDoctorAppointmentsById,
     updateAppointmentByDoctor,
@@ -158,5 +194,7 @@ export const AppointmentController = {
     getPatientPaymentInfo,
     getDoctorInvoices,
     createAppointmentByUnAuthenticateUser,
-    getAppointmentByTrackingId
+    getAppointmentByTrackingId,
+    getTotalAppointmentsCount, 
+    getDistinctPatientCount,
 }
