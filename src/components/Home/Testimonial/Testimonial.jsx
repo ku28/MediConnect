@@ -16,33 +16,61 @@ const Testimonial = () => {
     if (!isLoading && isError) content = <div>Something Went Wrong!</div>;
     if (!isLoading && !isError && data?.length === 0) content = <div>Empty</div>;
 
+    // Determine if sliding should be disabled
+    const allowSlide = data?.length > 4;
+
     // Mapping reviews to Swiper slides
     if (!isLoading && !isError && data?.length > 0) {
         content = (
             <>
                 {data.slice(0, 10)?.map((item, key) => (
-                    <SwiperSlide key={item.id + key} className="d-flex justify-content-center">
-                        <div className="testimonial-card shadow-sm">
+                    <SwiperSlide key={item.id + key} style={{ display: 'flex', justifyContent: 'center' }}>
+                        <div style={{
+                            border: '1px solid #ddd',
+                            borderRadius: '10px',
+                            padding: '20px',
+                            maxWidth: '300px',
+                            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                            backgroundColor: '#fff'
+                        }}>
                             {/* Patient Information */}
-                            <div className="testimonial-header d-flex align-items-center gap-3">
-                                <div className="testimonial-img">
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                                <div style={{
+                                    width: '60px',
+                                    height: '60px',
+                                    borderRadius: '50%',
+                                    overflow: 'hidden'
+                                }}>
                                     {item.patient.img && (
-                                        <img src={item.patient.img} alt="Patient" />
+                                        <img
+                                            src={item.patient.img}
+                                            alt="Patient"
+                                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                        />
                                     )}
                                 </div>
                                 <div>
-                                    <h5 className="testimonial-name m-0">
-                                        {item?.patient?.firstName} {item?.patient?.lastName}
-                                    </h5>
-                                    <p className="testimonial-desc text-muted m-0">
+                                    <h5 style={{ margin: 0 }}>{item?.patient?.firstName} {item?.patient?.lastName}</h5>
+                                    <p style={{
+                                        margin: 0,
+                                        color: '#6c757d',
+                                        fontSize: '14px'
+                                    }}>
                                         {truncate(item?.description, 150)}
                                     </p>
                                 </div>
                             </div>
 
                             {/* Recommendation and Rating */}
-                            <div className="testimonial-footer mt-3">
-                                <p className="recomended text-success d-flex align-items-center gap-1">
+                            <div style={{ marginTop: '20px' }}>
+                                <p style={{
+                                    color: '#28a745',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '5px',
+                                    fontSize: '14px',
+                                    margin: 0
+                                }}>
                                     <FaCheckDouble /> Recommended
                                 </p>
                                 <StarRatings
@@ -61,25 +89,28 @@ const Testimonial = () => {
     }
 
     return (
-        <div className="container my-5">
+        <div style={{ padding: '50px 20px', backgroundColor: '#f9f9f9' }}>
             {/* Section Title */}
-            <div className="text-center mb-5">
-                <h2 className="fw-bold">Reviews</h2>
-                <p className="text-muted">What Our Patients Say</p>
+            <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+                <h2 style={{ fontWeight: 'bold' }}>Reviews</h2>
+                <p style={{ color: '#6c757d' }}>What Our Patients Say</p>
             </div>
 
             {/* Swiper Carousel */}
             <Swiper
                 spaceBetween={30}
-                slidesPerView={1}
+                slidesPerView={4}
                 breakpoints={{
                     768: { slidesPerView: 2 },
-                    1024: { slidesPerView: 3 },
+                    1024: { slidesPerView: 4 },
                 }}
                 modules={[Navigation, Autoplay]}
-                navigation
-                autoplay={{ delay: 2500, disableOnInteraction: false }}
-                loop
+                navigation={allowSlide} // Enable navigation only if more than 4 slides
+                autoplay={allowSlide ? { delay: 2500, disableOnInteraction: false } : false} // Enable autoplay only if more than 4 slides
+                allowSlideNext={allowSlide} // Disable next slide if fewer than 4 slides
+                allowSlidePrev={allowSlide} // Disable previous slide if fewer than 4 slides
+                loop={false}
+                style={{ padding: '20px 0' }}
             >
                 {content}
             </Swiper>
