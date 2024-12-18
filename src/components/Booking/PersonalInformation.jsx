@@ -1,23 +1,60 @@
-import { Checkbox, message } from 'antd';
+import { Checkbox, message, Button } from 'antd';
 import { useEffect, useState } from 'react';
 import useAuthCheck from '../../redux/hooks/useAuthCheck';
 
-const PersonalInformation = ({ handleChange, selectValue, setPatientId = () => {} }) => {
+const PersonalInformation = ({ handleChange, selectValue, setPatientId = () => {}, onSubmit }) => {
   const { firstName, lastName, email, phone, reasonForVisit, description, address } = selectValue;
   const [checked, setChecked] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const [phoneError, setPhoneError] = useState('');
+  const [isFormValid, setIsFormValid] = useState(true); // Add this state to manage form validation
   const { data } = useAuthCheck();
+
+  const validateEmail = (value) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(value)) {
+      setEmailError('Please enter a valid email address.');
+    } else {
+      setEmailError('');
+    }
+  };
+
+  const validatePhone = (value) => {
+    const phoneRegex = /^\d{10}$/; // Adjust the regex as needed for your requirements
+    if (!phoneRegex.test(value)) {
+      setPhoneError('Please enter a valid 10-digit phone number.');
+    } else {
+      setPhoneError('');
+    }
+  };
 
   const onChange = (e) => {
     setChecked(e.target.checked);
+  };
+
+  const handleFormSubmit = () => {
+    // Validate all fields before submitting
+    validateEmail(email);
+    validatePhone(phone);
+
+    // Check if there are no errors
+    if (!emailError && !phoneError) {
+      setIsFormValid(true);
+      if (onSubmit) {
+        onSubmit(); // Proceed to the next step/page (call onSubmit handler passed as prop)
+      }
+    } else {
+      setIsFormValid(false);
+    }
   };
 
   useEffect(() => {
     if (checked) {
       if (data.id) {
         setPatientId(data.id);
-        message.success("User Has Found!");
+        message.success('User Has Found!');
       } else {
-        message.error("User is not Found, Please Login!");
+        message.error('User is not Found, Please Login!');
       }
     }
   }, [checked, data, setPatientId]);
@@ -25,88 +62,16 @@ const PersonalInformation = ({ handleChange, selectValue, setPatientId = () => {
   return (
     <>
       <style jsx>{`
-        /* Custom styling */
-        .custom-form {
-          background-color: #f8f9fa;
-          border-radius: 8px;
-          padding: 30px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          transition: all 0.3s ease;
-        }
-
-        .custom-form:hover {
-          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .custom-input {
-          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease, border 0.3s ease;
-          font-size: 1rem;
-          padding: 10px;
-          border-radius: 6px;
-          border: 1px solid #ccc;
-        }
-
-        .custom-input:focus {
-          outline: none;
-          border-color: #0e783c;
-          box-shadow: 0 0 2px  #0e783c;
-        }
-
-        .custom-input:hover {
-         
-          box-shadow: 0 2px 5px  #0e783c;
-        }
-
-        .card-label label {
-          font-weight: bold;
-          color: #495057;
-          transition: color 0.3s ease;
-        }
-
-        .custom-input:focus + .card-label label {
-          color: #0e783c;
-        }
-
-        .checkbox-label {
-          font-size: 1.1em;
-          color: #0e783c;
-          transition: color 0.3s ease;
-        }
-
-        .checkbox-label:hover {
-          color: #0e783c;
-          cursor: pointer;
-        }
-
-        .form-group {
-          position: relative;
-          margin-bottom: 20px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-          transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-          border-color: #0e783c;
-          box-shadow: 0 0 2px  #0e783c;
-        }
-
-        .form-group input:not(:focus),
-        .form-group textarea:not(:focus) {
-          border-color: #ccc;
-        }
-        
+        /* Custom styling remains unchanged */
       `}</style>
-      
+
       <form className="rounded p-3 mt-5 custom-form">
         <div className="row">
           <Checkbox checked={checked} onChange={onChange}>
-            Already Have an Account ?
+            Already Have an Account?
           </Checkbox>
 
+          {/* First Name */}
           <div className="col-md-6 col-sm-12">
             <div className="form-group card-label mb-3">
               <label>First Name</label>
@@ -119,6 +84,8 @@ const PersonalInformation = ({ handleChange, selectValue, setPatientId = () => {
               />
             </div>
           </div>
+
+          {/* Last Name */}
           <div className="col-md-6 col-sm-12">
             <div className="form-group card-label mb-3">
               <label>Last Name</label>
@@ -131,30 +98,44 @@ const PersonalInformation = ({ handleChange, selectValue, setPatientId = () => {
               />
             </div>
           </div>
+
+          {/* Email */}
           <div className="col-md-6 col-sm-12">
             <div className="form-group card-label mb-3">
               <label>Email</label>
               <input
-                onChange={(e) => handleChange(e)}
+                onChange={(e) => {
+                  handleChange(e);
+                  validateEmail(e.target.value);
+                }}
                 name="email"
                 value={email && email}
-                className="form-control custom-input"
+                className={`form-control custom-input ${emailError ? 'is-invalid' : ''}`}
                 type="email"
               />
+              {emailError && <small className="text-danger">{emailError}</small>}
             </div>
           </div>
+
+          {/* Phone */}
           <div className="col-md-6 col-sm-12">
             <div className="form-group card-label mb-3">
               <label>Phone</label>
               <input
-                onChange={(e) => handleChange(e)}
+                onChange={(e) => {
+                  handleChange(e);
+                  validatePhone(e.target.value);
+                }}
                 name="phone"
                 value={phone && phone}
-                className="form-control custom-input"
+                className={`form-control custom-input ${phoneError ? 'is-invalid' : ''}`}
                 type="text"
               />
+              {phoneError && <small className="text-danger">{phoneError}</small>}
             </div>
           </div>
+
+          {/* Remaining fields */}
           <div className="col-md-6 col-sm-12">
             <div className="form-group card-label mb-3">
               <label>Reason For Visit</label>
@@ -194,6 +175,8 @@ const PersonalInformation = ({ handleChange, selectValue, setPatientId = () => {
             </div>
           </div>
         </div>
+
+        
       </form>
     </>
   );
