@@ -11,7 +11,7 @@ const SelectDateAndTime = ({ content, handleDateChange, disabledDateTime, select
             </div>
 
             <div className="row justify-content-center">
-    <div className="col-md-5 col-sm-12 mt-5 d-flex flex-column align-items-center">
+    <div className="col-md-5 col-sm-12 mt-10 d-flex flex-column align-items-center">
         <h5 className="text-title mb-3">Please Select Date</h5>
         <DatePicker
             format="YYYY-MM-DD"
@@ -26,7 +26,7 @@ const SelectDateAndTime = ({ content, handleDateChange, disabledDateTime, select
         <div className="col-12">
             {
                 !selectedDate ? (
-                    <h5 className='text-title d-flex justify-content-center align-items-center mt-10'>
+                    <h5 className='text-title d-flex justify-content-center align-items-center mt-20'>
                         Please Select A Date First
                     </h5>
                 ) : (

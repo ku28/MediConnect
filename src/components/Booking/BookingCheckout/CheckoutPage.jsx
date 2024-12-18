@@ -91,7 +91,7 @@ const CheckoutPage = ({ handleChange, selectValue, isCheck, setIsChecked, data, 
             </style>
             <div className="row">
                 <div className="col-md-7">
-                    <div className="rounded p-10" style={{ background: "#f8f9fa" }}>
+                    <div className="rounded p-3 mt-1 custom-form" style={{ background: "#f8f9fa" }}>
 
                         <div className='row'>
                             <div className="col-md-6 mb-2">
@@ -108,14 +108,9 @@ const CheckoutPage = ({ handleChange, selectValue, isCheck, setIsChecked, data, 
                             </div>
                             <div className="col-md-6 mb-2">
                                 <label className="payment-radio credit-card-option">
-                                    <input type="radio"
-                                        name="paymentType"
-                                        value="cash"
-                                        onChange={(e) => handleChange(e)}
-                                        checked={paymentType === 'cash'}
-                                    />
+                                    
                                     <span className="ms-2"></span>
-                                    <span title="Pay with Cash">Cash</span>
+                                    
                                 </label>
                             </div>
                             <div className="col-md-6">
