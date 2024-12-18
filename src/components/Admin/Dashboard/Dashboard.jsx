@@ -109,10 +109,12 @@ const AdminDashboard = () => {
                                             <tr>
                                                 <td>
                                                     <h2 className="table-avatar">
-                                                        <a href="#" className="avatar avatar-sm mr-2">
-                                                            <img src="doctor-avatar.jpg" alt="Doctor Avatar" />
-                                                        </a>
-                                                        <a href="#">Dr. Ruby Perrin</a>
+                                                        <a href="#">Dr. Khushi Babbar</a>
+                                                        {/* <a href="#">Dr. Diya Gupta</a>
+                                                        <a href="#">Dr. Khushal Goyal</a>
+                                                        <a href="#">Dr. Nabh Jindal</a>
+                                                        <a href="#">Dr. Kesar Kumari</a>
+                                                        <a href="#">Dr. Kushagra Juneja</a> */}
                                                     </h2>
                                                 </td>
                                                 <td>Dental</td>
@@ -151,8 +153,7 @@ const AdminDashboard = () => {
                                             <tr>
                                                 <td>
                                                     <h2 className="table-avatar">
-                                                        <a href="profile.html" className="avatar avatar-sm mr-2" aria-label="Patient Avatar">Patient Avatar</a>
-                                                        <a href="profile.html">Charlene Reed </a>
+                                                        <a href="profile.html">Divyesh Thakur</a>
                                                     </h2>
                                                 </td>
                                                 <td>8286329170</td>
@@ -189,15 +190,15 @@ const AdminDashboard = () => {
                                             <tr>
                                                 <td>
                                                     <h2 className="table-avatar">
-                                                        <a href="profile.html" className="avatar avatar-sm mr-2" aria-label="Doctor Avatar">Doctor Avatar</a>
-                                                        <a href="profile.html">Dr. Ruby Perrin</a>
+                                                        
+                                                        <a href="profile.html">Dr. Khushi Babbar</a>
                                                     </h2>
                                                 </td>
                                                 <td>Dental</td>
                                                 <td>
                                                     <h2 className="table-avatar">
                                                         <a href="profile.html" className="avatar avatar-sm mr-2" aria-label="Profile"></a>
-                                                        <a href="profile.html">Charlene Reed </a>
+                                                        <a href="profile.html">Divyesh Thakur </a>
                                                     </h2>
                                                 </td>
                                                 <td>9 Nov 2019 <span className="text-primary d-block">11.00 AM - 11.15 AM</span></td>
