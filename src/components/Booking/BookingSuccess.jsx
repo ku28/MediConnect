@@ -209,4 +209,5 @@ const BookingSuccess = () => {
   );
 };
 
-export default BookingSuccess;
+
+export default BookingSuccess
