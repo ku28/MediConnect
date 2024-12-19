@@ -63,9 +63,9 @@ const SearchContent = ({ data }) => {
                 <div className="doc-info-right me-3">
                     <div className="clini-infos">
                         <ul>
-                            <li><FaRegThumbsUp />  97%</li>
+                            {/* <li><FaRegThumbsUp />  97%</li> */}
                             <li><FaComment /> 4 Feedback</li>
-                            <li><FaLocationArrow />{truncate(data?.clinicAddress, 20)}</li>
+                            <li><FaLocationArrow /> {truncate(data?.clinicAddress, 20)}</li>
                             <li><FaRupeeSign /> {data?.price ? truncate(data?.price, 4) : 60} (Per Hour)</li>
                         </ul>
                     </div>
